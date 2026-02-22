@@ -1,6 +1,4 @@
 import React from "react";
-import { motion } from "motion/react";
-
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-white border-t border-black/5 pt-24 pb-12">
@@ -20,7 +18,7 @@ export const Footer: React.FC = () => {
               Engineering high-velocity digital infrastructure, from AI-powered information hubs
               to survey systems and bespoke business platforms.
             </p>
-            <p className="text-brand-dark font-bold mb-6">
+            <p className="text-brand-dark font-bold">
               Prefer email?{" "}
               <a
                 href="mailto:info@sprintxdev.com"
@@ -29,28 +27,6 @@ export const Footer: React.FC = () => {
                 info@sprintxdev.com
               </a>
             </p>
-            <div className="flex flex-wrap gap-4">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="btn-primary !px-8 !py-4 !text-sm"
-              >
-                Talk to Our Team
-              </motion.button>
-              <a
-                href="https://wa.me/000000000000?text=Hi%20SprintXDev%2C%20I%27d%20like%20to%20discuss%20a%20project."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary !px-8 !py-4 !text-sm"
-              >
-                Chat on WhatsApp
-              </a>
-            </div>
           </div>
 
           <div>
