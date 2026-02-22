@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
           className="text-6xl md:text-8xl font-display font-bold text-brand-dark tracking-tight leading-[0.95] mb-10"
         >
           Digital Solutions <br />
-          <span className="gradient-text">That Drive Grow</span>
+          <span className="gradient-text">That Drive Growth</span>
         </motion.h1>
 
         <motion.p
