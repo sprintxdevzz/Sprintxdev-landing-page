@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-40">
                 <img
                   src="/SprintXDevLogo.png"
@@ -15,20 +15,41 @@ export const Footer: React.FC = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-
             </div>
-            <p className="text-brand-dark/50 max-w-sm mb-10 font-medium leading-relaxed">
-              Engineering the high-velocity digital infrastructure that powers
-              modern business growth. Digital Excellence. Delivered Fast.
+            <p className="text-brand-dark/50 max-w-sm mb-4 font-medium leading-relaxed">
+              Engineering high-velocity digital infrastructure, from AI-powered information hubs
+              to survey systems and bespoke business platforms.
             </p>
-            <div className="flex gap-4">
+            <p className="text-brand-dark font-bold mb-6">
+              Prefer email?{" "}
+              <a
+                href="mailto:info@sprintxdev.com"
+                className="text-brand-primary hover:underline"
+              >
+                info@sprintxdev.com
+              </a>
+            </p>
+            <div className="flex flex-wrap gap-4">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="btn-primary !px-8 !py-4 !text-sm"
               >
-                Start Your Project
+                Talk to Our Team
               </motion.button>
+              <a
+                href="https://wa.me/000000000000?text=Hi%20SprintXDev%2C%20I%27d%20like%20to%20discuss%20a%20project."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary !px-8 !py-4 !text-sm"
+              >
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
 
@@ -39,7 +60,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
               <li>
                 <a
-                  href="#"
+                  href="#solutions"
                   className="hover:text-brand-primary transition-colors"
                 >
                   Information Hub
@@ -47,26 +68,18 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#solutions"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Insight Systems
+                  Survey System
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#solutions"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Custom Development
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-brand-primary transition-colors"
-                >
-                  Event Tracking
+                  Custom Solutions
                 </a>
               </li>
             </ul>
@@ -79,7 +92,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
               <li>
                 <a
-                  href="#"
+                  href="#process"
                   className="hover:text-brand-primary transition-colors"
                 >
                   The Process
@@ -87,7 +100,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#tracking"
                   className="hover:text-brand-primary transition-colors"
                 >
                   Case Studies
@@ -95,7 +108,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#contact"
                   className="hover:text-brand-primary transition-colors"
                 >
                   Contact

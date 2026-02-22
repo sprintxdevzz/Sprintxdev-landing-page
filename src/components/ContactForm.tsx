@@ -73,7 +73,9 @@ export const ContactForm: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-brand-dark/40 uppercase tracking-widest leading-none mb-1">Email Us</div>
-                  <div className="text-brand-dark font-bold">sprintxdevz@gmail.com</div>
+                  <a href="mailto:info@sprintxdev.com" className="text-brand-dark font-bold hover:text-brand-primary transition-colors">
+                    info@sprintxdev.com
+                  </a>
                 </div>
               </div>
             </div>

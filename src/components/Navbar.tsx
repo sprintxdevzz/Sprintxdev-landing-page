@@ -12,6 +12,10 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
       <motion.nav
@@ -52,6 +56,7 @@ export const Navbar: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={scrollToContact}
                 className="px-6 py-2 bg-brand-primary text-white rounded-full text-xs font-bold shadow-lg shadow-brand-primary/20 transition-all"
               >
                 Get Started
@@ -98,7 +103,13 @@ export const Navbar: React.FC = () => {
                   Contact
                 </MobileNavLink>
                 <div className="pt-2">
-                  <button className="w-full py-3 text-center font-bold text-white bg-brand-primary rounded-xl shadow-lg shadow-brand-primary/20 text-sm">
+                  <button
+                    onClick={() => {
+                      setIsOpen(false);
+                      scrollToContact();
+                    }}
+                    className="w-full py-3 text-center font-bold text-white bg-brand-primary rounded-xl shadow-lg shadow-brand-primary/20 text-sm"
+                  >
                     Get Started
                   </button>
                 </div>

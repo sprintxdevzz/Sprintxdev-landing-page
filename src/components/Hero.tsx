@@ -1,13 +1,13 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
-import { UniverseBackground } from './UniverseBackground';
+import React from "react";
+import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
+import { UniverseBackground } from "./UniverseBackground";
 
 export const Hero: React.FC = () => {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden min-h-[95vh] flex flex-col items-center justify-center">
       <UniverseBackground />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,8 +28,8 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           className="text-6xl md:text-8xl font-display font-bold text-brand-dark tracking-tight leading-[0.95] mb-10"
         >
-          High-Velocity <br />
-          <span className="gradient-text">Digital Infrastructure</span>
+          Digital Solutions <br />
+          <span className="gradient-text">That Drive Growth</span>
         </motion.h1>
 
         <motion.p
@@ -38,7 +38,8 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="max-w-2xl mx-auto text-xl md:text-2xl text-brand-dark/60 mb-14 leading-relaxed font-medium"
         >
-          Engineering the systems that power your business growth. We build custom digital solutions designed to streamline your operations.
+          Engineering the systems that power your business growth. We build
+          custom digital solutions designed to streamline your operations.
         </motion.p>
 
         <motion.div
@@ -47,43 +48,52 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="btn-primary"
           >
             Start Your Project
             <ArrowRight size={20} />
           </motion.button>
-          
-          <motion.button 
+
+          <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() =>
+              document
+                .getElementById("solutions")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="btn-secondary"
           >
-            View Case Studies
+            Explore Solutions
           </motion.button>
         </motion.div>
       </div>
 
       {/* Background Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] universe-glow -z-10 opacity-50" />
-      <motion.div 
-        animate={{ 
+      <motion.div
+        animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3]
+          opacity: [0.3, 0.5, 0.3],
         }}
         transition={{ duration: 10, repeat: Infinity }}
-        className="absolute -top-[10%] -right-[10%] w-[600px] h-[600px] bg-brand-cyan/10 blur-[120px] rounded-full -z-10" 
+        className="absolute -top-[10%] -right-[10%] w-[600px] h-[600px] bg-brand-cyan/10 blur-[120px] rounded-full -z-10"
       />
-      <motion.div 
-        animate={{ 
+      <motion.div
+        animate={{
           scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2]
+          opacity: [0.2, 0.4, 0.2],
         }}
         transition={{ duration: 12, repeat: Infinity }}
-        className="absolute -bottom-[10%] -left-[10%] w-[600px] h-[600px] bg-brand-violet/10 blur-[120px] rounded-full -z-10" 
+        className="absolute -bottom-[10%] -left-[10%] w-[600px] h-[600px] bg-brand-violet/10 blur-[120px] rounded-full -z-10"
       />
     </section>
   );
