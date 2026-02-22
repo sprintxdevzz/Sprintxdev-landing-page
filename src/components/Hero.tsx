@@ -28,8 +28,8 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           className="text-6xl md:text-8xl font-display font-bold text-brand-dark tracking-tight leading-[0.95] mb-10"
         >
-          High-Velocity <br />
-          <span className="gradient-text">Digital Infrastructure</span>
+          Digital Solutions <br />
+          <span className="gradient-text">That Drive Grow</span>
         </motion.h1>
 
         <motion.p
