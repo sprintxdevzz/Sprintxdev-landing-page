@@ -263,7 +263,7 @@ export const DashboardPreview: React.FC = () => {
                     X
                   </div>
                   <div className="flex flex-col">
-                    <div className="text-white font-bold text-sm md:text-base">SprintX Project</div>
+                    <div className="text-white font-bold text-sm md:text-base">SprintX </div>
                     <div className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-black">Active Session</div>
                   </div>
                 </div>

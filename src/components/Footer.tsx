@@ -3,7 +3,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-white border-t border-black/5 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-40">
@@ -15,8 +15,8 @@ export const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-brand-dark/50 max-w-sm mb-4 font-medium leading-relaxed">
-              Engineering high-velocity digital infrastructure, from AI-powered information hubs
-              to survey systems and bespoke business platforms.
+              Engineering high-velocity digital infrastructure, from AI-powered
+              information hubs to survey systems and bespoke business platforms.
             </p>
             <p className="text-brand-dark font-bold">
               Prefer email?{" "}
@@ -56,46 +56,6 @@ export const Footer: React.FC = () => {
                   className="hover:text-brand-primary transition-colors"
                 >
                   Custom Solutions
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-brand-dark mb-8 uppercase tracking-widest text-xs">
-              Company
-            </h4>
-            <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
-              <li>
-                <a
-                  href="#process"
-                  className="hover:text-brand-primary transition-colors"
-                >
-                  The Process
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#tracking"
-                  className="hover:text-brand-primary transition-colors"
-                >
-                  Case Studies
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-brand-primary transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-brand-primary transition-colors"
-                >
-                  Privacy Policy
                 </a>
               </li>
             </ul>
