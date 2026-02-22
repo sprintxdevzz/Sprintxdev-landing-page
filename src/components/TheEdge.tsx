@@ -78,7 +78,7 @@ export const TheEdge: React.FC = () => {
         >
           <div className="relative z-10">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 md:mb-8 leading-tight">Ready to build what's next?</h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+            <div className="flex items-center justify-center">
               <motion.button 
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -86,13 +86,6 @@ export const TheEdge: React.FC = () => {
                 className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white text-brand-primary rounded-xl md:rounded-2xl text-base md:text-lg font-bold shadow-xl"
               >
                 Talk to an Expert
-              </motion.button>
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-xl md:rounded-2xl text-base md:text-lg font-bold hover:bg-white/20 transition-all"
-              >
-                View Case Studies
               </motion.button>
             </div>
           </div>
