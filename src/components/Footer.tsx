@@ -102,21 +102,10 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-10 border-t border-black/5 flex flex-col items-center gap-3">
           <p className="text-sm text-brand-dark/30 font-bold">
             © {new Date().getFullYear()} Sprint X Dev. All rights reserved.
           </p>
-          <div className="flex gap-8 text-sm text-brand-dark/30 font-bold">
-            <a href="#" className="hover:text-brand-primary transition-colors">
-              Twitter
-            </a>
-            <a href="#" className="hover:text-brand-primary transition-colors">
-              LinkedIn
-            </a>
-            <a href="#" className="hover:text-brand-primary transition-colors">
-              GitHub
-            </a>
-          </div>
         </div>
       </div>
     </footer>
