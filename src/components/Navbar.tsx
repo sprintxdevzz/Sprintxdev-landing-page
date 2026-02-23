@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
+  const [pendingScroll, setPendingScroll] = React.useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -12,8 +13,30 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      const offset = 96;
+      window.scrollTo({
+        top: Math.max(rect.top + window.scrollY - offset, 0),
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollToContact = () => scrollToId("contact");
+
+  const handleMobileNavClick = (id: string) => {
+    setPendingScroll(id);
+    setIsOpen(false);
+  };
+
+  const handleMenuExitComplete = () => {
+    if (pendingScroll) {
+      scrollToId(pendingScroll);
+      setPendingScroll(null);
+    }
   };
 
   return (
@@ -75,7 +98,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile menu */}
-        <AnimatePresence>
+        <AnimatePresence onExitComplete={handleMenuExitComplete}>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
@@ -85,29 +108,32 @@ export const Navbar: React.FC = () => {
             >
               <div className="pt-4 pb-6 space-y-4 border-t border-black/5">
                 <MobileNavLink
-                  href="#solutions"
-                  onClick={() => setIsOpen(false)}
+                  targetId="solutions"
+                  onClick={() => handleMobileNavClick("solutions")}
                 >
                   Solutions
                 </MobileNavLink>
-                <MobileNavLink href="#process" onClick={() => setIsOpen(false)}>
+                <MobileNavLink
+                  targetId="process"
+                  onClick={() => handleMobileNavClick("process")}
+                >
                   Process
                 </MobileNavLink>
                 <MobileNavLink
-                  href="#tracking"
-                  onClick={() => setIsOpen(false)}
+                  targetId="tracking"
+                  onClick={() => handleMobileNavClick("tracking")}
                 >
                   Tracking
                 </MobileNavLink>
-                <MobileNavLink href="#contact" onClick={() => setIsOpen(false)}>
+                <MobileNavLink
+                  targetId="contact"
+                  onClick={() => handleMobileNavClick("contact")}
+                >
                   Contact
                 </MobileNavLink>
                 <div className="pt-2">
                   <button
-                    onClick={() => {
-                      setIsOpen(false);
-                      scrollToContact();
-                    }}
+                    onClick={() => handleMobileNavClick("contact")}
                     className="w-full py-3 text-center font-bold text-white bg-brand-primary rounded-xl shadow-lg shadow-brand-primary/20 text-sm"
                   >
                     Get Started
@@ -140,19 +166,19 @@ const NavLink = ({
 );
 
 const MobileNavLink = ({
-  href,
+  targetId,
   children,
   onClick,
 }: {
-  href: string;
+  targetId: string;
   children: React.ReactNode;
   onClick: () => void;
 }) => (
-  <a
-    href={href}
+  <button
+    type="button"
     onClick={onClick}
-    className="block text-sm font-bold text-brand-dark/70 hover:text-brand-primary py-2"
+    className="w-full text-left block text-sm font-bold text-brand-dark/70 hover:text-brand-primary py-2"
   >
     {children}
-  </a>
+  </button>
 );

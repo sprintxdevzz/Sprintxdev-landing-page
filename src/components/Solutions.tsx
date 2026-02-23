@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "motion/react";
-import {
-  Database,
-  BarChart3,
-  Code2,
+import { 
+  Database, 
+  BarChart3, 
+  Code2, 
   Activity,
   Search,
   Globe,
@@ -163,14 +163,14 @@ export const Solutions: React.FC = () => {
                   0{index + 1}
                 </span>
               </div>
-
+              
               <h3 className="text-2xl md:text-3xl font-display font-bold text-brand-dark mb-2">
                 {sol.title}
               </h3>
               <p className="text-brand-primary font-bold text-xs md:text-sm uppercase tracking-wider mb-6 md:mb-8">
                 {sol.subtitle}
               </p>
-
+              
               <div className="space-y-4 md:space-y-6">
                 {sol.features.map((feat, fIndex) => (
                   <div key={fIndex} className="flex gap-3 md:gap-4">
