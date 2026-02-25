@@ -130,7 +130,7 @@ export const Footer: React.FC = () => {
           <p className="text-sm text-brand-dark/30 font-bold">
             © {new Date().getFullYear()} Sprint X Dev. All rights reserved.
           </p>
-          <div className="flex gap-8 text-sm text-brand-dark/30 font-bold">
+          {/* <div className="flex gap-8 text-sm text-brand-dark/30 font-bold">
             <a href="#" className="hover:text-brand-primary transition-colors">
               Twitter
             </a>
@@ -140,7 +140,7 @@ export const Footer: React.FC = () => {
             <a href="#" className="hover:text-brand-primary transition-colors">
               GitHub
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
