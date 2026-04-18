@@ -23,11 +23,14 @@
 }
 
 .gradient-brand {
-  @apply bg-gradient-to-r from-[#15156B] to-[#05D89C];
+  background: var(--color-brand-secondary);
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#15156B] to-[#05D89C];
+  background: linear-gradient(135deg, #2020CC 0%, #0060EE 42%, #05D89C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .glass-card {
@@ -35,7 +38,7 @@
 }
 
 .universe-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(21, 21, 107, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(21, 21, 107, 0.18) 0%, rgba(5, 216, 156, 0.05) 50%, transparent 72%);
 }
 
 .dashboard-shadow {
@@ -43,7 +46,10 @@
 }
 
 .btn-primary {
-  @apply px-10 py-5 bg-gradient-to-br from-brand-primary to-[#1E1E8F] text-white rounded-2xl font-bold text-lg hover:scale-[1.02] hover:shadow-2xl hover:shadow-brand-primary/40 transition-all active:scale-[0.98] flex items-center justify-center gap-3;
+  @apply px-10 py-5 bg-brand-primary hover:bg-[#1c1c80] text-white rounded-2xl font-bold text-lg
+    shadow-[0_8px_28px_rgba(21,21,107,0.25)]
+    hover:shadow-[0_12px_36px_rgba(21,21,107,0.35)]
+    transition-all active:scale-[0.98] flex items-center justify-center gap-3;
 }
 
 .btn-secondary {

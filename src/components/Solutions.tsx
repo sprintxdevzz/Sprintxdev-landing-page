@@ -269,7 +269,7 @@ export const Solutions: React.FC = () => {
                     {/* Number + icon row */}
                     <div className="flex items-center justify-between mb-6">
                       <div className="w-12 h-12 rounded-xl bg-brand-primary/[0.07] flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform duration-500">
-                        {React.cloneElement(sol.icon as React.ReactElement, { size: 24 })}
+                        {React.cloneElement(sol.icon as React.ReactElement<{ size?: number }>, { size: 24 })}
                       </div>
                       <span className="text-5xl font-display font-black text-brand-dark/[0.04] select-none">
                         0{index + 1}

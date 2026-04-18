@@ -10,16 +10,16 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-80">
                 <img
-                  src="/logo.png"
+                  src="/nextautomationlogo.webp"
                   alt="Next Automation logo"
                   className="w-full h-full object-contain"
                 />
               </div>
             </div>
             <p className="text-brand-dark/50 max-w-sm mb-4 font-medium leading-relaxed">
-              Next Automation | Engineering high-velocity digital infrastructure,
-              from AI-powered information hubs to survey systems and bespoke
-              business platforms.
+              Next Automation | Engineering high-velocity digital
+              infrastructure, from AI-powered information hubs to survey systems
+              and bespoke business platforms.
             </p>
             <p className="text-brand-dark font-bold mb-6">
               Email us:{" "}
@@ -60,17 +60,26 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
               <li>
-                <a href="#solutions" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#solutions"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Information Hub
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#solutions"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Survey System
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#solutions"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Custom Solutions
                 </a>
               </li>
@@ -83,22 +92,34 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
               <li>
-                <a href="#process" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#process"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   The Process
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Case Studies
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#contact"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Privacy Policy
                 </a>
               </li>

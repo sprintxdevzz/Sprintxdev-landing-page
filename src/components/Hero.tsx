@@ -79,22 +79,30 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] universe-glow -z-10 opacity-50" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] universe-glow -z-10 opacity-90" />
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
+          opacity: [0.45, 0.65, 0.45],
         }}
         transition={{ duration: 10, repeat: Infinity }}
-        className="absolute -top-[10%] -right-[10%] w-[600px] h-[600px] bg-brand-secondary/10 blur-[120px] rounded-full -z-10"
+        className="absolute -top-[10%] -right-[10%] w-[700px] h-[700px] bg-brand-secondary/15 blur-[120px] rounded-full -z-10"
       />
       <motion.div
         animate={{
           scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2],
+          opacity: [0.35, 0.55, 0.35],
         }}
         transition={{ duration: 12, repeat: Infinity }}
-        className="absolute -bottom-[10%] -left-[10%] w-[600px] h-[600px] bg-brand-primary/10 blur-[120px] rounded-full -z-10"
+        className="absolute -bottom-[10%] -left-[10%] w-[700px] h-[700px] bg-brand-primary/15 blur-[120px] rounded-full -z-10"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.2, 0.38, 0.2],
+        }}
+        transition={{ duration: 15, repeat: Infinity, delay: 3 }}
+        className="absolute top-[30%] left-[15%] w-[400px] h-[400px] bg-brand-secondary/10 blur-[100px] rounded-full -z-10"
       />
     </section>
   );

@@ -49,7 +49,7 @@ export const TheEdge: React.FC = () => {
               className="text-center group p-6 md:p-0"
             >
               <div className="w-16 md:w-20 h-16 md:h-20 rounded-2xl md:rounded-3xl bg-brand-dark/[0.03] flex items-center justify-center mx-auto mb-6 md:mb-8 group-hover:rotate-6 transition-transform duration-500">
-                {React.cloneElement(edge.icon as React.ReactElement, {
+                {React.cloneElement(edge.icon as React.ReactElement<{ size?: number }>, {
                   size: 32,
                 })}
               </div>
@@ -63,46 +63,7 @@ export const TheEdge: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 md:mt-32 p-8 md:p-20 rounded-[32px] md:rounded-[60px] gradient-brand text-white text-center relative overflow-hidden shadow-2xl shadow-brand-primary/30"
-        >
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-4 md:mb-6 leading-tight">
-              Ready to build what's next?
-            </h2>
-            <p className="text-white/70 text-base md:text-lg mb-8 font-medium">
-              Talk to an Expert or View Case Studies
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white text-brand-primary rounded-xl md:rounded-2xl text-base md:text-lg font-bold shadow-xl"
-              >
-                Talk to an Expert
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-xl md:rounded-2xl text-base md:text-lg font-bold hover:bg-white/20 transition-all"
-              >
-                View Case Studies
-              </motion.button>
-            </div>
-          </div>
 
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
-        </motion.div>
       </div>
     </section>
   );

@@ -14,28 +14,28 @@ export const Methodology: React.FC = () => {
       title: "Analysis",
       desc: "We identify your core challenges and map out a clear path to resolution. Understanding your business, data flows, and operational bottlenecks.",
       icon: <Search className="text-white" />,
-      color: "bg-brand-secondary shadow-[0_0_20px_rgba(5,216,156,0.3)]"
+      color: "bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_0_28px_rgba(251,146,60,0.55)]"
     },
     {
       number: "02",
       title: "Design",
       desc: "Creating tailored blueprints that prioritize user experience and system speed. Designing for your specific industry requirements and future growth.",
       icon: <PenTool className="text-white" />,
-      color: "bg-brand-primary shadow-[0_0_20px_rgba(21,21,107,0.5)]"
+      color: "bg-gradient-to-br from-violet-500 to-purple-700 shadow-[0_0_28px_rgba(167,139,250,0.5)]"
     },
     {
       number: "03",
       title: "Implementation",
       desc: "Clean execution with minimal impact on your current operations. Real-time progress tracking and transparent delivery milestones.",
       icon: <Code2 className="text-white" />,
-      color: "bg-brand-secondary shadow-[0_0_20px_rgba(5,216,156,0.3)]"
+      color: "bg-gradient-to-br from-sky-400 to-blue-600 shadow-[0_0_28px_rgba(56,189,248,0.5)]"
     },
     {
       number: "04",
       title: "Optimization",
       desc: "Continuous monitoring and support via our responsive ticketing system. We ensure sustained performance, innovation, and reliability.",
       icon: <LineChart className="text-white" />,
-      color: "bg-brand-primary shadow-[0_0_20px_rgba(21,21,107,0.5)]"
+      color: "bg-gradient-to-br from-emerald-400 to-teal-600 shadow-[0_0_28px_rgba(52,211,153,0.5)]"
     }
   ];
 
@@ -84,7 +84,7 @@ export const Methodology: React.FC = () => {
               className="relative p-6 md:p-8 rounded-[24px] md:rounded-[32px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
             >
               <div className={`w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl ${step.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}>
-                {React.cloneElement(step.icon as React.ReactElement, { size: 20, className: "opacity-100" })}
+                {React.cloneElement(step.icon as React.ReactElement<{ size?: number; className?: string }>, { size: 20, className: "text-white opacity-100" })}
               </div>
 
               <span className="text-white/20 font-display font-black text-2xl mb-4 block">{step.number}</span>
@@ -95,7 +95,7 @@ export const Methodology: React.FC = () => {
               </p>
 
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-[1px] bg-white/10" />
+                <div className="hidden lg:block absolute top-1/2 -right-8 w-8 h-[1px] bg-white/10" />
               )}
             </motion.div>
           ))}

@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Send, CheckCircle2, AlertCircle, MessageCircle } from 'lucide-react';
+import { NeonButton } from './ui/neon-button';
 
-const SOLUTION_OPTIONS = [
-  "CX Solutions — Survey Platform",
-  "CX Solutions — Event Tracking System",
-  "Enterprise Solutions — ERP",
-  "Enterprise Solutions — CRM",
-  "Enterprise Solutions — Performance Management",
-  "Automation",
-  "Multiple / Full Suite",
-];
 
 export const ContactForm: React.FC = () => {
   const [result, setResult] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -150,23 +142,6 @@ export const ContactForm: React.FC = () => {
                   className={inputClass}
                 />
               </div>
-              <div className="relative">
-                <select
-                  name="solution"
-                  className={`${inputClass} appearance-none cursor-pointer`}
-                  defaultValue=""
-                >
-                  <option value="" disabled>Solution of Interest</option>
-                  {SOLUTION_OPTIONS.map((opt) => (
-                    <option key={opt} value={opt}>{opt}</option>
-                  ))}
-                </select>
-                <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-brand-dark/30">
-                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-                    <path d="M1 1L6 7L11 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              </div>
               <textarea
                 name="message"
                 placeholder="Message (optional)"
@@ -174,22 +149,24 @@ export const ContactForm: React.FC = () => {
                 className={`${inputClass} resize-none`}
               />
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                disabled={result === "loading"}
-                type="submit"
-                className="w-full py-5 gradient-brand text-white rounded-2xl font-bold text-lg shadow-xl shadow-brand-primary/20 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-              >
-                {result === "loading" ? (
-                  <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                ) : (
-                  <>
-                    Send Message
-                    <Send size={18} />
-                  </>
-                )}
-              </motion.button>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <NeonButton
+                  variant="solid"
+                  size="xl"
+                  type="submit"
+                  disabled={result === "loading"}
+                  className="w-full"
+                >
+                  {result === "loading" ? (
+                    <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <>
+                      Send Message
+                      <Send size={18} />
+                    </>
+                  )}
+                </NeonButton>
+              </motion.div>
 
               {result !== "idle" && result !== "loading" && (
                 <motion.div
