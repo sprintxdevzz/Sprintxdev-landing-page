@@ -6,17 +6,17 @@ export const TheEdge: React.FC = () => {
   const edges = [
     {
       title: "Real-Time Collaboration",
-      desc: "Review progress and approve deliverables through our integrated platform.",
+      desc: "Review progress and approve deliverables through our integrated platform. Complete visibility at every stage of your project.",
       icon: <Users2 className="text-brand-primary" />,
     },
     {
       title: "Performance Focus",
-      desc: "We optimize for speed, reducing staff training periods and increasing delivery time.",
+      desc: "We optimize for speed, reducing staff training periods and increasing delivery velocity. Maximum ROI with minimum disruption.",
       icon: <Zap className="text-brand-secondary" />,
     },
     {
-      title: "Reliability",
-      desc: "Dedicated maintenance ensures your systems stay online and updated.",
+      title: "Reliability & Support",
+      desc: "Dedicated maintenance ensures your systems stay online, updated, and performing. 99.9% uptime with responsive support teams.",
       icon: <ShieldCheck className="text-brand-primary" />,
     },
   ];
@@ -25,14 +25,6 @@ export const TheEdge: React.FC = () => {
     <section className="py-20 md:py-32 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 md:mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-brand-primary font-bold text-xs md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4"
-          >
-            The Edge
-          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -40,8 +32,9 @@ export const TheEdge: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-brand-dark leading-tight"
           >
-            Why businesses choose <br className="hidden md:block" />{" "}
-            <span className="gradient-text">Sprint X Dev</span>
+            Why businesses choose{" "}
+            <br className="hidden md:block" />
+            <span className="gradient-text">Next Automation</span>
           </motion.h2>
         </div>
 
@@ -70,7 +63,7 @@ export const TheEdge: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Section Integrated */}
+        {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,9 +71,12 @@ export const TheEdge: React.FC = () => {
           className="mt-20 md:mt-32 p-8 md:p-20 rounded-[32px] md:rounded-[60px] gradient-brand text-white text-center relative overflow-hidden shadow-2xl shadow-brand-primary/30"
         >
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 md:mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-4 md:mb-6 leading-tight">
               Ready to build what's next?
             </h2>
+            <p className="text-white/70 text-base md:text-lg mb-8 font-medium">
+              Talk to an Expert or View Case Studies
+            </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
               <motion.button
                 whileHover={{ scale: 1.02 }}
@@ -104,7 +100,6 @@ export const TheEdge: React.FC = () => {
             </div>
           </div>
 
-          {/* Background decorative circles */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
         </motion.div>

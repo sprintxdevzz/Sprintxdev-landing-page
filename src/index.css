@@ -5,11 +5,12 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  
-  --color-brand-primary: #6E45FF;
-  --color-brand-secondary: #00D2FF;
+
+  --color-brand-primary: #15156B;
+  --color-brand-secondary: #05D89C;
   --color-brand-dark: #0F172A;
-  --color-brand-accent: #10B981;
+  --color-brand-accent: #05D89C;
+  --color-brand-light: #F5F5FF;
 }
 
 @layer base {
@@ -22,11 +23,11 @@
 }
 
 .gradient-brand {
-  @apply bg-gradient-to-r from-[#6E45FF] to-[#00D2FF];
+  @apply bg-gradient-to-r from-[#15156B] to-[#05D89C];
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#6E45FF] to-[#00D2FF];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#15156B] to-[#05D89C];
 }
 
 .glass-card {
@@ -34,15 +35,15 @@
 }
 
 .universe-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(110, 69, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(21, 21, 107, 0.08) 0%, transparent 70%);
 }
 
 .dashboard-shadow {
-  box-shadow: 0 40px 100px -20px rgba(110, 69, 255, 0.2);
+  box-shadow: 0 40px 100px -20px rgba(21, 21, 107, 0.2);
 }
 
 .btn-primary {
-  @apply px-10 py-5 bg-gradient-to-br from-brand-primary to-[#5A35E0] text-white rounded-2xl font-bold text-lg hover:scale-[1.02] hover:shadow-2xl hover:shadow-brand-primary/40 transition-all active:scale-[0.98] flex items-center justify-center gap-3;
+  @apply px-10 py-5 bg-gradient-to-br from-brand-primary to-[#1E1E8F] text-white rounded-2xl font-bold text-lg hover:scale-[1.02] hover:shadow-2xl hover:shadow-brand-primary/40 transition-all active:scale-[0.98] flex items-center justify-center gap-3;
 }
 
 .btn-secondary {

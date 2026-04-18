@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
           </span>
-          Build. Optimize. Accelerate.
+          AI-Powered Automation Platforms
         </motion.div>
 
         <motion.h1
@@ -28,8 +28,8 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           className="text-6xl md:text-8xl font-display font-bold text-brand-dark tracking-tight leading-[0.95] mb-10"
         >
-          Digital Solutions <br />
-          <span className="gradient-text">That Drive Growth</span>
+          Automate. Optimize. <br />
+          <span className="gradient-text">Accelerate Growth.</span>
         </motion.h1>
 
         <motion.p
@@ -38,8 +38,9 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="max-w-2xl mx-auto text-xl md:text-2xl text-brand-dark/60 mb-14 leading-relaxed font-medium"
         >
-          Engineering the systems that power your business growth. We build
-          custom digital solutions designed to streamline your operations.
+          Engineering intelligent systems that transform data into competitive
+          advantage. From AI-powered CX platforms to enterprise ERP, CRM, and
+          complete workflow automation.
         </motion.p>
 
         <motion.div
@@ -85,7 +86,7 @@ export const Hero: React.FC = () => {
           opacity: [0.3, 0.5, 0.3],
         }}
         transition={{ duration: 10, repeat: Infinity }}
-        className="absolute -top-[10%] -right-[10%] w-[600px] h-[600px] bg-brand-cyan/10 blur-[120px] rounded-full -z-10"
+        className="absolute -top-[10%] -right-[10%] w-[600px] h-[600px] bg-brand-secondary/10 blur-[120px] rounded-full -z-10"
       />
       <motion.div
         animate={{
@@ -93,7 +94,7 @@ export const Hero: React.FC = () => {
           opacity: [0.2, 0.4, 0.2],
         }}
         transition={{ duration: 12, repeat: Infinity }}
-        className="absolute -bottom-[10%] -left-[10%] w-[600px] h-[600px] bg-brand-violet/10 blur-[120px] rounded-full -z-10"
+        className="absolute -bottom-[10%] -left-[10%] w-[600px] h-[600px] bg-brand-primary/10 blur-[120px] rounded-full -z-10"
       />
     </section>
   );

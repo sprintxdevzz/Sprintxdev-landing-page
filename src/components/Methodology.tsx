@@ -1,37 +1,41 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { 
-  Search, 
-  PenTool, 
-  Code2, 
-  LineChart 
+import {
+  Search,
+  PenTool,
+  Code2,
+  LineChart
 } from 'lucide-react';
 
 export const Methodology: React.FC = () => {
   const steps = [
     {
+      number: "01",
       title: "Analysis",
-      desc: "We identify your core challenges and map out a clear path to resolution.",
+      desc: "We identify your core challenges and map out a clear path to resolution. Understanding your business, data flows, and operational bottlenecks.",
       icon: <Search className="text-white" />,
-      color: "bg-brand-secondary shadow-[0_0_20px_rgba(0,210,255,0.3)]"
+      color: "bg-brand-secondary shadow-[0_0_20px_rgba(5,216,156,0.3)]"
     },
     {
+      number: "02",
       title: "Design",
-      desc: "Creating tailored blueprints that prioritize user experience and system speed.",
+      desc: "Creating tailored blueprints that prioritize user experience and system speed. Designing for your specific industry requirements and future growth.",
       icon: <PenTool className="text-white" />,
-      color: "bg-brand-primary shadow-[0_0_20px_rgba(110,69,255,0.3)]"
+      color: "bg-brand-primary shadow-[0_0_20px_rgba(21,21,107,0.5)]"
     },
     {
+      number: "03",
       title: "Implementation",
-      desc: "Clean execution with minimal impact on your current operations.",
+      desc: "Clean execution with minimal impact on your current operations. Real-time progress tracking and transparent delivery milestones.",
       icon: <Code2 className="text-white" />,
-      color: "bg-brand-secondary shadow-[0_0_20px_rgba(0,210,255,0.3)]"
+      color: "bg-brand-secondary shadow-[0_0_20px_rgba(5,216,156,0.3)]"
     },
     {
+      number: "04",
       title: "Optimization",
-      desc: "Continuous monitoring and support via our responsive ticketing system.",
+      desc: "Continuous monitoring and support via our responsive ticketing system. We ensure sustained performance, innovation, and reliability.",
       icon: <LineChart className="text-white" />,
-      color: "bg-brand-primary shadow-[0_0_20px_rgba(110,69,255,0.3)]"
+      color: "bg-brand-primary shadow-[0_0_20px_rgba(21,21,107,0.5)]"
     }
   ];
 
@@ -44,9 +48,9 @@ export const Methodology: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-brand-primary font-bold text-xs md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4"
+              className="text-brand-secondary font-bold text-xs md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4"
             >
-              How We Work
+              THE NEXT AUTOMATION METHODOLOGY
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -55,7 +59,7 @@ export const Methodology: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight"
             >
-              The Sprint Methodology
+              A streamlined approach to engineering high-velocity digital systems
             </motion.h2>
           </div>
           <motion.p
@@ -65,7 +69,7 @@ export const Methodology: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-white/50 text-base md:text-lg max-w-sm font-medium"
           >
-            A streamlined approach to engineering high-velocity digital systems.
+            Building on the proven Sprint methodology, we deliver intelligent solutions through discovery, design, implementation, and optimization.
           </motion.p>
         </div>
 
@@ -79,10 +83,12 @@ export const Methodology: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="relative p-6 md:p-8 rounded-[24px] md:rounded-[32px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
             >
-              <div className={`w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl ${step.color} flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-500`}>
+              <div className={`w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl ${step.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}>
                 {React.cloneElement(step.icon as React.ReactElement, { size: 20, className: "opacity-100" })}
               </div>
-              
+
+              <span className="text-white/20 font-display font-black text-2xl mb-4 block">{step.number}</span>
+
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">{step.title}</h3>
               <p className="text-white/40 leading-relaxed text-xs md:text-sm">
                 {step.desc}

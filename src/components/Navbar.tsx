@@ -52,19 +52,16 @@ export const Navbar: React.FC = () => {
       >
         {/* Glassy overlay */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/40 via-white/10 to-white/0 opacity-90" />
-        <div className="pointer-events-none absolute inset-x-4 top-px h-px bg-white/60/">
-          {/* subtle top highlight */}
-        </div>
 
         <div className="relative z-10 flex justify-between items-center">
           <motion.div
             whileHover={{ scale: 1.02 }}
             className="flex items-center gap-3 group cursor-pointer"
           >
-            <div className="w-20 md:w-24 flex-shrink-0">
+            <div className="w-40 md:w-30 flex-shrink-0">
               <img
-                src="/SprintXDevLogo.png"
-                alt="Sprint X Dev logo"
+                src="/logo.png"
+                alt="Next Automation logo"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -73,7 +70,6 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center gap-8">
             <NavLink href="#solutions">Solutions</NavLink>
             <NavLink href="#process">Process</NavLink>
-            <NavLink href="#tracking">Tracking</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <div className="flex items-center gap-4 ml-4">
               <motion.button
@@ -82,7 +78,7 @@ export const Navbar: React.FC = () => {
                 onClick={scrollToContact}
                 className="px-6 py-2 bg-brand-primary text-white rounded-full text-xs font-bold shadow-lg shadow-brand-primary/20 transition-all"
               >
-                Get Started
+                Book a Demo
               </motion.button>
             </div>
           </div>
@@ -120,12 +116,6 @@ export const Navbar: React.FC = () => {
                   Process
                 </MobileNavLink>
                 <MobileNavLink
-                  targetId="tracking"
-                  onClick={() => handleMobileNavClick("tracking")}
-                >
-                  Tracking
-                </MobileNavLink>
-                <MobileNavLink
                   targetId="contact"
                   onClick={() => handleMobileNavClick("contact")}
                 >
@@ -136,7 +126,7 @@ export const Navbar: React.FC = () => {
                     onClick={() => handleMobileNavClick("contact")}
                     className="w-full py-3 text-center font-bold text-white bg-brand-primary rounded-xl shadow-lg shadow-brand-primary/20 text-sm"
                   >
-                    Get Started
+                    Book a Demo
                   </button>
                 </div>
               </div>
