@@ -7,6 +7,11 @@ export const UniverseBackground: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    const isMobile = window.innerWidth < 768;
+
+    // Skip canvas entirely on mobile — use CSS gradient instead
+    if (isMobile) return;
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -48,15 +53,7 @@ export const UniverseBackground: React.FC = () => {
         context.beginPath();
         context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         context.fill();
-        
-        // Add a subtle glow to larger particles
-        if (this.size > 1.5) {
-          context.shadowBlur = 10;
-          context.shadowColor = this.color;
-        }
-        
         context.globalAlpha = 1;
-        context.shadowBlur = 0;
       }
     }
 
@@ -89,7 +86,8 @@ export const UniverseBackground: React.FC = () => {
 
     const init = () => {
       particles = [];
-      const numberOfParticles = (canvas.width * canvas.height) / 8000;
+      // Cap particles for performance; density reduced vs original
+      const numberOfParticles = Math.min((canvas.width * canvas.height) / 10000, 80);
       for (let i = 0; i < numberOfParticles; i++) {
         particles.push(new Particle(canvas.width, canvas.height));
       }
@@ -118,8 +116,7 @@ export const UniverseBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none opacity-40"
-      style={{ filter: 'blur(0.5px)' }}
+      className="absolute inset-0 pointer-events-none opacity-40 hidden md:block"
     />
   );
 };

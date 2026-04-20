@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
             }
             className="btn-primary"
           >
-            Start Your Project
+            Book a Demo
             <ArrowRight size={20} />
           </motion.button>
 
@@ -78,32 +78,25 @@ export const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] universe-glow -z-10 opacity-90" />
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.45, 0.65, 0.45],
-        }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className="absolute -top-[10%] -right-[10%] w-[700px] h-[700px] bg-brand-secondary/15 blur-[120px] rounded-full -z-10"
-      />
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.35, 0.55, 0.35],
-        }}
-        transition={{ duration: 12, repeat: Infinity }}
-        className="absolute -bottom-[10%] -left-[10%] w-[700px] h-[700px] bg-brand-primary/15 blur-[120px] rounded-full -z-10"
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.2, 0.38, 0.2],
-        }}
-        transition={{ duration: 15, repeat: Infinity, delay: 3 }}
-        className="absolute top-[30%] left-[15%] w-[400px] h-[400px] bg-brand-secondary/10 blur-[100px] rounded-full -z-10"
-      />
+      {/* Background Glows — animated only on desktop, static on mobile */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[1100px] md:h-[1100px] universe-glow -z-10 opacity-90" />
+      <div className="hidden md:block absolute -top-[10%] -right-[10%] -z-10">
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.45, 0.65, 0.45] }}
+          transition={{ duration: 10, repeat: Infinity }}
+          className="w-[700px] h-[700px] bg-brand-secondary/15 blur-[120px] rounded-full"
+        />
+      </div>
+      <div className="hidden md:block absolute -bottom-[10%] -left-[10%] -z-10">
+        <motion.div
+          animate={{ scale: [1.2, 1, 1.2], opacity: [0.35, 0.55, 0.35] }}
+          transition={{ duration: 12, repeat: Infinity }}
+          className="w-[700px] h-[700px] bg-brand-primary/15 blur-[120px] rounded-full"
+        />
+      </div>
+      {/* Static fallback glows for mobile */}
+      <div className="md:hidden absolute -top-[10%] -right-[10%] w-[300px] h-[300px] bg-brand-secondary/10 blur-[80px] rounded-full -z-10" />
+      <div className="md:hidden absolute -bottom-[10%] -left-[10%] w-[300px] h-[300px] bg-brand-primary/10 blur-[80px] rounded-full -z-10" />
     </section>
   );
 };

@@ -1,0 +1,21 @@
+{
+  "name": "Next Automation",
+  "short_name": "NextAut",
+  "description": "AI-powered CX platforms, enterprise ERP/CRM, and intelligent automation.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#15156B",
+  "icons": [
+    {
+      "src": "/nextautomationlogo.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/nextautomationlogo.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { NeonButton } from "./ui/neon-button";
 
 export const Navbar: React.FC = () => {
@@ -96,9 +96,10 @@ export const Navbar: React.FC = () => {
                   variant="solid"
                   size="sm"
                   onClick={scrollToContact}
-                  className="border-brand-primary/25 text-brand-primary"
+                  className="border-brand-primary/25 text-brand-primary flex items-center gap-1.5"
                 >
-                  Book a Demo
+                  <Phone size={13} />
+                  Contact Us
                 </NeonButton>
               </motion.div>
             </div>
@@ -159,9 +160,10 @@ export const Navbar: React.FC = () => {
                     variant="glass"
                     size="default"
                     onClick={() => handleMobileNavClick("contact")}
-                    className="w-full border-brand-primary/25 text-brand-primary"
+                    className="w-full border-brand-primary/25 text-brand-primary flex items-center justify-center gap-2"
                   >
-                    Book a Demo
+                    <Phone size={14} />
+                    Contact Us
                   </NeonButton>
                 </div>
               </div>

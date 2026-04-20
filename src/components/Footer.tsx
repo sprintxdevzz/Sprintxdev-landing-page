@@ -64,14 +64,6 @@ export const Footer: React.FC = () => {
                   href="#solutions"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Information Hub
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#solutions"
-                  className="hover:text-brand-primary transition-colors"
-                >
                   Survey System
                 </a>
               </li>
