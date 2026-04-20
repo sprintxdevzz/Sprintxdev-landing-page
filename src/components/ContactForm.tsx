@@ -13,7 +13,7 @@ export const ContactForm: React.FC = () => {
     setResult("loading");
 
     const formData = new FormData(event.currentTarget);
-    formData.append("access_key", "7e374832-4453-42da-86c5-28abd9bd9862");
+    formData.append("access_key", "95c0adb6-3c50-4a2c-b838-20c58d54b922");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -81,22 +81,6 @@ export const ContactForm: React.FC = () => {
                   <div className="text-xs font-bold text-brand-dark/40 uppercase tracking-widest leading-none mb-1">Email Us</div>
                   <a href="mailto:info@nxtaut.com" className="text-brand-dark font-bold hover:text-brand-primary transition-colors">
                     info@nxtaut.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center text-brand-secondary">
-                  <MessageCircle size={20} />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-brand-dark/40 uppercase tracking-widest leading-none mb-1">WhatsApp</div>
-                  <a
-                    href="https://wa.me/?text=Hi%20Next%20Automation%2C%20I%27d%20like%20to%20discuss%20a%20project."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-brand-dark font-bold hover:text-brand-secondary transition-colors"
-                  >
-                    Chat with us
                   </a>
                 </div>
               </div>

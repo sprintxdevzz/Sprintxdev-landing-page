@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             </div>
             <p className="text-brand-dark/50 max-w-sm mb-4 font-medium leading-relaxed">
               Next Automation | Engineering high-velocity digital
-              infrastructure, from AI-powered information hubs to survey systems
+              infrastructure, from AI-powered to survey systems
               and bespoke business platforms.
             </p>
             <p className="text-brand-dark font-bold mb-6">
@@ -33,10 +33,10 @@ export const Footer: React.FC = () => {
             <p className="text-brand-dark font-bold mb-6">
               Call us:{" "}
               <a
-                href="tel:+966503388832"
+                href="tel:+966500598757"
                 className="text-brand-primary hover:underline"
               >
-                +966 50 338 8832
+                +966 50 059 8757
               </a>
             </p>
             <div className="flex flex-wrap gap-4">
