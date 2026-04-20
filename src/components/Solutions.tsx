@@ -191,11 +191,6 @@ const solutions: Solution[] = [
             desc: "Real-time visibility and automatic escalation for critical flows.",
             icon: <Bell size={13} />,
           },
-          {
-            label: "Robotic Process Automation",
-            desc: "Bot-driven automation for high-volume, rule-based processes.",
-            icon: <Activity size={13} />,
-          },
         ],
       },
     ],
