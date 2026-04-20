@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import {  Rocket, Sparkles } from "lucide-react";
 import { UniverseBackground } from "./UniverseBackground";
 
 export const Hero: React.FC = () => {
@@ -59,8 +59,8 @@ export const Hero: React.FC = () => {
             }
             className="btn-primary"
           >
-            Start Your Project
-            <ArrowRight size={20} />
+            Book a Demo
+            <Rocket size={20} />
           </motion.button>
 
           <motion.button
@@ -74,6 +74,7 @@ export const Hero: React.FC = () => {
             className="btn-secondary"
           >
             Explore Solutions
+            <Sparkles  size={20}/>
           </motion.button>
         </motion.div>
       </div>

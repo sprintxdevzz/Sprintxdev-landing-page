@@ -30,6 +30,15 @@ export const Footer: React.FC = () => {
                 info@nxtaut.com
               </a>
             </p>
+            <p className="text-brand-dark font-bold mb-6">
+              Call us:{" "}
+              <a
+                href="tel:+966503388832"
+                className="text-brand-primary hover:underline"
+              >
+                +966 50 338 8832
+              </a>
+            </p>
             <div className="flex flex-wrap gap-4">
               <motion.button
                 whileHover={{ scale: 1.02 }}
@@ -43,14 +52,6 @@ export const Footer: React.FC = () => {
               >
                 Talk to Our Team
               </motion.button>
-              <a
-                href="https://wa.me/?text=Hi%20Next%20Automation%2C%20I%27d%20like%20to%20discuss%20a%20project."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary !px-8 !py-4 !text-sm"
-              >
-                Chat on WhatsApp
-              </a>
             </div>
           </div>
 
@@ -64,7 +65,7 @@ export const Footer: React.FC = () => {
                   href="#solutions"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Information Hub
+                  CX Solutions
                 </a>
               </li>
               <li>
@@ -72,7 +73,7 @@ export const Footer: React.FC = () => {
                   href="#solutions"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Survey System
+                  Enterprise Solutions
                 </a>
               </li>
               <li>
@@ -80,7 +81,7 @@ export const Footer: React.FC = () => {
                   href="#solutions"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Custom Solutions
+                  Automation
                 </a>
               </li>
             </ul>
