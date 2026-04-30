@@ -1,42 +1,39 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'motion/react';
-import {
-  Search,
-  PenTool,
-  Code2,
-  LineChart
-} from 'lucide-react';
+import { Search, PenTool, Code2, LineChart } from 'lucide-react';
 
 export const Methodology: React.FC = () => {
   const steps = [
     {
-      number: "01",
-      title: "Analysis",
-      desc: "We identify your core challenges and map out a clear path to resolution. Understanding your business, data flows, and operational bottlenecks.",
+      number: '01',
+      title: 'Analysis',
+      desc: 'We identify your core challenges and map out a clear path to resolution. Understanding your business, data flows, and operational bottlenecks.',
       icon: <Search className="text-white" />,
-      color: "bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_0_28px_rgba(251,146,60,0.55)]"
+      color: 'bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_0_28px_rgba(251,146,60,0.55)]',
     },
     {
-      number: "02",
-      title: "Design",
-      desc: "Creating tailored blueprints that prioritize user experience and system speed. Designing for your specific industry requirements and future growth.",
+      number: '02',
+      title: 'Design',
+      desc: 'Creating tailored blueprints that prioritize user experience and system speed. Designing for your specific industry requirements and future growth.',
       icon: <PenTool className="text-white" />,
-      color: "bg-gradient-to-br from-violet-500 to-purple-700 shadow-[0_0_28px_rgba(167,139,250,0.5)]"
+      color: 'bg-gradient-to-br from-violet-500 to-purple-700 shadow-[0_0_28px_rgba(167,139,250,0.5)]',
     },
     {
-      number: "03",
-      title: "Implementation",
-      desc: "Clean execution with minimal impact on your current operations. Real-time progress tracking and transparent delivery milestones.",
+      number: '03',
+      title: 'Implementation',
+      desc: 'Clean execution with minimal impact on your current operations. Real-time progress tracking and transparent delivery milestones.',
       icon: <Code2 className="text-white" />,
-      color: "bg-gradient-to-br from-sky-400 to-blue-600 shadow-[0_0_28px_rgba(56,189,248,0.5)]"
+      color: 'bg-gradient-to-br from-sky-400 to-blue-600 shadow-[0_0_28px_rgba(56,189,248,0.5)]',
     },
     {
-      number: "04",
-      title: "Optimization",
-      desc: "Continuous monitoring and support via our responsive ticketing system. We ensure sustained performance, innovation, and reliability.",
+      number: '04',
+      title: 'Optimization',
+      desc: 'Continuous monitoring and support via our responsive ticketing system. We ensure sustained performance, innovation, and reliability.',
       icon: <LineChart className="text-white" />,
-      color: "bg-gradient-to-br from-emerald-400 to-teal-600 shadow-[0_0_28px_rgba(52,211,153,0.5)]"
-    }
+      color: 'bg-gradient-to-br from-emerald-400 to-teal-600 shadow-[0_0_28px_rgba(52,211,153,0.5)]',
+    },
   ];
 
   return (
@@ -69,7 +66,8 @@ export const Methodology: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-white/50 text-base md:text-lg max-w-sm font-medium"
           >
-            Building on the proven Sprint methodology, we deliver intelligent solutions through discovery, design, implementation, and optimization.
+            Building on the proven Sprint methodology, we deliver intelligent solutions through
+            discovery, design, implementation, and optimization.
           </motion.p>
         </div>
 
@@ -83,16 +81,23 @@ export const Methodology: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="relative p-6 md:p-8 rounded-[24px] md:rounded-[32px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
             >
-              <div className={`w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl ${step.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}>
-                {React.cloneElement(step.icon as React.ReactElement<{ size?: number; className?: string }>, { size: 20, className: "text-white opacity-100" })}
+              <div
+                className={`w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl ${step.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}
+              >
+                {React.cloneElement(
+                  step.icon as React.ReactElement<{ size?: number; className?: string }>,
+                  { size: 20, className: 'text-white opacity-100' }
+                )}
               </div>
 
-              <span className="text-white/20 font-display font-black text-2xl mb-4 block">{step.number}</span>
+              <span className="text-white/20 font-display font-black text-2xl mb-4 block">
+                {step.number}
+              </span>
 
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">{step.title}</h3>
-              <p className="text-white/40 leading-relaxed text-xs md:text-sm">
-                {step.desc}
-              </p>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">
+                {step.title}
+              </h3>
+              <p className="text-white/40 leading-relaxed text-xs md:text-sm">{step.desc}</p>
 
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 -right-8 w-8 h-[1px] bg-white/10" />
@@ -102,7 +107,6 @@ export const Methodology: React.FC = () => {
         </div>
       </div>
 
-      {/* Background patterns */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white to-transparent" />
         <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white to-transparent" />

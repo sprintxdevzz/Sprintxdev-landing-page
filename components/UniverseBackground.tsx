@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
 
 export const UniverseBackground: React.FC = () => {
@@ -7,14 +9,12 @@ export const UniverseBackground: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Bail out on reduced-motion — no animation at all
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
     const isMobile = window.innerWidth < 768;
-    // Cap devicePixelRatio at 1 so mobile doesn't overdraw at 3×
     const dpr = Math.min(window.devicePixelRatio || 1, 1);
 
     let rafId: number;
@@ -57,7 +57,6 @@ export const UniverseBackground: React.FC = () => {
       }
     }
 
-    // O(n²) line pass — desktop only
     const drawLines = () => {
       const THRESH = 110;
       const THRESH_SQ = THRESH * THRESH;
@@ -82,7 +81,6 @@ export const UniverseBackground: React.FC = () => {
 
     const init = (w: number, h: number) => {
       particles = [];
-      // Mobile: ~1 particle per 15 000 logical px²; desktop: 1 per 8 000
       const density = isMobile ? 15000 : 8000;
       const count = Math.min(Math.floor((w * h) / density), isMobile ? 35 : 110);
       for (let i = 0; i < count; i++) particles.push(new Particle(w, h));
@@ -104,7 +102,6 @@ export const UniverseBackground: React.FC = () => {
       const h = canvas.height / dpr;
       frameCount++;
 
-      // Mobile: skip every other frame → ~30 fps instead of 60
       if (isMobile && frameCount % 2 !== 0) {
         rafId = requestAnimationFrame(animate);
         return;
