@@ -25,7 +25,17 @@
       "Bash(git commit -m ' *)",
       "Bash(py *)",
       "PowerShell(python \"C:/Users/ossam/.claude/plugins/cache/ui-ux-pro-max-skill/ui-ux-pro-max/2.5.0/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"enterprise B2B SaaS automation landing page CTA buttons pill\" --design-system -p \"Next Automation\" 2>&1)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(echo \"Exit: $?\")",
+      "Read(//tmp/**)",
+      "Bash(cat postcss.config.mjs)",
+      "Bash(cat postcss.config.js)",
+      "Bash(cat postcss.config.ts)",
+      "Bash(cat next.config.ts)",
+      "Bash(cat next.config.js)",
+      "Bash(cat next.config.mjs)",
+      "Bash(node -e \"const p=require\\('./node_modules/next/package.json'\\);console.log\\('next:',p.version\\)\")",
+      "Bash(node -e \"const p=require\\('./node_modules/tailwindcss/package.json'\\);console.log\\('tailwindcss:',p.version\\)\")"
     ]
   }
 }
