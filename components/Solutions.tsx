@@ -27,7 +27,6 @@ type Section = { name: string; features: Feature[] };
 
 type Solution = {
   id: string;
-  anchor: string;
   title: string;
   tagline: string;
   description: string;
@@ -39,7 +38,6 @@ type Solution = {
 const solutions: Solution[] = [
   {
     id: '1',
-    anchor: 'cx-solutions',
     title: 'CX Solutions',
     tagline: 'From Raw Data to Radical Growth',
     description:
@@ -49,46 +47,18 @@ const solutions: Solution[] = [
       {
         name: 'Survey Platform',
         features: [
-          {
-            label: 'Conversational Data Entry',
-            desc: 'Chat or voice-guided prompts for seamless survey creation.',
-            icon: <MessageSquare size={13} />,
-          },
-          {
-            label: 'Fully Bilingual',
-            desc: 'Native Arabic & English with integrated translation.',
-            icon: <Globe size={13} />,
-          },
-          {
-            label: 'Adaptive Logic Paths',
-            desc: 'Visual tree builder for complex conditional journeys.',
-            icon: <Layers size={13} />,
-          },
-          {
-            label: 'Executive Dashboards',
-            desc: 'Real-time BI reports for executive decision-making.',
-            icon: <BarChart3 size={13} />,
-          },
+          { label: 'Conversational Data Entry', desc: 'Chat or voice-guided prompts for seamless survey creation.', icon: <MessageSquare size={13} /> },
+          { label: 'Fully Bilingual', desc: 'Native Arabic & English with integrated translation.', icon: <Globe size={13} /> },
+          { label: 'Adaptive Logic Paths', desc: 'Visual tree builder for complex conditional journeys.', icon: <Layers size={13} /> },
+          { label: 'Executive Dashboards', desc: 'Real-time BI reports for executive decision-making.', icon: <BarChart3 size={13} /> },
         ],
       },
       {
         name: 'Event Tracking System',
         features: [
-          {
-            label: 'Real-Time Behavioral Capture',
-            desc: 'Track operational data across all channels instantly.',
-            icon: <Activity size={13} />,
-          },
-          {
-            label: 'Predictive Analytics',
-            desc: 'Identify revenue opportunities before they\'re missed.',
-            icon: <TrendingUp size={13} />,
-          },
-          {
-            label: 'Omnichannel Intelligence',
-            desc: 'Consolidate all data into one unified dashboard.',
-            icon: <Database size={13} />,
-          },
+          { label: 'Real-Time Behavioral Capture', desc: 'Track operational data across all channels instantly.', icon: <Activity size={13} /> },
+          { label: 'Predictive Analytics', desc: "Identify revenue opportunities before they're missed.", icon: <TrendingUp size={13} /> },
+          { label: 'Omnichannel Intelligence', desc: 'Consolidate all data into one unified dashboard.', icon: <Database size={13} /> },
         ],
       },
     ],
@@ -100,7 +70,6 @@ const solutions: Solution[] = [
   },
   {
     id: '2',
-    anchor: 'enterprise',
     title: 'Enterprise Solutions',
     tagline: 'The Infrastructure Backbone of Your Business',
     description:
@@ -110,41 +79,17 @@ const solutions: Solution[] = [
       {
         name: 'CRM',
         features: [
-          {
-            label: 'Microsoft CRM Customization',
-            desc: 'Tailor-fit CRM workflows to your sales and service model.',
-            icon: <Users size={13} />,
-          },
-          {
-            label: '360° Customer View',
-            desc: 'Sales, marketing, and service automation in one platform.',
-            icon: <Target size={13} />,
-          },
-          {
-            label: 'Revenue Forecasting',
-            desc: 'Pipeline analytics with real-time performance dashboards.',
-            icon: <TrendingUp size={13} />,
-          },
+          { label: 'Microsoft CRM Customization', desc: 'Tailor-fit CRM workflows to your sales and service model.', icon: <Users size={13} /> },
+          { label: '360° Customer View', desc: 'Sales, marketing, and service automation in one platform.', icon: <Target size={13} /> },
+          { label: 'Revenue Forecasting', desc: 'Pipeline analytics with real-time performance dashboards.', icon: <TrendingUp size={13} /> },
         ],
       },
       {
         name: 'ERP & Performance KPI',
         features: [
-          {
-            label: 'End-to-End Resource Planning',
-            desc: 'Unify finance, supply chain, and operations in real time.',
-            icon: <Layers size={13} />,
-          },
-          {
-            label: 'Power BI Integration',
-            desc: 'Customizable modules with cross-department data flow.',
-            icon: <BarChart3 size={13} />,
-          },
-          {
-            label: 'KPI Frameworks',
-            desc: 'Link individual output to organizational objectives.',
-            icon: <CheckCircle2 size={13} />,
-          },
+          { label: 'End-to-End Resource Planning', desc: 'Unify finance, supply chain, and operations in real time.', icon: <Layers size={13} /> },
+          { label: 'Power BI Integration', desc: 'Customizable modules with cross-department data flow.', icon: <BarChart3 size={13} /> },
+          { label: 'KPI Frameworks', desc: 'Link individual output to organizational objectives.', icon: <CheckCircle2 size={13} /> },
         ],
       },
     ],
@@ -157,7 +102,6 @@ const solutions: Solution[] = [
   },
   {
     id: '3',
-    anchor: 'automation',
     title: 'Automation',
     tagline: 'Eliminate Friction. Maximize Throughput.',
     description:
@@ -167,36 +111,16 @@ const solutions: Solution[] = [
       {
         name: 'Intelligent Automation',
         features: [
-          {
-            label: 'Workflow Automation',
-            desc: 'Streamline repetitive tasks across departments and systems.',
-            icon: <Zap size={13} />,
-          },
-          {
-            label: 'AI-Powered Decision Routing',
-            desc: 'Intelligent task assignment based on complexity and skill.',
-            icon: <Bot size={13} />,
-          },
-          {
-            label: 'Document Processing & OCR',
-            desc: 'Form reading and intelligent data capture at scale.',
-            icon: <FileSearch size={13} />,
-          },
-          {
-            label: 'Custom Integrations',
-            desc: 'Connect every tool in your stack into one ecosystem.',
-            icon: <GitMerge size={13} />,
-          },
+          { label: 'Workflow Automation', desc: 'Streamline repetitive tasks across departments and systems.', icon: <Zap size={13} /> },
+          { label: 'AI-Powered Decision Routing', desc: 'Intelligent task assignment based on complexity and skill.', icon: <Bot size={13} /> },
+          { label: 'Document Processing & OCR', desc: 'Form reading and intelligent data capture at scale.', icon: <FileSearch size={13} /> },
+          { label: 'Custom Integrations', desc: 'Connect every tool in your stack into one ecosystem.', icon: <GitMerge size={13} /> },
         ],
       },
       {
         name: 'Operations & RPA',
         features: [
-          {
-            label: 'Process Monitoring & Alerting',
-            desc: 'Real-time visibility and automatic escalation for critical flows.',
-            icon: <Bell size={13} />,
-          },
+          { label: 'Process Monitoring & Alerting', desc: 'Real-time visibility and automatic escalation for critical flows.', icon: <Bell size={13} /> },
         ],
       },
     ],
@@ -211,13 +135,45 @@ const solutions: Solution[] = [
 
 export const Solutions: React.FC = () => {
   return (
-    <section className="py-20 md:py-32 bg-[#F5F5FF] relative overflow-hidden">
+    <section id="solutions" className="py-20 md:py-32 bg-[#F5F5FF] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section header */}
+        <div className="text-center mb-16 md:mb-20 px-4">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-brand-primary font-bold text-xs uppercase tracking-[0.3em] mb-4"
+          >
+            OUR SOLUTIONS
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-brand-dark mb-4 md:mb-6"
+          >
+            Built for modern{' '}
+            <span className="gradient-text">enterprise complexity</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg md:text-xl text-brand-dark/50 max-w-2xl mx-auto font-medium"
+          >
+            Three interconnected pillars designed to work as one unified system:
+            CX intelligence, enterprise infrastructure, and end-to-end automation.
+          </motion.p>
+        </div>
+
+        {/* Solution cards */}
         <div className="space-y-6">
           {solutions.map((sol, index) => (
             <motion.div
               key={sol.id}
-              id={sol.anchor}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
@@ -227,6 +183,7 @@ export const Solutions: React.FC = () => {
               <div className="absolute left-0 top-6 bottom-6 w-1 rounded-r-full bg-gradient-to-b from-brand-primary to-brand-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] divide-y lg:divide-y-0 lg:divide-x divide-black/[0.05]">
+                {/* Column 1: Identity */}
                 <div className="p-8 md:p-10 flex flex-col justify-between gap-6">
                   <div>
                     <div className="flex items-center justify-between mb-6">
@@ -237,18 +194,17 @@ export const Solutions: React.FC = () => {
                         0{index + 1}
                       </span>
                     </div>
-
                     <h3 className="text-2xl md:text-3xl font-display font-bold text-brand-dark mb-2 leading-tight">
                       {sol.title}
                     </h3>
                     <p className="text-brand-secondary font-bold text-xs mb-5 leading-snug">
                       {sol.tagline}
                     </p>
-
                     <p className="text-brand-dark/50 text-sm leading-relaxed">{sol.description}</p>
                   </div>
                 </div>
 
+                {/* Column 2: Features */}
                 <div className="p-8 md:p-10">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                     {sol.sections.map((sec, sIdx) => (
@@ -263,12 +219,8 @@ export const Solutions: React.FC = () => {
                                 {feat.icon}
                               </div>
                               <div>
-                                <h4 className="font-bold text-brand-dark text-xs mb-0.5">
-                                  {feat.label}
-                                </h4>
-                                <p className="text-brand-dark/45 text-xs leading-relaxed">
-                                  {feat.desc}
-                                </p>
+                                <h4 className="font-bold text-brand-dark text-xs mb-0.5">{feat.label}</h4>
+                                <p className="text-brand-dark/45 text-xs leading-relaxed">{feat.desc}</p>
                               </div>
                             </div>
                           ))}
@@ -278,6 +230,7 @@ export const Solutions: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Column 3: Benefits */}
                 <div className="p-8 md:p-10 bg-brand-primary/[0.02] flex flex-col justify-center">
                   <p className="text-brand-dark font-bold text-[10px] uppercase tracking-[0.18em] mb-5">
                     Key Benefits

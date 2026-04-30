@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Bash(npm run lint)",
       "Bash(npm run *)",
       "Bash(npm install *)",
       "Bash(git checkout *)",
@@ -20,7 +21,8 @@
       "Bash(curl -s http://localhost:3000/faq)",
       "Bash(git add *)",
       "Bash(git gc *)",
-      "PowerShell(icacls \"E:\\\\WEB DEV\\\\web\\\\PROJECTS\\\\sprintxdev\\\\.git\\\\objects\" /grant \"${env:USERNAME}:\\(OI\\)\\(CI\\)F\" /T 2>&1 | Select-Object -Last 5)"
+      "PowerShell(icacls \"E:\\\\WEB DEV\\\\web\\\\PROJECTS\\\\sprintxdev\\\\.git\\\\objects\" /grant \"${env:USERNAME}:\\(OI\\)\\(CI\\)F\" /T 2>&1 | Select-Object -Last 5)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Rocket, Sparkles } from 'lucide-react';
 
@@ -57,19 +56,25 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Link href="/contact" className="btn-primary">
-              Book a Demo
-              <Rocket size={20} />
-            </Link>
-          </motion.div>
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="btn-primary"
+          >
+            Book a Demo
+            <Rocket size={20} />
+          </motion.a>
 
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Link href="/solutions" className="btn-secondary">
-              Explore Solutions
-              <Sparkles size={20} />
-            </Link>
-          </motion.div>
+          <motion.a
+            href="#solutions"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="btn-secondary"
+          >
+            Explore Solutions
+            <Sparkles size={20} />
+          </motion.a>
         </motion.div>
       </div>
 

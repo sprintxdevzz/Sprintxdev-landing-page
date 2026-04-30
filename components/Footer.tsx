@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'motion/react';
 
 export const Footer: React.FC = () => {
@@ -38,9 +37,9 @@ export const Footer: React.FC = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Link href="/contact" className="btn-primary !px-8 !py-4 !text-sm">
+                <a href="#contact" className="btn-primary !px-8 !py-4 !text-sm">
                   Talk to Our Team
-                </Link>
+                </a>
               </motion.div>
             </div>
           </div>
@@ -51,19 +50,19 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
               <li>
-                <Link href="/solutions#cx-solutions" className="hover:text-brand-primary transition-colors">
+                <a href="#solutions" className="hover:text-brand-primary transition-colors">
                   CX Solutions
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/solutions#enterprise" className="hover:text-brand-primary transition-colors">
+                <a href="#solutions" className="hover:text-brand-primary transition-colors">
                   Enterprise Solutions
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/solutions#automation" className="hover:text-brand-primary transition-colors">
+                <a href="#solutions" className="hover:text-brand-primary transition-colors">
                   Automation
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -74,19 +73,24 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
               <li>
-                <Link href="/methodology" className="hover:text-brand-primary transition-colors">
+                <a href="#process" className="hover:text-brand-primary transition-colors">
                   The Process
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-brand-primary transition-colors">
-                  FAQ
-                </Link>
+                <a href="#" className="hover:text-brand-primary transition-colors">
+                  Case Studies
+                </a>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-brand-primary transition-colors">
+                <a href="#contact" className="hover:text-brand-primary transition-colors">
                   Contact
-                </Link>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-brand-primary transition-colors">
+                  Privacy Policy
+                </a>
               </li>
             </ul>
           </div>
