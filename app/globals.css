@@ -45,14 +45,14 @@
 }
 
 .btn-primary {
-  @apply px-10 py-5 bg-brand-primary hover:bg-[#1c1c80] text-white rounded-2xl font-bold text-lg
-    shadow-[0_8px_28px_rgba(21,21,107,0.25)]
-    hover:shadow-[0_12px_36px_rgba(21,21,107,0.35)]
-    transition-all active:scale-[0.98] flex items-center justify-center gap-3;
+  @apply px-7 py-3 bg-brand-primary hover:bg-[#1c1c80] text-white rounded-full font-semibold text-base
+    shadow-[0_2px_12px_rgba(21,21,107,0.20)]
+    hover:shadow-[0_4px_20px_rgba(21,21,107,0.30)]
+    transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2;
 }
 
 .btn-secondary {
-  @apply px-10 py-5 bg-white text-brand-dark border border-black/10 rounded-2xl font-bold text-lg hover:bg-black/[0.02] hover:border-black/20 transition-all active:scale-[0.98] flex items-center justify-center gap-3;
+  @apply px-7 py-3 bg-white text-brand-dark border border-black/[0.09] rounded-full font-semibold text-base hover:bg-brand-dark/[0.02] hover:border-black/[0.16] transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2;
 }
 
 @layer utilities {

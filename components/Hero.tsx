@@ -3,7 +3,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'motion/react';
-import { Rocket, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const UniverseBackground = dynamic(
   () => import('./UniverseBackground').then((m) => m.UniverseBackground),
@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
             className="btn-primary"
           >
             Book a Demo
-            <Rocket size={20} />
+            <ArrowRight size={16} />
           </motion.a>
 
           <motion.a
@@ -73,7 +73,6 @@ export const Hero: React.FC = () => {
             className="btn-secondary"
           >
             Explore Solutions
-            <Sparkles size={20} />
           </motion.a>
         </motion.div>
       </div>

@@ -22,7 +22,10 @@
       "Bash(git add *)",
       "Bash(git gc *)",
       "PowerShell(icacls \"E:\\\\WEB DEV\\\\web\\\\PROJECTS\\\\sprintxdev\\\\.git\\\\objects\" /grant \"${env:USERNAME}:\\(OI\\)\\(CI\\)F\" /T 2>&1 | Select-Object -Last 5)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(py *)",
+      "PowerShell(python \"C:/Users/ossam/.claude/plugins/cache/ui-ux-pro-max-skill/ui-ux-pro-max/2.5.0/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"enterprise B2B SaaS automation landing page CTA buttons pill\" --design-system -p \"Next Automation\" 2>&1)",
+      "Bash(npx tsc *)"
     ]
   }
 }
