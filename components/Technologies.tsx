@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
-import { Orbit, Workflow, Radar, Sparkles, ShieldCheck } from "lucide-react";
+import { Workflow, ShieldCheck } from "lucide-react";
 
 type Tech = {
   name: string;
@@ -18,7 +19,15 @@ const technologies: Tech[] = [
     category: "Compute",
     description:
       "High-performance distributed compute that scales horizontally without breaking a sweat — the engine room behind every system we ship.",
-    icon: <Orbit strokeWidth={1.5} />,
+    icon: (
+      <Image
+        src="/Google_Antigravit (1).webp"
+        alt="Antigravity"
+        width={28}
+        height={28}
+        className="object-contain"
+      />
+    ),
     accent: "sky",
   },
   {
@@ -34,7 +43,15 @@ const technologies: Tech[] = [
     category: "AI",
     description:
       "AI-powered intelligence — from code synthesis to decision routing — embedded directly into the solutions we design, build, and deliver.",
-    icon: <Sparkles strokeWidth={1.5} />,
+    icon: (
+      <Image
+        src="/claudecode-color.png"
+        alt="Claude Code"
+        width={28}
+        height={28}
+        className="object-contain"
+      />
+    ),
     accent: "amber",
   },
 ];
@@ -180,13 +197,15 @@ export const Technologies: React.FC = () => {
                   <div
                     className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center ${a.iconText} group-hover:scale-110 transition-transform duration-500 ring-1 ${a.ring}`}
                   >
-                    {React.cloneElement(
-                      tech.icon as React.ReactElement<{
-                        size?: number;
-                        className?: string;
-                      }>,
-                      { size: 22 },
-                    )}
+                    {React.isValidElement(tech.icon) && tech.icon.type !== Image
+                      ? React.cloneElement(
+                          tech.icon as React.ReactElement<{
+                            size?: number;
+                            className?: string;
+                          }>,
+                          { size: 22 },
+                        )
+                      : tech.icon}
                   </div>
                   <span
                     className={`inline-flex items-center gap-1.5 ${a.tagText}  text-[10px] font-bold uppercase tracking-[0.16em]`}
