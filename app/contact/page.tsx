@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
 };
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export default function ContactPage() {
   return (
     <>

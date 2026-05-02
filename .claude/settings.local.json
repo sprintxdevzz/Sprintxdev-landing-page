@@ -39,7 +39,15 @@
       "Bash(git merge *)",
       "Bash(git stash *)",
       "Bash(git push *)",
-      "Bash(echo \"EXIT=$?\")"
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(find . -maxdepth 3 -name \"middleware.*\" -not -path \"*/node_modules/*\")",
+      "Bash(ls vercel.json)",
+      "Bash(curl -sI -L \"https://nxtaut.com/\")",
+      "Bash(curl -sI -L \"https://www.nxtaut.com/\")",
+      "Bash(curl -sI \"https://nxtaut.com/robots.txt\")",
+      "Bash(curl -s \"https://www.nxtaut.com/robots.txt\")",
+      "Bash(curl -sI \"https://nxtaut.com/\")",
+      "Bash(curl -s \"https://www.nxtaut.com/\")"
     ]
   }
 }

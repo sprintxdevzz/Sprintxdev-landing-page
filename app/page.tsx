@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',

@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/solutions' },
 };
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export default function SolutionsPage() {
   return (
     <>

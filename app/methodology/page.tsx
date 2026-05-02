@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/methodology' },
 };
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export default function MethodologyPage() {
   return (
     <>
