@@ -3,14 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Workflow, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 type Tech = {
   name: string;
   category: string;
   description: string;
   icon: React.ReactNode;
-  accent: "emerald" | "sky" | "violet" | "amber";
+  accent: "emerald" | "sky" | "violet" | "amber" | "orange";
 };
 
 const technologies: Tech[] = [
@@ -35,8 +35,16 @@ const technologies: Tech[] = [
     category: "Workflows",
     description:
       "Enterprise-grade workflow orchestration and RPA that turn brittle manual processes into reliable, observable, always-on pipelines.",
-    icon: <Workflow strokeWidth={1.5} />,
-    accent: "emerald",
+    icon: (
+      <Image
+        src="/replit.png"
+        alt="Relplit"
+        width={28}
+        height={28}
+        className="object-contain"
+      />
+    ),
+    accent: "orange",
   },
   {
     name: "Claude Code",
@@ -87,6 +95,13 @@ const accentMap: Record<
     tagText: "text-amber-200",
     iconText: "text-amber-200",
     glow: "group-hover:shadow-[0_0_60px_-12px_rgba(252,211,77,0.4)]",
+  },
+  orange: {
+    dot: "bg-[#F7650E]",
+    ring: "ring-[#F7650E]/30",
+    tagText: "text-[#F7650E]",
+    iconText: "text-[#F7650E]",
+    glow: "group-hover:shadow-[0_0_60px_-12px_rgba(247,101,14,0.5)]",
   },
 };
 
@@ -197,15 +212,7 @@ export const Technologies: React.FC = () => {
                   <div
                     className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center ${a.iconText} group-hover:scale-110 transition-transform duration-500 ring-1 ${a.ring}`}
                   >
-                    {React.isValidElement(tech.icon) && tech.icon.type !== Image
-                      ? React.cloneElement(
-                          tech.icon as React.ReactElement<{
-                            size?: number;
-                            className?: string;
-                          }>,
-                          { size: 22 },
-                        )
-                      : tech.icon}
+                    {tech.icon}
                   </div>
                   <span
                     className={`inline-flex items-center gap-1.5 ${a.tagText}  text-[10px] font-bold uppercase tracking-[0.16em]`}

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'motion/react';
+import React from "react";
+import { motion } from "motion/react";
 
 export const Footer: React.FC = () => {
   return (
@@ -20,23 +20,32 @@ export const Footer: React.FC = () => {
             </div>
             <p className="text-brand-dark/50 max-w-sm mb-4 font-medium leading-relaxed">
               Next Automation | Engineering high-velocity digital
-              infrastructure, from AI-powered to survey systems
-              and bespoke business platforms.
+              infrastructure, from AI-powered to survey systems and bespoke
+              business platforms.
             </p>
             <p className="text-brand-dark font-bold mb-6">
-              Email us:{' '}
-              <a href="mailto:info@nxtaut.com" className="text-brand-primary hover:underline">
+              Email us:{" "}
+              <a
+                href="mailto:info@nxtaut.com"
+                className="text-brand-primary hover:underline"
+              >
                 info@nxtaut.com
               </a>
             </p>
             <p className="text-brand-dark font-bold mb-6">
-              Call us:{' '}
-              <a href="tel:+966500598757" className="text-brand-primary hover:underline">
+              Call us:{" "}
+              <a
+                href="tel:+966500598757"
+                className="text-brand-primary hover:underline"
+              >
                 +966 50 059 8757
               </a>
             </p>
             <div className="flex flex-wrap gap-4">
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 <a href="#contact" className="btn-primary !px-8 !py-4 !text-sm">
                   Talk to Our Team
                 </a>
@@ -50,17 +59,26 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
               <li>
-                <a href="#solutions" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#solutions"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   CX Solutions
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#solutions"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Enterprise Solutions
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#solutions"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Automation
                 </a>
               </li>
@@ -73,22 +91,34 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
               <li>
-                <a href="#process" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#process"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   The Process
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Case Studies
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#contact"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-primary transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-brand-primary transition-colors"
+                >
                   Privacy Policy
                 </a>
               </li>
