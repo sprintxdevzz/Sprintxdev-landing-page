@@ -1,72 +1,75 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'motion/react';
-import { Orbit, Workflow, Radar, Sparkles, ShieldCheck } from 'lucide-react';
+import React from "react";
+import { motion } from "motion/react";
+import { Orbit, Workflow, Radar, Sparkles, ShieldCheck } from "lucide-react";
 
 type Tech = {
   name: string;
   category: string;
   description: string;
   icon: React.ReactNode;
-  accent: 'emerald' | 'sky' | 'violet' | 'amber';
+  accent: "emerald" | "sky" | "violet" | "amber";
 };
 
 const technologies: Tech[] = [
   {
-    name: 'Antigravity',
-    category: 'Compute',
+    name: "Antigravity",
+    category: "Compute",
     description:
-      'High-performance distributed compute that scales horizontally without breaking a sweat — the engine room behind every system we ship.',
+      "High-performance distributed compute that scales horizontally without breaking a sweat — the engine room behind every system we ship.",
     icon: <Orbit strokeWidth={1.5} />,
-    accent: 'sky',
+    accent: "sky",
   },
   {
-    name: 'Relplit',
-    category: 'Workflows',
+    name: "Relplit",
+    category: "Workflows",
     description:
-      'Enterprise-grade workflow orchestration and RPA that turn brittle manual processes into reliable, observable, always-on pipelines.',
+      "Enterprise-grade workflow orchestration and RPA that turn brittle manual processes into reliable, observable, always-on pipelines.",
     icon: <Workflow strokeWidth={1.5} />,
-    accent: 'emerald',
+    accent: "emerald",
   },
   {
-    name: 'Claude Code',
-    category: 'AI',
+    name: "Claude Code",
+    category: "AI",
     description:
-      'AI-powered intelligence — from code synthesis to decision routing — embedded directly into the solutions we design, build, and deliver.',
+      "AI-powered intelligence — from code synthesis to decision routing — embedded directly into the solutions we design, build, and deliver.",
     icon: <Sparkles strokeWidth={1.5} />,
-    accent: 'amber',
+    accent: "amber",
   },
 ];
 
-const accentMap: Record<Tech['accent'], { dot: string; ring: string; tagText: string; iconText: string; glow: string }> = {
+const accentMap: Record<
+  Tech["accent"],
+  { dot: string; ring: string; tagText: string; iconText: string; glow: string }
+> = {
   sky: {
-    dot: 'bg-sky-400',
-    ring: 'ring-sky-400/30',
-    tagText: 'text-sky-300',
-    iconText: 'text-sky-300',
-    glow: 'group-hover:shadow-[0_0_60px_-12px_rgba(56,189,248,0.45)]',
+    dot: "bg-sky-400",
+    ring: "ring-sky-400/30",
+    tagText: "text-sky-300",
+    iconText: "text-sky-300",
+    glow: "group-hover:shadow-[0_0_60px_-12px_rgba(56,189,248,0.45)]",
   },
   emerald: {
-    dot: 'bg-brand-secondary',
-    ring: 'ring-brand-secondary/30',
-    tagText: 'text-brand-secondary',
-    iconText: 'text-brand-secondary',
-    glow: 'group-hover:shadow-[0_0_60px_-12px_rgba(5,216,156,0.5)]',
+    dot: "bg-brand-secondary",
+    ring: "ring-brand-secondary/30",
+    tagText: "text-brand-secondary",
+    iconText: "text-brand-secondary",
+    glow: "group-hover:shadow-[0_0_60px_-12px_rgba(5,216,156,0.5)]",
   },
   violet: {
-    dot: 'bg-violet-400',
-    ring: 'ring-violet-400/30',
-    tagText: 'text-violet-300',
-    iconText: 'text-violet-300',
-    glow: 'group-hover:shadow-[0_0_60px_-12px_rgba(167,139,250,0.45)]',
+    dot: "bg-violet-400",
+    ring: "ring-violet-400/30",
+    tagText: "text-violet-300",
+    iconText: "text-violet-300",
+    glow: "group-hover:shadow-[0_0_60px_-12px_rgba(167,139,250,0.45)]",
   },
   amber: {
-    dot: 'bg-amber-300',
-    ring: 'ring-amber-300/30',
-    tagText: 'text-amber-200',
-    iconText: 'text-amber-200',
-    glow: 'group-hover:shadow-[0_0_60px_-12px_rgba(252,211,77,0.4)]',
+    dot: "bg-amber-300",
+    ring: "ring-amber-300/30",
+    tagText: "text-amber-200",
+    iconText: "text-amber-200",
+    glow: "group-hover:shadow-[0_0_60px_-12px_rgba(252,211,77,0.4)]",
   },
 };
 
@@ -83,12 +86,12 @@ export const Technologies: React.FC = () => {
         className="absolute inset-0 opacity-[0.18] pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(rgba(255,255,255,0.55) 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
+            "radial-gradient(rgba(255,255,255,0.55) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
           maskImage:
-            'radial-gradient(ellipse at center, black 30%, transparent 75%)',
+            "radial-gradient(ellipse at center, black 30%, transparent 75%)",
           WebkitMaskImage:
-            'radial-gradient(ellipse at center, black 30%, transparent 75%)',
+            "radial-gradient(ellipse at center, black 30%, transparent 75%)",
         }}
       />
       <div
@@ -129,10 +132,10 @@ export const Technologies: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.05]"
             >
-              Built on{' '}
+              Built on{" "}
               <span className="bg-gradient-to-r from-white via-brand-secondary to-white bg-clip-text text-transparent">
                 enterprise-grade
-              </span>{' '}
+              </span>{" "}
               technology
             </motion.h2>
           </div>
@@ -145,9 +148,9 @@ export const Technologies: React.FC = () => {
             className="max-w-md lg:max-w-sm space-y-5"
           >
             <p className="text-white/60 text-base md:text-lg leading-relaxed font-medium">
-              We accelerate your success using the most modern tools — engineered
-              by expert teams to ensure best practices and production-grade
-              quality.
+              We accelerate your success using the most modern tools —
+              engineered by expert teams to ensure best practices and
+              production-grade quality.
             </p>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-[11px] font-bold uppercase tracking-[0.18em]">
               <ShieldCheck size={13} className="text-brand-secondary" />
@@ -165,8 +168,12 @@ export const Technologies: React.FC = () => {
                 key={tech.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ delay: index * 0.08, duration: 0.5, ease: 'easeOut' }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  delay: index * 0.08,
+                  duration: 0.5,
+                  ease: "easeOut",
+                }}
                 className={`group relative p-6 md:p-7 rounded-[24px] md:rounded-[28px] bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:bg-white/[0.07] hover:border-white/20 transition-all duration-300 ${a.glow}`}
               >
                 <div className="flex items-center justify-between mb-6">
@@ -174,8 +181,11 @@ export const Technologies: React.FC = () => {
                     className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center ${a.iconText} group-hover:scale-110 transition-transform duration-500 ring-1 ${a.ring}`}
                   >
                     {React.cloneElement(
-                      tech.icon as React.ReactElement<{ size?: number; className?: string }>,
-                      { size: 22 }
+                      tech.icon as React.ReactElement<{
+                        size?: number;
+                        className?: string;
+                      }>,
+                      { size: 22 },
                     )}
                   </div>
                   <span
@@ -206,13 +216,13 @@ export const Technologies: React.FC = () => {
           className="mt-14 md:mt-20 max-w-3xl mx-auto text-center"
         >
           <p className="text-white/70 text-base md:text-lg leading-relaxed font-medium">
-            At Next Automation, we don&apos;t cut corners. We leverage industry-leading
-            technology — combined with expert engineering — to design and build
-            solutions that scale, perform, and last.
+            At Next Automation, we don&apos;t cut corners. We leverage
+            industry-leading technology — combined with expert engineering — to
+            design and build solutions that scale, perform, and last.
           </p>
           <p className="mt-4 text-white/40 text-sm md:text-base leading-relaxed">
-            Every implementation is grounded in proven best practices, not trends or
-            shortcuts.
+            Every implementation is grounded in proven best practices, not
+            trends or shortcuts.
           </p>
         </motion.div>
       </div>
