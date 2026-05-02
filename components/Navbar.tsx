@@ -61,6 +61,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             <NavLink href="#process">Process</NavLink>
+            <NavLink href="#technologies">Stack</NavLink>
             <NavLink href="#contact">Contact</NavLink>
 
             <div className="flex items-center gap-4 ml-4">
@@ -99,6 +100,7 @@ export const Navbar: React.FC = () => {
                 <MobileNavLink href="#solutions" onClick={close}>Enterprise Solutions</MobileNavLink>
                 <MobileNavLink href="#solutions" onClick={close}>Automation</MobileNavLink>
                 <MobileNavLink href="#process" onClick={close}>Process</MobileNavLink>
+                <MobileNavLink href="#technologies" onClick={close}>Stack</MobileNavLink>
                 <MobileNavLink href="#contact" onClick={close}>Contact</MobileNavLink>
                 <div className="pt-2">
                   <a href="#contact" onClick={close}>

@@ -26,10 +26,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #2020CC 0%, #0060EE 42%, #05D89C 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-brand-primary);
 }
 
 .glass-card {

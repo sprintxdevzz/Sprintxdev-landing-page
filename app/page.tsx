@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero';
 import { Solutions } from '@/components/Solutions';
 import { Methodology } from '@/components/Methodology';
 import { TheEdge } from '@/components/TheEdge';
+import { Technologies } from '@/components/Technologies';
 import { ContactForm } from '@/components/ContactForm';
 import { JsonLd } from '@/components/JsonLd';
 
@@ -96,6 +97,14 @@ const solutionsListSchema = {
     {
       '@type': 'ListItem',
       position: 5,
+      name: 'Technology Stack',
+      url: 'https://www.nxtaut.com/#technologies',
+      description:
+        'The enterprise-grade technologies powering Next Automation: Antigravity, Relplit, Higgsfield, and Claude Code.',
+    },
+    {
+      '@type': 'ListItem',
+      position: 6,
       name: 'Contact Us',
       url: 'https://www.nxtaut.com/#contact',
       description: 'Book a demo or get in touch with the Next Automation team.',
@@ -152,6 +161,7 @@ export default function HomePage() {
       <Solutions />
       <Methodology />
       <TheEdge />
+      <Technologies />
       <ContactForm />
     </>
   );

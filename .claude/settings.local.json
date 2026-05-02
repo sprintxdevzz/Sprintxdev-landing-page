@@ -35,7 +35,11 @@
       "Bash(cat next.config.js)",
       "Bash(cat next.config.mjs)",
       "Bash(node -e \"const p=require\\('./node_modules/next/package.json'\\);console.log\\('next:',p.version\\)\")",
-      "Bash(node -e \"const p=require\\('./node_modules/tailwindcss/package.json'\\);console.log\\('tailwindcss:',p.version\\)\")"
+      "Bash(node -e \"const p=require\\('./node_modules/tailwindcss/package.json'\\);console.log\\('tailwindcss:',p.version\\)\")",
+      "Bash(git merge *)",
+      "Bash(git stash *)",
+      "Bash(git push *)",
+      "Bash(echo \"EXIT=$?\")"
     ]
   }
 }

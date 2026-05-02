@@ -180,8 +180,6 @@ export const Solutions: React.FC = () => {
               transition={{ delay: index * 0.08, duration: 0.5, ease: 'easeOut' }}
               className="group relative bg-white rounded-[28px] md:rounded-[36px] border border-black/[0.06] hover:border-brand-primary/20 hover:shadow-2xl hover:shadow-brand-primary/[0.06] transition-all duration-300 overflow-hidden"
             >
-              <div className="absolute left-0 top-6 bottom-6 w-1 rounded-r-full bg-gradient-to-b from-brand-primary to-brand-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] divide-y lg:divide-y-0 lg:divide-x divide-black/[0.05]">
                 {/* Column 1: Identity */}
                 <div className="p-8 md:p-10 flex flex-col justify-between gap-6">
