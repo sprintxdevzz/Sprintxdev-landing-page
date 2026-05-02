@@ -5,12 +5,12 @@
   --font-display: var(--font-outfit), sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
 
-  --color-brand-primary: #15156B;
-  --color-brand-secondary: #05D89C;
-  --color-brand-dark: #0F172A;
-  --color-brand-accent: #05D89C;
-  --color-brand-light: #F5F5FF;
-  --color-brand-orange: #F7650E;
+  --color-brand-primary: #15156b;
+  --color-brand-secondary: #05d89c;
+  --color-brand-dark: #0f172a;
+  --color-brand-accent: #05d89c;
+  --color-brand-light: #f5f5ff;
+  --color-brand-orange: #f7650e;
 }
 
 @layer base {
@@ -35,7 +35,12 @@
 }
 
 .universe-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(21, 21, 107, 0.18) 0%, rgba(5, 216, 156, 0.05) 50%, transparent 72%);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(21, 21, 107, 0.18) 0%,
+    rgba(5, 216, 156, 0.05) 50%,
+    transparent 72%
+  );
 }
 
 .dashboard-shadow {
