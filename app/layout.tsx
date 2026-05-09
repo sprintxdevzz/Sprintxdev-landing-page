@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Outfit, JetBrains_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -77,9 +79,16 @@ export const metadata: Metadata = {
     images: ['/logoicon.jpg'],
   },
   icons: {
-    icon: '/favicon-32x32.png',
-    shortcut: '/favicon-32x32.png',
-    apple: '/favicon-32x32.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/logoicon.jpg', type: 'image/jpeg', sizes: '180x180' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/logoicon.jpg',
+  },
+  verification: {
+    google: 'replace-with-search-console-token',
   },
 };
 
@@ -93,9 +102,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={siteSchemas.website} />
         <div className="min-h-screen flex flex-col selection:bg-brand-primary/20">
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main className="grow">{children}</main>
           <Footer />
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -46,22 +46,36 @@ const webPageSchema = {
   ],
 };
 
-const siteNavSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Next Automation — Site Navigation',
-  itemListElement: [
-    {
-      '@type': 'SiteLinksSearchBox',
-      url: 'https://www.nxtaut.com/',
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: 'https://www.nxtaut.com/?q={search_term_string}',
-        'query-input': 'required name=search_term_string',
-      },
-    },
-  ],
-};
+const siteNavSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SiteNavigationElement',
+    name: 'Solutions',
+    url: 'https://www.nxtaut.com/solutions',
+    description: 'CX, Enterprise ERP/CRM, and Automation platforms.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SiteNavigationElement',
+    name: 'Methodology',
+    url: 'https://www.nxtaut.com/methodology',
+    description: 'Our 4-step delivery process: Analysis, Design, Implementation, Optimization.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SiteNavigationElement',
+    name: 'FAQ',
+    url: 'https://www.nxtaut.com/faq',
+    description: 'Answers to common questions about timelines, integrations, and maintenance.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SiteNavigationElement',
+    name: 'Contact',
+    url: 'https://www.nxtaut.com/contact',
+    description: 'Book a demo or get in touch with the Next Automation team.',
+  },
+];
 
 const solutionsListSchema = {
   '@context': 'https://schema.org',
@@ -73,43 +87,42 @@ const solutionsListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'CX Solutions — Survey Platform & Event Tracking',
-      url: 'https://www.nxtaut.com/#solutions',
+      url: 'https://www.nxtaut.com/solutions#cx-solutions',
       description: 'Transform customer data into actionable intelligence with AI-powered survey and tracking tools.',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Enterprise Solutions — ERP & CRM',
-      url: 'https://www.nxtaut.com/#solutions',
+      url: 'https://www.nxtaut.com/solutions#enterprise',
       description: 'Purpose-built ERP and CRM platforms with Power BI integration for enterprise operations.',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Automation — Workflow & RPA',
-      url: 'https://www.nxtaut.com/#solutions',
+      url: 'https://www.nxtaut.com/solutions#automation',
       description: 'Intelligent workflow automation and RPA solutions that run around the clock.',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Our Methodology',
-      url: 'https://www.nxtaut.com/#process',
+      url: 'https://www.nxtaut.com/methodology',
       description: 'Analysis, Design, Implementation, Optimization — our 4-step delivery process.',
     },
     {
       '@type': 'ListItem',
       position: 5,
-      name: 'Technology Stack',
-      url: 'https://www.nxtaut.com/#technologies',
-      description:
-        'The enterprise-grade technologies powering Next Automation: Antigravity, Relplit, Higgsfield, and Claude Code.',
+      name: 'Frequently Asked Questions',
+      url: 'https://www.nxtaut.com/faq',
+      description: 'Answers about timelines, integrations, maintenance, and our delivery model.',
     },
     {
       '@type': 'ListItem',
       position: 6,
       name: 'Contact Us',
-      url: 'https://www.nxtaut.com/#contact',
+      url: 'https://www.nxtaut.com/contact',
       description: 'Book a demo or get in touch with the Next Automation team.',
     },
   ],
@@ -155,7 +168,9 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={webPageSchema} />
-      <JsonLd data={siteNavSchema} />
+      {siteNavSchema.map((s, i) => (
+        <JsonLd key={`nav-${i}`} data={s} />
+      ))}
       <JsonLd data={solutionsListSchema} />
       {serviceSchemas.map((s, i) => (
         <JsonLd key={i} data={s} />

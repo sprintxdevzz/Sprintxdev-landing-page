@@ -15,7 +15,17 @@ export const siteSchemas = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Next Automation',
+    alternateName: 'nxtaut',
     url: `${SITE_URL}/`,
+    publisher: { '@type': 'Organization', name: 'Next Automation', url: `${SITE_URL}/` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   },
 };
 

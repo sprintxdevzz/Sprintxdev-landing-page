@@ -47,7 +47,11 @@
       "Bash(curl -sI \"https://nxtaut.com/robots.txt\")",
       "Bash(curl -s \"https://www.nxtaut.com/robots.txt\")",
       "Bash(curl -sI \"https://nxtaut.com/\")",
-      "Bash(curl -s \"https://www.nxtaut.com/\")"
+      "Bash(curl -s \"https://www.nxtaut.com/\")",
+      "Bash(cp public/favicon-32x32.png public/favicon.ico && ls public/favicon*)"
+    ],
+    "additionalDirectories": [
+      "E:\\WEB DEV\\web\\PROJECTS\\sprintxdev\\public"
     ]
   }
 }
