@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Hero } from '@/components/Hero';
+import { CapabilityMarquee } from '@/components/CapabilityMarquee';
 import { Solutions } from '@/components/Solutions';
 import { Methodology } from '@/components/Methodology';
 import { TheEdge } from '@/components/TheEdge';
@@ -176,6 +177,7 @@ export default function HomePage() {
         <JsonLd key={i} data={s} />
       ))}
       <Hero />
+      <CapabilityMarquee />
       <Solutions />
       <Methodology />
       <TheEdge />

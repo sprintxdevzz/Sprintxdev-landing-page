@@ -28,6 +28,7 @@ type Section = { name: string; features: Feature[] };
 
 type Solution = {
   id: string;
+  anchor: string;
   title: string;
   tagline: string;
   description: string;
@@ -39,6 +40,7 @@ type Solution = {
 const solutions: Solution[] = [
   {
     id: '1',
+    anchor: 'cx-solutions',
     title: 'CX Solutions',
     tagline: 'From Raw Data to Radical Growth',
     description:
@@ -71,6 +73,7 @@ const solutions: Solution[] = [
   },
   {
     id: '2',
+    anchor: 'enterprise',
     title: 'Enterprise Solutions',
     tagline: 'The Infrastructure Backbone of Your Business',
     description:
@@ -103,6 +106,7 @@ const solutions: Solution[] = [
   },
   {
     id: '3',
+    anchor: 'automation',
     title: 'Automation',
     tagline: 'Eliminate Friction. Maximize Throughput.',
     description:
@@ -176,11 +180,12 @@ export const Solutions: React.FC = () => {
           {solutions.map((sol, index) => (
             <motion.div
               key={sol.id}
+              id={sol.anchor}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: index * 0.08, duration: 0.5, ease: 'easeOut' }}
-              className="group card card-hover overflow-hidden"
+              className="group card card-hover overflow-hidden scroll-mt-28"
             >
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] divide-y lg:divide-y-0 lg:divide-x divide-black/[0.06]">
                 {/* Column 1: Identity */}

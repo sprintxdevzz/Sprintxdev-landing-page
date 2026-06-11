@@ -6,6 +6,7 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
+import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { siteSchemas } from '@/lib/seo';
 
 const inter = Inter({
@@ -100,6 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <JsonLd data={siteSchemas.organization} />
         <JsonLd data={siteSchemas.website} />
+        <ScrollProgress />
         <div className="min-h-screen flex flex-col selection:bg-brand-primary/20">
           <Navbar />
           <main className="grow">{children}</main>

@@ -1,9 +1,16 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { NeonButton } from './ui/neon-button';
+
+const solutionLinks = [
+  { href: '/solutions#cx-solutions', label: 'CX Solutions' },
+  { href: '/solutions#enterprise', label: 'Enterprise Solutions' },
+  { href: '/solutions#automation', label: 'Automation' },
+];
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -31,41 +38,46 @@ export const Navbar: React.FC = () => {
       >
         <div className="relative z-10 flex justify-between items-center">
           <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-3 group cursor-pointer">
-            <a href="#" className="w-40 md:w-30 flex-shrink-0">
+            <Link href="/" className="w-40 md:w-30 flex-shrink-0">
               <img
                 src="/nextautomationlogo.webp"
                 alt="Next Automation logo"
                 className="w-full h-full object-contain"
               />
-            </a>
+            </Link>
           </motion.div>
 
           <div className="hidden md:flex items-center gap-8">
-            {/* Solutions Dropdown */}
+            {/* Solutions — clickable link + hover/focus dropdown */}
             <div className="relative group/sol">
-              <button className="text-[0.8rem] font-semibold text-ink-500 hover:text-brand-primary transition-colors flex items-center gap-1 py-1">
+              <Link
+                href="/solutions"
+                className="text-[0.8rem] font-semibold text-ink-500 hover:text-brand-primary transition-colors flex items-center gap-1 py-1"
+              >
                 Solutions
                 <ChevronDown
                   size={12}
                   className="opacity-60 group-hover/sol:rotate-180 transition-transform duration-200"
                 />
-              </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 pointer-events-none group-hover/sol:opacity-100 group-hover/sol:pointer-events-auto transition-all duration-200">
+              </Link>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 pointer-events-none transition-all duration-200 group-hover/sol:opacity-100 group-hover/sol:pointer-events-auto group-focus-within/sol:opacity-100 group-focus-within/sol:pointer-events-auto">
                 <div className="bg-white border border-black/[0.07] rounded-2xl shadow-[var(--shadow-pop)] p-2 min-w-[210px]">
-                  <DropdownItem href="#solutions">CX Solutions</DropdownItem>
-                  <DropdownItem href="#solutions">Enterprise Solutions</DropdownItem>
-                  <DropdownItem href="#solutions">Automation</DropdownItem>
+                  {solutionLinks.map((l) => (
+                    <DropdownItem key={l.href} href={l.href}>
+                      {l.label}
+                    </DropdownItem>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <NavLink href="#process">Process</NavLink>
-            <NavLink href="#technologies">Stack</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
+            <NavLink href="/methodology">Process</NavLink>
+            <NavLink href="/#technologies">Stack</NavLink>
+            <NavLink href="/#contact">Contact</NavLink>
 
             <div className="flex items-center gap-4 ml-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a href="#contact">
+                <Link href="/contact">
                   <NeonButton
                     variant="solid"
                     size="sm"
@@ -74,7 +86,7 @@ export const Navbar: React.FC = () => {
                     <Phone size={13} />
                     Contact Us
                   </NeonButton>
-                </a>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -94,15 +106,22 @@ export const Navbar: React.FC = () => {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden overflow-hidden mt-4"
             >
-              <div className="pt-4 pb-6 space-y-2 border-t border-black/5">
-                <MobileNavLink href="#solutions" onClick={close}>CX Solutions</MobileNavLink>
-                <MobileNavLink href="#solutions" onClick={close}>Enterprise Solutions</MobileNavLink>
-                <MobileNavLink href="#solutions" onClick={close}>Automation</MobileNavLink>
-                <MobileNavLink href="#process" onClick={close}>Process</MobileNavLink>
-                <MobileNavLink href="#technologies" onClick={close}>Stack</MobileNavLink>
-                <MobileNavLink href="#contact" onClick={close}>Contact</MobileNavLink>
-                <div className="pt-2">
-                  <a href="#contact" onClick={close}>
+              <div className="pt-4 pb-6 space-y-1 border-t border-black/5">
+                <MobileNavLink href="/solutions" onClick={close}>
+                  All Solutions
+                </MobileNavLink>
+                <div className="pl-3 border-l border-black/[0.06] ml-1 space-y-1">
+                  {solutionLinks.map((l) => (
+                    <MobileNavLink key={l.href} href={l.href} onClick={close}>
+                      {l.label}
+                    </MobileNavLink>
+                  ))}
+                </div>
+                <MobileNavLink href="/methodology" onClick={close}>Process</MobileNavLink>
+                <MobileNavLink href="/#technologies" onClick={close}>Stack</MobileNavLink>
+                <MobileNavLink href="/contact" onClick={close}>Contact</MobileNavLink>
+                <div className="pt-3">
+                  <Link href="/contact" onClick={close}>
                     <NeonButton
                       variant="glass"
                       size="default"
@@ -111,7 +130,7 @@ export const Navbar: React.FC = () => {
                       <Phone size={14} />
                       Contact Us
                     </NeonButton>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -123,22 +142,22 @@ export const Navbar: React.FC = () => {
 };
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a
+  <Link
     href={href}
     className="text-[0.8rem] font-semibold text-ink-500 hover:text-brand-primary transition-colors relative group"
   >
     {children}
     <span className="absolute -bottom-1.5 left-0 w-0 h-0.5 rounded-full bg-brand-primary transition-all duration-300 group-hover:w-full" />
-  </a>
+  </Link>
 );
 
 const DropdownItem = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a
+  <Link
     href={href}
     className="block px-4 py-2.5 text-[0.8rem] font-semibold text-ink-500 hover:text-brand-primary hover:bg-brand-primary/[0.06] rounded-xl transition-all duration-150"
   >
     {children}
-  </a>
+  </Link>
 );
 
 const MobileNavLink = ({
@@ -150,11 +169,11 @@ const MobileNavLink = ({
   children: React.ReactNode;
   onClick: () => void;
 }) => (
-  <a
+  <Link
     href={href}
     onClick={onClick}
     className="w-full text-left block text-sm font-semibold text-ink-500 hover:text-brand-primary py-2 transition-colors"
   >
     {children}
-  </a>
+  </Link>
 );

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "motion/react";
 
 export const Footer: React.FC = () => {
@@ -46,9 +47,9 @@ export const Footer: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <a href="#contact" className="btn-primary !px-8 !py-4 !text-sm">
+                <Link href="/contact" className="btn-primary !px-8 !py-4 !text-sm">
                   Talk to Our Team
-                </a>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -59,28 +60,28 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-ink-500 font-medium">
               <li>
-                <a
-                  href="#solutions"
+                <Link
+                  href="/solutions#cx-solutions"
                   className="hover:text-brand-primary transition-colors"
                 >
                   CX Solutions
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#solutions"
+                <Link
+                  href="/solutions#enterprise"
                   className="hover:text-brand-primary transition-colors"
                 >
                   Enterprise Solutions
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#solutions"
+                <Link
+                  href="/solutions#automation"
                   className="hover:text-brand-primary transition-colors"
                 >
                   Automation
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -91,36 +92,28 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-ink-500 font-medium">
               <li>
-                <a
-                  href="#process"
+                <Link
+                  href="/methodology"
                   className="hover:text-brand-primary transition-colors"
                 >
                   The Process
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/faq"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Case Studies
-                </a>
+                  FAQ
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="hover:text-brand-primary transition-colors"
                 >
                   Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-brand-primary transition-colors"
-                >
-                  Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
