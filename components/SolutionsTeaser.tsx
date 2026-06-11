@@ -34,13 +34,12 @@ const teasers = [
 
 export const SolutionsTeaser: React.FC = () => {
   return (
-    <section className="py-20 md:py-28 bg-[#F5F5FF]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-28 bg-brand-light relative overflow-hidden">
+      <div aria-hidden className="absolute inset-0 bg-grid mask-fade-b opacity-60" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-14">
-          <p className="text-brand-primary font-bold text-xs uppercase tracking-[0.3em] mb-4">
-            OUR SOLUTIONS
-          </p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-brand-dark">
+          <p className="eyebrow text-brand-primary justify-center mb-5">Our solutions</p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-ink text-balance">
             Three pillars. One unified system.
           </h2>
         </div>
@@ -56,15 +55,15 @@ export const SolutionsTeaser: React.FC = () => {
             >
               <Link
                 href={`/solutions#${t.anchor}`}
-                className="group block bg-white rounded-[24px] border border-black/[0.06] hover:border-brand-primary/20 hover:shadow-xl hover:shadow-brand-primary/[0.06] transition-all duration-300 p-8 h-full"
+                className="group card card-hover block p-8 h-full"
               >
-                <div className="w-12 h-12 rounded-xl bg-brand-primary/[0.07] flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500">
+                <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-brand-primary/[0.07] border border-brand-primary/10 flex items-center justify-center text-brand-primary mb-6 transition-transform duration-300 group-hover:scale-105">
                   {t.icon}
                 </div>
-                <h3 className="text-xl font-display font-bold text-brand-dark mb-1">{t.title}</h3>
-                <p className="text-brand-secondary font-bold text-xs mb-4">{t.tagline}</p>
-                <p className="text-brand-dark/50 text-sm leading-relaxed mb-6">{t.description}</p>
-                <span className="inline-flex items-center gap-1.5 text-brand-primary font-bold text-xs group-hover:gap-3 transition-all">
+                <h3 className="text-xl font-display font-semibold text-ink mb-1.5">{t.title}</h3>
+                <p className="text-brand-primary font-semibold text-[0.78rem] mb-4">{t.tagline}</p>
+                <p className="text-ink-500 text-sm leading-relaxed mb-6">{t.description}</p>
+                <span className="inline-flex items-center gap-1.5 text-brand-primary font-semibold text-xs group-hover:gap-3 transition-all">
                   Learn more <ArrowRight size={14} />
                 </span>
               </Link>

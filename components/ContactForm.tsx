@@ -37,10 +37,13 @@ export const ContactForm: React.FC = () => {
   };
 
   const inputClass =
-    'w-full px-6 py-4 rounded-2xl bg-brand-dark/[0.02] border border-black/5 focus:border-brand-primary/30 focus:bg-white transition-all outline-none text-brand-dark font-medium placeholder:text-brand-dark/30';
+    'w-full px-5 py-3.5 rounded-[var(--radius-md)] bg-white border border-black/[0.1] focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15 transition-all outline-none text-ink placeholder:text-ink-400/70';
+  const labelClass =
+    'block text-[0.72rem] font-semibold text-ink-700 mb-1.5 tracking-wide';
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-[#F5F5FF] relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 bg-brand-light relative overflow-hidden">
+      <div aria-hidden className="absolute inset-0 bg-grid mask-fade opacity-60" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -48,26 +51,25 @@ export const ContactForm: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-brand-primary font-bold text-xs md:text-sm uppercase tracking-[0.3em] mb-4"
+              className="eyebrow text-brand-primary mb-5"
             >
-              Get In Touch
+              Get in touch
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-display font-bold text-brand-dark mb-6 leading-tight"
+              className="text-4xl md:text-6xl font-display font-bold text-ink mb-6 leading-[1.05] text-balance"
             >
-              Let&apos;s build your <br />
-              <span className="gradient-text">next big thing</span>
+              Let&apos;s build your <span className="text-brand-primary">next big thing</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-brand-dark/50 text-lg max-w-md font-medium mb-10"
+              className="text-ink-500 text-lg max-w-md mb-10 text-pretty"
             >
               Ready to accelerate your digital growth? Send us a message and our team will get
               back to you within 24 hours.
@@ -75,16 +77,16 @@ export const ContactForm: React.FC = () => {
 
             <div className="space-y-5">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary">
-                  <Send size={20} />
+                <div className="w-12 h-12 rounded-[var(--radius-md)] bg-brand-primary/[0.08] border border-brand-primary/10 flex items-center justify-center text-brand-primary">
+                  <Send size={19} strokeWidth={1.75} />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-brand-dark/40 uppercase tracking-widest leading-none mb-1">
-                    Email Us
+                  <div className="text-[0.68rem] font-semibold text-ink-400 uppercase tracking-[0.14em] leading-none mb-1.5">
+                    Email us
                   </div>
                   <a
                     href="mailto:info@nxtaut.com"
-                    className="text-brand-dark font-bold hover:text-brand-primary transition-colors"
+                    className="text-ink font-semibold hover:text-brand-primary transition-colors"
                   >
                     info@nxtaut.com
                   </a>
@@ -94,13 +96,11 @@ export const ContactForm: React.FC = () => {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden p-8 md:p-12 rounded-[40px] border border-white/15 bg-white/80 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur-2xl"
+            className="relative p-7 md:p-10 rounded-[var(--radius-2xl)] border border-black/[0.07] bg-white shadow-[var(--shadow-pop)]"
           >
-            <div className="pointer-events-none absolute inset-0 rounded-[40px] bg-gradient-to-br from-white/60 via-white/20 to-white/0 opacity-80" />
-
             <form onSubmit={onSubmit} className="relative z-10 space-y-4">
               {/* Honeypot — hidden from real users, bots fill it */}
               <input
@@ -113,36 +113,75 @@ export const ContactForm: React.FC = () => {
               />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name *"
-                  required
-                  className={inputClass}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email *"
-                  required
-                  className={inputClass}
-                />
+                <div>
+                  <label htmlFor="cf-name" className={labelClass}>
+                    Name <span className="text-brand-primary">*</span>
+                  </label>
+                  <input
+                    id="cf-name"
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    placeholder="Jane Doe"
+                    required
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="cf-email" className={labelClass}>
+                    Email <span className="text-brand-primary">*</span>
+                  </label>
+                  <input
+                    id="cf-email"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    placeholder="jane@company.com"
+                    required
+                    className={inputClass}
+                  />
+                </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Company"
-                  className={inputClass}
-                />
-                <input type="tel" name="phone" placeholder="Phone" className={inputClass} />
+                <div>
+                  <label htmlFor="cf-company" className={labelClass}>
+                    Company
+                  </label>
+                  <input
+                    id="cf-company"
+                    type="text"
+                    name="company"
+                    autoComplete="organization"
+                    placeholder="Acme Inc."
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="cf-phone" className={labelClass}>
+                    Phone
+                  </label>
+                  <input
+                    id="cf-phone"
+                    type="tel"
+                    name="phone"
+                    autoComplete="tel"
+                    placeholder="+966 …"
+                    className={inputClass}
+                  />
+                </div>
               </div>
-              <textarea
-                name="message"
-                placeholder="Message (optional)"
-                rows={4}
-                className={`${inputClass} resize-none`}
-              />
+              <div>
+                <label htmlFor="cf-message" className={labelClass}>
+                  Message
+                </label>
+                <textarea
+                  id="cf-message"
+                  name="message"
+                  placeholder="Tell us about your project…"
+                  rows={4}
+                  className={`${inputClass} resize-none`}
+                />
+              </div>
 
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <NeonButton
@@ -165,25 +204,24 @@ export const ContactForm: React.FC = () => {
 
               {result !== 'idle' && result !== 'loading' && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={`flex items-center gap-3 p-4 rounded-2xl ${
+                  role="alert"
+                  aria-live="polite"
+                  className={`flex items-center gap-3 p-4 rounded-[var(--radius-md)] ${
                     result === 'success'
-                      ? 'bg-emerald-50 text-emerald-700 border border-emerald-100'
-                      : 'bg-red-50 text-red-700 border border-red-100'
+                      ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                      : 'bg-red-50 text-red-700 border border-red-200'
                   }`}
                 >
                   {result === 'success' ? <CheckCircle2 size={20} /> : <AlertCircle size={20} />}
-                  <p className="text-sm font-bold">{message}</p>
+                  <p className="text-sm font-semibold">{message}</p>
                 </motion.div>
               )}
             </form>
           </motion.div>
         </div>
       </div>
-
-      <div className="absolute top-1/2 -right-20 w-96 h-96 bg-brand-primary/5 blur-[100px] rounded-full -z-10" />
-      <div className="absolute bottom-0 -left-20 w-96 h-96 bg-brand-secondary/5 blur-[100px] rounded-full -z-10" />
     </section>
   );
 };

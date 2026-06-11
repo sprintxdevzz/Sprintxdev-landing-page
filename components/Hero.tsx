@@ -1,99 +1,95 @@
 'use client';
 
 import React from 'react';
-import dynamic from 'next/dynamic';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
-const UniverseBackground = dynamic(
-  () => import('./UniverseBackground').then((m) => m.UniverseBackground),
-  { ssr: false }
-);
+const credentials = [
+  { value: '2–4 wks', label: 'to first release' },
+  { value: '99.9%', label: 'uptime SLA' },
+  { value: '24/7', label: 'support & optimization' },
+];
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden min-h-[95vh] flex flex-col items-center justify-center">
-      <UniverseBackground />
+    <section className="relative overflow-hidden bg-white pt-36 pb-24 md:pt-44 md:pb-28">
+      {/* Engineered grid texture — replaces the glowing-orb soup */}
+      <div aria-hidden className="absolute inset-0 bg-grid mask-fade" />
+      {/* One restrained light source, behind the headline */}
+      <div
+        aria-hidden
+        className="absolute left-1/2 top-[22%] -translate-x-1/2 -translate-y-1/2 w-[820px] h-[820px] aura opacity-70 pointer-events-none"
+      />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-primary/5 border border-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mb-10"
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-black/[0.08] shadow-[0_1px_2px_rgba(10,15,31,0.04)] text-ink-700 text-[0.72rem] font-semibold tracking-wide mb-9"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary" />
-          </span>
-          AI-Powered Automation Platforms
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary" />
+          AI-powered automation, ERP &amp; CX platforms
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-          className="text-6xl md:text-8xl font-display font-bold text-brand-dark tracking-tight leading-[0.95] mb-10"
+          transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }}
+          className="font-display font-bold text-ink text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.98] tracking-[-0.03em] text-balance"
         >
-          Automate. Optimize. <br />
-          <span className="gradient-text">Accelerate Growth.</span>
+          Automate. Optimize.
+          <br />
+          <span className="text-brand-primary">Accelerate growth.</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-          className="max-w-2xl mx-auto text-xl md:text-2xl text-brand-dark/60 mb-14 leading-relaxed font-medium"
+          transition={{ duration: 0.6, delay: 0.12, ease: 'easeOut' }}
+          className="max-w-2xl mx-auto mt-8 text-lg md:text-xl text-ink-500 leading-relaxed text-pretty"
         >
-          Engineering intelligent systems that transform data into competitive
-          advantage. From AI-powered CX platforms to enterprise ERP, CRM, and
-          complete workflow automation.
+          We engineer intelligent systems that turn operational data into a
+          competitive edge — from AI-powered CX platforms to enterprise ERP, CRM,
+          and end-to-end workflow automation.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
+          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-11"
         >
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="btn-primary"
-          >
-            Book a Demo
-            <ArrowRight size={16} />
-          </motion.a>
-
-          <motion.a
-            href="#solutions"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="btn-secondary"
-          >
-            Explore Solutions
-          </motion.a>
+          <a href="#contact" className="btn-primary group">
+            Book a demo
+            <ArrowRight
+              size={17}
+              className="transition-transform duration-200 group-hover:translate-x-0.5"
+            />
+          </a>
+          <a href="#solutions" className="btn-secondary">
+            Explore solutions
+          </a>
         </motion.div>
-      </div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] universe-glow -z-10 opacity-90" />
-      <div className="hidden md:block">
+        {/* Credential strip — gives the hero substance instead of empty space */}
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.45, 0.65, 0.45] }}
-          transition={{ duration: 10, repeat: Infinity }}
-          className="absolute -top-[10%] -right-[10%] w-[700px] h-[700px] bg-brand-secondary/15 blur-[120px] rounded-full -z-10"
-        />
-        <motion.div
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.35, 0.55, 0.35] }}
-          transition={{ duration: 12, repeat: Infinity }}
-          className="absolute -bottom-[10%] -left-[10%] w-[700px] h-[700px] bg-brand-primary/15 blur-[120px] rounded-full -z-10"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.38, 0.2] }}
-          transition={{ duration: 15, repeat: Infinity, delay: 3 }}
-          className="absolute top-[30%] left-[15%] w-[400px] h-[400px] bg-brand-secondary/10 blur-[100px] rounded-full -z-10"
-        />
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+          className="mt-16 md:mt-20 flex items-stretch justify-center divide-x divide-black/[0.08] border-y border-black/[0.07] max-w-2xl mx-auto"
+        >
+          {credentials.map((c) => (
+            <div key={c.label} className="flex-1 px-4 py-5">
+              <div className="font-display font-bold text-2xl md:text-3xl text-ink tracking-tight">
+                {c.value}
+              </div>
+              <div className="mt-1 text-[0.72rem] md:text-xs text-ink-400 font-medium uppercase tracking-[0.12em]">
+                {c.label}
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

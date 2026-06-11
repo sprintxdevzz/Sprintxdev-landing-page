@@ -50,14 +50,18 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="border border-black/5 rounded-3xl overflow-hidden transition-all hover:border-brand-primary/20">
+    <div className="border border-black/[0.08] rounded-[var(--radius-lg)] overflow-hidden transition-colors hover:border-brand-primary/25 bg-white">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-8 py-6 flex items-center justify-between text-left bg-white hover:bg-black/[0.01] transition-colors"
+        aria-expanded={isOpen}
+        className="w-full px-7 py-5 flex items-center justify-between gap-4 text-left hover:bg-black/[0.015] transition-colors"
       >
-        <span className="font-bold text-brand-dark">{question}</span>
-        <motion.div animate={{ rotate: isOpen ? 45 : 0 }} className="text-brand-primary shrink-0">
-          <Plus />
+        <span className="font-semibold text-ink">{question}</span>
+        <motion.div
+          animate={{ rotate: isOpen ? 45 : 0 }}
+          className="text-brand-primary shrink-0"
+        >
+          <Plus size={20} />
         </motion.div>
       </button>
 
@@ -66,7 +70,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
         animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
         className="overflow-hidden"
       >
-        <div className="px-8 pb-8 text-brand-dark/50 font-medium leading-relaxed">{answer}</div>
+        <div className="px-7 pb-7 text-ink-500 leading-relaxed">{answer}</div>
       </motion.div>
     </div>
   );

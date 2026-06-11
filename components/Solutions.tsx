@@ -20,6 +20,7 @@ import {
   Bell,
   BarChart2,
   CheckCircle2,
+  Check,
 } from 'lucide-react';
 
 type Feature = { label: string; desc: string; icon: React.ReactNode };
@@ -135,7 +136,8 @@ const solutions: Solution[] = [
 
 export const Solutions: React.FC = () => {
   return (
-    <section id="solutions" className="py-20 md:py-32 bg-[#F5F5FF] relative overflow-hidden">
+    <section id="solutions" className="py-20 md:py-32 bg-brand-light relative overflow-hidden">
+      <div aria-hidden className="absolute inset-0 bg-grid mask-fade-b opacity-60" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16 md:mb-20 px-4">
@@ -143,9 +145,9 @@ export const Solutions: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-primary font-bold text-xs uppercase tracking-[0.3em] mb-4"
+            className="eyebrow text-brand-primary justify-center mb-5"
           >
-            OUR SOLUTIONS
+            Our solutions
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -162,7 +164,7 @@ export const Solutions: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-brand-dark/50 max-w-2xl mx-auto font-medium"
+            className="text-lg md:text-xl text-ink-500 max-w-2xl mx-auto text-pretty"
           >
             Three interconnected pillars designed to work as one unified system:
             CX intelligence, enterprise infrastructure, and end-to-end automation.
@@ -178,9 +180,9 @@ export const Solutions: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: index * 0.08, duration: 0.5, ease: 'easeOut' }}
-              className="group relative bg-white rounded-[28px] md:rounded-[36px] border border-black/[0.06] hover:border-brand-primary/20 hover:shadow-2xl hover:shadow-brand-primary/[0.06] transition-all duration-300 overflow-hidden"
+              className="group card card-hover overflow-hidden"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] divide-y lg:divide-y-0 lg:divide-x divide-black/[0.05]">
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] divide-y lg:divide-y-0 lg:divide-x divide-black/[0.06]">
                 {/* Column 1: Identity */}
                 <div className="p-8 md:p-10 flex flex-col justify-between gap-6">
                   <div>
@@ -195,10 +197,10 @@ export const Solutions: React.FC = () => {
                     <h3 className="text-2xl md:text-3xl font-display font-bold text-brand-dark mb-2 leading-tight">
                       {sol.title}
                     </h3>
-                    <p className="text-brand-secondary font-bold text-xs mb-5 leading-snug">
+                    <p className="text-brand-primary font-semibold text-[0.8rem] mb-5 leading-snug">
                       {sol.tagline}
                     </p>
-                    <p className="text-brand-dark/50 text-sm leading-relaxed">{sol.description}</p>
+                    <p className="text-ink-500 text-sm leading-relaxed">{sol.description}</p>
                   </div>
                 </div>
 
@@ -207,18 +209,18 @@ export const Solutions: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                     {sol.sections.map((sec, sIdx) => (
                       <div key={sIdx}>
-                        <p className="text-brand-primary font-bold text-[10px] uppercase tracking-[0.18em] mb-4">
+                        <p className="text-brand-primary font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-4">
                           {sec.name}
                         </p>
                         <div className="space-y-3.5">
                           {sec.features.map((feat, fIdx) => (
                             <div key={fIdx} className="flex gap-2.5">
-                              <div className="mt-0.5 w-5 h-5 rounded-full bg-brand-primary/[0.08] flex items-center justify-center text-brand-primary shrink-0">
+                              <div className="mt-0.5 w-5 h-5 rounded-md bg-brand-primary/[0.08] flex items-center justify-center text-brand-primary shrink-0">
                                 {feat.icon}
                               </div>
                               <div>
-                                <h4 className="font-bold text-brand-dark text-xs mb-0.5">{feat.label}</h4>
-                                <p className="text-brand-dark/45 text-xs leading-relaxed">{feat.desc}</p>
+                                <h4 className="font-semibold text-ink text-xs mb-0.5">{feat.label}</h4>
+                                <p className="text-ink-400 text-xs leading-relaxed">{feat.desc}</p>
                               </div>
                             </div>
                           ))}
@@ -229,15 +231,15 @@ export const Solutions: React.FC = () => {
                 </div>
 
                 {/* Column 3: Benefits */}
-                <div className="p-8 md:p-10 bg-brand-primary/[0.02] flex flex-col justify-center">
-                  <p className="text-brand-dark font-bold text-[10px] uppercase tracking-[0.18em] mb-5">
-                    Key Benefits
+                <div className="p-8 md:p-10 bg-brand-primary/[0.025] flex flex-col justify-center">
+                  <p className="text-ink font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-5">
+                    Key benefits
                   </p>
                   <ul className="space-y-4">
                     {sol.benefits.map((b, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-3">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-secondary shrink-0" />
-                        <span className="text-sm text-brand-dark/65 leading-snug font-medium">{b}</span>
+                        <Check size={15} className="mt-0.5 text-brand-secondary shrink-0" strokeWidth={2.5} />
+                        <span className="text-sm text-ink-700 leading-snug">{b}</span>
                       </li>
                     ))}
                   </ul>

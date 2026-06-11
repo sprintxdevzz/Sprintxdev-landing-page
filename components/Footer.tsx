@@ -18,12 +18,12 @@ export const Footer: React.FC = () => {
                 />
               </div>
             </div>
-            <p className="text-brand-dark/50 max-w-sm mb-4 font-medium leading-relaxed">
-              Next Automation | Engineering high-velocity digital
-              infrastructure, from AI-powered to survey systems and bespoke
-              business platforms.
+            <p className="text-ink-500 max-w-sm mb-6 leading-relaxed">
+              Next Automation — engineering high-velocity digital
+              infrastructure, from AI-powered platforms to survey systems and
+              bespoke business software.
             </p>
-            <p className="text-brand-dark font-bold mb-6">
+            <p className="text-ink-700 font-semibold mb-4">
               Email us:{" "}
               <a
                 href="mailto:info@nxtaut.com"
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
                 info@nxtaut.com
               </a>
             </p>
-            <p className="text-brand-dark font-bold mb-6">
+            <p className="text-ink-700 font-semibold mb-6">
               Call us:{" "}
               <a
                 href="tel:+966500598757"
@@ -54,10 +54,10 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-bold text-brand-dark mb-8 uppercase tracking-widest text-xs">
+            <h4 className="font-semibold text-ink mb-8 uppercase tracking-[0.16em] text-[0.7rem]">
               Solutions
             </h4>
-            <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
+            <ul className="space-y-4 text-sm text-ink-500 font-medium">
               <li>
                 <a
                   href="#solutions"
@@ -86,10 +86,10 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-bold text-brand-dark mb-8 uppercase tracking-widest text-xs">
+            <h4 className="font-semibold text-ink mb-8 uppercase tracking-[0.16em] text-[0.7rem]">
               Company
             </h4>
-            <ul className="space-y-4 text-sm text-brand-dark/50 font-bold">
+            <ul className="space-y-4 text-sm text-ink-500 font-medium">
               <li>
                 <a
                   href="#process"
@@ -126,8 +126,8 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-brand-dark/30 font-bold">
+        <div className="pt-10 border-t border-black/[0.07] flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-ink-400 font-medium">
             © 2026 Next Automation. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
@@ -137,7 +137,8 @@ export const Footer: React.FC = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="text-brand-dark/50 hover:text-brand-primary transition-colors"
+              aria-label="Follow Next Automation on LinkedIn"
+              className="text-ink-400 hover:text-brand-primary transition-colors"
               title="Follow us on LinkedIn"
             >
               <svg

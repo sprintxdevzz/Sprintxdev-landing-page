@@ -48,7 +48,11 @@
       "Bash(curl -s \"https://www.nxtaut.com/robots.txt\")",
       "Bash(curl -sI \"https://nxtaut.com/\")",
       "Bash(curl -s \"https://www.nxtaut.com/\")",
-      "Bash(cp public/favicon-32x32.png public/favicon.ico && ls public/favicon*)"
+      "Bash(cp public/favicon-32x32.png public/favicon.ico && ls public/favicon*)",
+      "WebFetch(domain:www.nxtaut.com)",
+      "PowerShell($r = Invoke-WebRequest -Uri 'https://www.nxtaut.com/' -UseBasicParsing -Headers @{'User-Agent'='Mozilla/5.0'}; $head = \\($r.Content -split '</head>'\\)[0]; $head.Substring\\(0, [Math]::Min\\(8000, $head.Length\\)\\))",
+      "PowerShell($r = Invoke-WebRequest -Uri 'https://www.nxtaut.com/sitemap.xml' -UseBasicParsing; \"STATUS: $\\($r.StatusCode\\)\"; $r.Content)",
+      "PowerShell($r = Invoke-WebRequest -Uri 'https://www.nxtaut.com/robots.txt' -UseBasicParsing; \"STATUS: $\\($r.StatusCode\\)\"; $r.Content; \"---\"; $f = Invoke-WebRequest -Uri 'https://www.nxtaut.com/favicon.ico' -UseBasicParsing -Method Head; \"FAVICON STATUS: $\\($f.StatusCode\\), Type: $\\($f.Headers.'Content-Type'\\), Bytes: $\\($f.Headers.'Content-Length'\\)\")"
     ],
     "additionalDirectories": [
       "E:\\WEB DEV\\web\\PROJECTS\\sprintxdev\\public"

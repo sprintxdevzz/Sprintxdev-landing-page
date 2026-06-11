@@ -31,14 +31,14 @@ const technologies: Tech[] = [
     accent: "sky",
   },
   {
-    name: "Relplit",
+    name: "Replit",
     category: "Workflows",
     description:
       "Enterprise-grade workflow orchestration and RPA that turn brittle manual processes into reliable, observable, always-on pipelines.",
     icon: (
       <Image
         src="/replit.png"
-        alt="Relplit"
+        alt="Replit"
         width={28}
         height={28}
         className="object-contain"
@@ -128,14 +128,6 @@ export const Technologies: React.FC = () => {
       />
       <div
         aria-hidden="true"
-        className="absolute -top-40 -left-32 w-[520px] h-[520px] bg-brand-secondary/20 blur-[140px] rounded-full pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -bottom-40 -right-32 w-[520px] h-[520px] bg-brand-primary/30 blur-[140px] rounded-full pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
         className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
       />
       <div
@@ -151,10 +143,9 @@ export const Technologies: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 text-brand-secondary font-bold text-xs md:text-sm uppercase tracking-[0.3em] mb-4"
+              className="eyebrow text-brand-secondary mb-4"
             >
-              <span className="w-6 h-px bg-brand-secondary/60" />
-              OUR TECHNOLOGY STACK
+              Our technology stack
             </motion.div>
             <motion.h2
               id="technologies-heading"
@@ -162,13 +153,9 @@ export const Technologies: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.05]"
+              className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.05] text-balance"
             >
-              Built on{" "}
-              <span className="bg-gradient-to-r from-white via-brand-secondary to-white bg-clip-text text-transparent">
-                enterprise-grade
-              </span>{" "}
-              technology
+              Built on <span className="text-brand-secondary">enterprise-grade</span> technology
             </motion.h2>
           </div>
 
@@ -179,14 +166,14 @@ export const Technologies: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="max-w-md lg:max-w-sm space-y-5"
           >
-            <p className="text-white/60 text-base md:text-lg leading-relaxed font-medium">
+            <p className="text-white/65 text-base md:text-lg leading-relaxed">
               We accelerate your success using the most modern tools —
               engineered by expert teams to ensure best practices and
               production-grade quality.
             </p>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-[11px] font-bold uppercase tracking-[0.18em]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-[11px] font-semibold uppercase tracking-[0.16em]">
               <ShieldCheck size={13} className="text-brand-secondary" />
-              Exert Engineering Team
+              Expert engineering team
             </div>
           </motion.div>
         </div>
@@ -206,7 +193,7 @@ export const Technologies: React.FC = () => {
                   duration: 0.5,
                   ease: "easeOut",
                 }}
-                className={`group relative p-6 md:p-7 rounded-[24px] md:rounded-[28px] bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:bg-white/[0.07] hover:border-white/20 transition-all duration-300 ${a.glow}`}
+                className={`group relative w-full p-6 md:p-7 rounded-[var(--radius-xl)] bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:bg-white/[0.07] hover:border-white/20 transition-all duration-300 ${a.glow}`}
               >
                 <div className="flex items-center justify-between mb-6">
                   <div
@@ -222,10 +209,10 @@ export const Technologies: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-3 leading-tight">
+                <h3 className="text-xl md:text-2xl font-display font-semibold text-white mb-3 leading-tight">
                   {tech.name}
                 </h3>
-                <p className="text-white/55 text-xs md:text-sm leading-relaxed">
+                <p className="text-white/60 text-xs md:text-sm leading-relaxed">
                   {tech.description}
                 </p>
               </motion.article>
@@ -241,12 +228,12 @@ export const Technologies: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="mt-14 md:mt-20 max-w-3xl mx-auto text-center"
         >
-          <p className="text-white/70 text-base md:text-lg leading-relaxed font-medium">
+          <p className="text-white/75 text-base md:text-lg leading-relaxed text-pretty">
             At Next Automation, we don&apos;t cut corners. We leverage
             industry-leading technology — combined with expert engineering — to
             design and build solutions that scale, perform, and last.
           </p>
-          <p className="mt-4 text-white/40 text-sm md:text-base leading-relaxed">
+          <p className="mt-4 text-white/50 text-sm md:text-base leading-relaxed">
             Every implementation is grounded in proven best practices, not
             trends or shortcuts.
           </p>

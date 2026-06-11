@@ -9,35 +9,32 @@ export const Methodology: React.FC = () => {
     {
       number: '01',
       title: 'Analysis',
-      desc: 'We identify your core challenges and map out a clear path to resolution. Understanding your business, data flows, and operational bottlenecks.',
-      icon: <Search className="text-white" />,
-      color: 'bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_0_28px_rgba(251,146,60,0.55)]',
+      desc: 'We identify your core challenges and map a clear path to resolution — understanding your business, data flows, and operational bottlenecks.',
+      icon: <Search />,
     },
     {
       number: '02',
       title: 'Design',
-      desc: 'Creating tailored blueprints that prioritize user experience and system speed. Designing for your specific industry requirements and future growth.',
-      icon: <PenTool className="text-white" />,
-      color: 'bg-gradient-to-br from-violet-500 to-purple-700 shadow-[0_0_28px_rgba(167,139,250,0.5)]',
+      desc: 'Tailored blueprints that prioritize user experience and system speed, designed for your industry requirements and future growth.',
+      icon: <PenTool />,
     },
     {
       number: '03',
       title: 'Implementation',
-      desc: 'Clean execution with minimal impact on your current operations. Real-time progress tracking and transparent delivery milestones.',
-      icon: <Code2 className="text-white" />,
-      color: 'bg-gradient-to-br from-sky-400 to-blue-600 shadow-[0_0_28px_rgba(56,189,248,0.5)]',
+      desc: 'Clean execution with minimal impact on current operations — real-time progress tracking and transparent delivery milestones.',
+      icon: <Code2 />,
     },
     {
       number: '04',
       title: 'Optimization',
-      desc: 'Continuous monitoring and support via our responsive ticketing system. We ensure sustained performance, innovation, and reliability.',
-      icon: <LineChart className="text-white" />,
-      color: 'bg-gradient-to-br from-emerald-400 to-teal-600 shadow-[0_0_28px_rgba(52,211,153,0.5)]',
+      desc: 'Continuous monitoring and support via our responsive ticketing system, ensuring sustained performance and reliability.',
+      icon: <LineChart />,
     },
   ];
 
   return (
     <section id="process" className="py-20 md:py-32 bg-brand-dark relative overflow-hidden">
+      <div aria-hidden className="absolute inset-0 bg-grid-dark mask-fade opacity-50" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 md:mb-24 gap-6 md:gap-8">
           <div className="max-w-2xl">
@@ -45,9 +42,9 @@ export const Methodology: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-brand-secondary font-bold text-xs md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4"
+              className="eyebrow text-brand-secondary mb-4"
             >
-              THE NEXT AUTOMATION METHODOLOGY
+              The Next Automation methodology
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -64,44 +61,39 @@ export const Methodology: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-white/50 text-base md:text-lg max-w-sm font-medium"
+            className="text-white/55 text-base md:text-lg max-w-sm text-pretty"
           >
             Building on the proven Sprint methodology, we deliver intelligent solutions through
             discovery, design, implementation, and optimization.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.08] rounded-[var(--radius-xl)] overflow-hidden border border-white/[0.08]">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="relative p-6 md:p-8 rounded-[24px] md:rounded-[32px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
+              transition={{ delay: index * 0.08, ease: 'easeOut' }}
+              className="relative p-7 md:p-8 bg-brand-dark hover:bg-white/[0.03] transition-colors duration-300 group"
             >
-              <div
-                className={`w-12 md:w-14 h-12 md:h-14 rounded-xl md:rounded-2xl ${step.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}
-              >
-                {React.cloneElement(
-                  step.icon as React.ReactElement<{ size?: number; className?: string }>,
-                  { size: 20, className: 'text-white opacity-100' }
-                )}
+              <div className="flex items-center justify-between mb-7">
+                <div className="w-11 h-11 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center text-brand-secondary transition-colors duration-300 group-hover:border-brand-secondary/40">
+                  {React.cloneElement(
+                    step.icon as React.ReactElement<{ size?: number; strokeWidth?: number }>,
+                    { size: 19, strokeWidth: 1.75 }
+                  )}
+                </div>
+                <span className="font-mono text-xs font-medium text-white/30 tabular-nums">
+                  {step.number}
+                </span>
               </div>
 
-              <span className="text-white/20 font-display font-black text-2xl mb-4 block">
-                {step.number}
-              </span>
-
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">
+              <h3 className="text-lg md:text-xl font-display font-semibold text-white mb-2.5">
                 {step.title}
               </h3>
-              <p className="text-white/40 leading-relaxed text-xs md:text-sm">{step.desc}</p>
-
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-8 w-8 h-[1px] bg-white/10" />
-              )}
+              <p className="text-white/50 leading-relaxed text-sm">{step.desc}</p>
             </motion.div>
           ))}
         </div>
