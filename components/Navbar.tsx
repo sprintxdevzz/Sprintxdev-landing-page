@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { NeonButton } from './ui/neon-button';
@@ -38,11 +39,16 @@ export const Navbar: React.FC = () => {
       >
         <div className="relative z-10 flex justify-between items-center">
           <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-3 group cursor-pointer">
-            <Link href="/" className="w-40 md:w-30 flex-shrink-0">
-              <img
+            <Link href="/" className="w-40 md:w-36 shrink-0">
+              <Image
                 src="/nextautomationlogo.webp"
-                alt="Next Automation logo"
-                className="w-full h-full object-contain"
+                alt="Next Automation"
+                width={493}
+                height={120}
+                priority
+                quality={100}
+                sizes="160px"
+                className="w-full h-auto select-none"
               />
             </Link>
           </motion.div>

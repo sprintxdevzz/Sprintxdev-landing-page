@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
@@ -19,21 +20,31 @@ const companyLinks = [
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-brand-light border-t border-black/[0.06] overflow-hidden">
-      <div aria-hidden className="absolute inset-0 bg-grid mask-fade-b opacity-50" />
+    <footer className="relative bg-brand-dark overflow-hidden">
+      {/* Gradient divider — strong separation from the section above */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-secondary/60 to-transparent" />
+      <div aria-hidden className="absolute inset-0 bg-grid-dark mask-fade-b opacity-40" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8 pb-14">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4">
-            <Link href="/" className="block w-44 mb-6">
-              <img
+            {/* Logo kept on a white card so the dark-ink wordmark stays legible */}
+            <Link
+              href="/"
+              className="inline-block w-44 rounded-[var(--radius-md)] bg-white p-3.5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.5)]"
+            >
+              <Image
                 src="/nextautomationlogo.webp"
-                alt="Next Automation logo"
-                className="w-full h-auto object-contain"
+                alt="Next Automation"
+                width={493}
+                height={120}
+                quality={100}
+                sizes="160px"
+                className="w-full h-auto select-none"
               />
             </Link>
-            <p className="text-ink-500 max-w-xs leading-relaxed text-sm">
+            <p className="text-white/55 max-w-xs mt-6 leading-relaxed text-sm">
               Engineering high-velocity digital infrastructure — from AI-powered
               platforms to enterprise ERP, CRM, and end-to-end automation.
             </p>
@@ -46,7 +57,7 @@ export const Footer: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 aria-label="Follow Next Automation on LinkedIn"
                 title="Follow us on LinkedIn"
-                className="w-10 h-10 rounded-[var(--radius-sm)] bg-white border border-black/[0.08] flex items-center justify-center text-ink-500 hover:text-brand-primary hover:border-brand-primary/30 transition-colors"
+                className="w-10 h-10 rounded-[var(--radius-sm)] bg-white/[0.06] border border-white/10 flex items-center justify-center text-white/70 hover:text-brand-secondary hover:border-brand-secondary/40 transition-colors"
               >
                 <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.728-2.004 1.431-.103.25-.129.599-.129.948v5.426h-3.554s.05-8.736 0-9.646h3.554v1.364c.43-.664 1.201-1.608 2.923-1.608 2.136 0 3.75 1.395 3.75 4.398v5.492zM5.337 9.433c-1.144 0-1.915-.759-1.915-1.71 0-.951.77-1.71 1.916-1.71 1.144 0 1.915.759 1.915 1.71 0 .951-.771 1.71-1.916 1.71zm1.575 11.019H3.762V8.787h3.15v11.665zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
@@ -64,7 +75,7 @@ export const Footer: React.FC = () => {
                   <ContactIcon>
                     <Mail size={15} strokeWidth={1.75} />
                   </ContactIcon>
-                  <span className="text-sm text-ink-700 font-medium group-hover:text-brand-primary transition-colors">
+                  <span className="text-sm text-white/75 font-medium group-hover:text-brand-secondary transition-colors">
                     info@nxtaut.com
                   </span>
                 </a>
@@ -74,7 +85,7 @@ export const Footer: React.FC = () => {
                   <ContactIcon>
                     <Phone size={15} strokeWidth={1.75} />
                   </ContactIcon>
-                  <span className="text-sm text-ink-700 font-medium group-hover:text-brand-primary transition-colors">
+                  <span className="text-sm text-white/75 font-medium group-hover:text-brand-secondary transition-colors">
                     +966 50 059 8757
                   </span>
                 </a>
@@ -83,7 +94,7 @@ export const Footer: React.FC = () => {
                 <ContactIcon>
                   <MapPin size={15} strokeWidth={1.75} />
                 </ContactIcon>
-                <span className="text-sm text-ink-500 font-medium">Saudi Arabia</span>
+                <span className="text-sm text-white/55 font-medium">Saudi Arabia</span>
               </li>
             </ul>
           </div>
@@ -114,13 +125,13 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-black/[0.07] flex flex-col-reverse md:flex-row justify-between items-center gap-4">
-          <p className="text-[0.8rem] text-ink-400 font-medium">
+        <div className="pt-8 border-t border-white/10 flex flex-col-reverse md:flex-row justify-between items-center gap-4">
+          <p className="text-[0.8rem] text-white/40 font-medium">
             © 2026 Next Automation. All rights reserved.
           </p>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-1.5 text-[0.8rem] font-semibold text-ink-700 hover:text-brand-primary transition-colors"
+            className="group inline-flex items-center gap-1.5 text-[0.8rem] font-semibold text-white/70 hover:text-brand-secondary transition-colors"
           >
             Start a project
             <ArrowUpRight
@@ -135,7 +146,7 @@ export const Footer: React.FC = () => {
 };
 
 const FooterHeading = ({ children }: { children: React.ReactNode }) => (
-  <h4 className="font-semibold text-ink mb-5 uppercase tracking-[0.16em] text-[0.7rem]">
+  <h4 className="font-semibold text-white mb-5 uppercase tracking-[0.16em] text-[0.7rem]">
     {children}
   </h4>
 );
@@ -143,14 +154,14 @@ const FooterHeading = ({ children }: { children: React.ReactNode }) => (
 const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <Link
     href={href}
-    className="text-sm text-ink-500 font-medium hover:text-brand-primary transition-colors"
+    className="text-sm text-white/55 font-medium hover:text-white transition-colors"
   >
     {children}
   </Link>
 );
 
 const ContactIcon = ({ children }: { children: React.ReactNode }) => (
-  <span className="w-9 h-9 shrink-0 rounded-[var(--radius-sm)] bg-white border border-black/[0.08] flex items-center justify-center text-brand-primary group-hover:border-brand-primary/30 transition-colors">
+  <span className="w-9 h-9 shrink-0 rounded-[var(--radius-sm)] bg-white/[0.06] border border-white/10 flex items-center justify-center text-brand-secondary group-hover:border-brand-secondary/40 transition-colors">
     {children}
   </span>
 );

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'motion/react';
 import {
   MessageSquare,
@@ -22,7 +21,6 @@ import {
   BarChart2,
   CheckCircle2,
   Check,
-  ArrowRight,
 } from 'lucide-react';
 
 type Feature = { label: string; desc: string; icon: React.ReactNode };
@@ -197,28 +195,22 @@ export const Solutions: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] divide-y lg:divide-y-0 lg:divide-x divide-black/[0.06]">
                 {/* Column 1: Identity */}
                 <div className="relative p-8 md:p-10 flex flex-col">
-                  <span className="pointer-events-none absolute top-6 right-7 font-display font-black text-6xl text-brand-primary/[0.06] select-none leading-none">
+                  <span className="pointer-events-none absolute top-6 right-7 font-display font-black text-6xl text-brand-primary/[0.06] select-none leading-none transition-colors duration-500 group-hover:text-brand-primary/[0.1]">
                     0{index + 1}
                   </span>
                   <div className="relative flex-1">
-                    <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-gradient-to-br from-brand-primary/[0.1] to-brand-primary/[0.04] border border-brand-primary/10 ring-1 ring-inset ring-white/40 flex items-center justify-center text-brand-primary mb-6 transition-transform duration-500 group-hover:scale-105">
+                    <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-brand-primary/[0.07] border border-brand-primary/10 flex items-center justify-center text-brand-primary mb-6 transition-all duration-300 group-hover:bg-brand-primary group-hover:text-white group-hover:scale-105 group-hover:shadow-[0_8px_20px_-6px_rgba(21,21,107,0.5)]">
                       {React.cloneElement(sol.icon as React.ReactElement<{ size?: number }>, { size: 24 })}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-ink mb-2 leading-tight">
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-ink mb-3 leading-tight">
                       {sol.title}
                     </h3>
-                    <p className="text-brand-primary font-semibold text-[0.8rem] mb-5 leading-snug">
+                    <span className="flex items-center gap-2 mb-5 text-[0.8rem] font-semibold text-brand-primary leading-snug">
+                      <span className="h-3.5 w-0.5 shrink-0 rounded-full bg-brand-secondary" />
                       {sol.tagline}
-                    </p>
+                    </span>
                     <p className="text-ink-500 text-sm leading-relaxed">{sol.description}</p>
                   </div>
-                  <Link
-                    href={`/solutions#${sol.anchor}`}
-                    className="relative mt-7 inline-flex items-center gap-1.5 text-brand-primary font-semibold text-[0.8rem] w-fit transition-all hover:gap-2.5"
-                  >
-                    Explore {sol.title}
-                    <ArrowRight size={15} />
-                  </Link>
                 </div>
 
                 {/* Column 2: Features */}
