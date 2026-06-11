@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import {
   MessageSquare,
@@ -21,6 +22,7 @@ import {
   BarChart2,
   CheckCircle2,
   Check,
+  ArrowRight,
 } from 'lucide-react';
 
 type Feature = { label: string; desc: string; icon: React.ReactNode };
@@ -158,7 +160,7 @@ export const Solutions: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.05 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-brand-dark mb-4 md:mb-6"
+            className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-ink mb-4 md:mb-6 text-balance"
           >
             Built for modern{' '}
             <span className="gradient-text">enterprise complexity</span>
@@ -187,19 +189,22 @@ export const Solutions: React.FC = () => {
               transition={{ delay: index * 0.08, duration: 0.5, ease: 'easeOut' }}
               className="group card card-hover overflow-hidden scroll-mt-28"
             >
+              {/* Top accent — sweeps in on hover */}
+              <div className="h-1 w-full bg-black/[0.04] overflow-hidden">
+                <div className="h-full w-full origin-left scale-x-0 bg-gradient-to-r from-brand-primary to-brand-secondary transition-transform duration-500 ease-out group-hover:scale-x-100" />
+              </div>
+
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] divide-y lg:divide-y-0 lg:divide-x divide-black/[0.06]">
                 {/* Column 1: Identity */}
-                <div className="p-8 md:p-10 flex flex-col justify-between gap-6">
-                  <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-brand-primary/[0.07] flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform duration-500">
-                        {React.cloneElement(sol.icon as React.ReactElement<{ size?: number }>, { size: 24 })}
-                      </div>
-                      <span className="text-5xl font-display font-black text-brand-dark/[0.04] select-none">
-                        0{index + 1}
-                      </span>
+                <div className="relative p-8 md:p-10 flex flex-col">
+                  <span className="pointer-events-none absolute top-6 right-7 font-display font-black text-6xl text-brand-primary/[0.06] select-none leading-none">
+                    0{index + 1}
+                  </span>
+                  <div className="relative flex-1">
+                    <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-gradient-to-br from-brand-primary/[0.1] to-brand-primary/[0.04] border border-brand-primary/10 ring-1 ring-inset ring-white/40 flex items-center justify-center text-brand-primary mb-6 transition-transform duration-500 group-hover:scale-105">
+                      {React.cloneElement(sol.icon as React.ReactElement<{ size?: number }>, { size: 24 })}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-brand-dark mb-2 leading-tight">
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-ink mb-2 leading-tight">
                       {sol.title}
                     </h3>
                     <p className="text-brand-primary font-semibold text-[0.8rem] mb-5 leading-snug">
@@ -207,19 +212,30 @@ export const Solutions: React.FC = () => {
                     </p>
                     <p className="text-ink-500 text-sm leading-relaxed">{sol.description}</p>
                   </div>
+                  <Link
+                    href={`/solutions#${sol.anchor}`}
+                    className="relative mt-7 inline-flex items-center gap-1.5 text-brand-primary font-semibold text-[0.8rem] w-fit transition-all hover:gap-2.5"
+                  >
+                    Explore {sol.title}
+                    <ArrowRight size={15} />
+                  </Link>
                 </div>
 
                 {/* Column 2: Features */}
                 <div className="p-8 md:p-10">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-7">
                     {sol.sections.map((sec, sIdx) => (
                       <div key={sIdx}>
-                        <p className="text-brand-primary font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-4">
+                        <p className="flex items-center gap-2 text-brand-primary font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-4">
+                          <span className="h-1 w-1 rounded-full bg-brand-secondary" />
                           {sec.name}
                         </p>
-                        <div className="space-y-3.5">
+                        <div className="space-y-1">
                           {sec.features.map((feat, fIdx) => (
-                            <div key={fIdx} className="flex gap-2.5">
+                            <div
+                              key={fIdx}
+                              className="flex gap-2.5 rounded-lg -mx-2 px-2 py-1.5 transition-colors hover:bg-brand-primary/[0.04]"
+                            >
                               <div className="mt-0.5 w-5 h-5 rounded-md bg-brand-primary/[0.08] flex items-center justify-center text-brand-primary shrink-0">
                                 {feat.icon}
                               </div>
@@ -237,13 +253,16 @@ export const Solutions: React.FC = () => {
 
                 {/* Column 3: Benefits */}
                 <div className="p-8 md:p-10 bg-brand-primary/[0.025] flex flex-col justify-center">
-                  <p className="text-ink font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-5">
+                  <p className="flex items-center gap-2 text-ink font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-5">
+                    <Zap size={12} className="text-brand-secondary" strokeWidth={2.25} />
                     Key benefits
                   </p>
-                  <ul className="space-y-4">
+                  <ul className="space-y-3.5">
                     {sol.benefits.map((b, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-3">
-                        <Check size={15} className="mt-0.5 text-brand-secondary shrink-0" strokeWidth={2.5} />
+                        <span className="mt-0.5 w-[18px] h-[18px] rounded-full bg-brand-secondary/15 flex items-center justify-center shrink-0">
+                          <Check size={11} className="text-brand-secondary" strokeWidth={3} />
+                        </span>
                         <span className="text-sm text-ink-700 leading-snug">{b}</span>
                       </li>
                     ))}
@@ -254,9 +273,6 @@ export const Solutions: React.FC = () => {
           ))}
         </div>
       </div>
-
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-brand-secondary/5 blur-[100px] rounded-full pointer-events-none" />
     </section>
   );
 };
