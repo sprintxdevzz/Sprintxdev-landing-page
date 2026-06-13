@@ -27,7 +27,7 @@ const webPageSchema = {
       '@type': 'Service',
       name: 'CX Solutions',
       url: 'https://www.nxtaut.com/#solutions',
-      description: 'Survey platform and event tracking system for 360-degree customer intelligence.',
+      description: 'Survey platform and knowledge base for 360-degree customer intelligence.',
       provider: { '@type': 'Organization', name: 'Next Automation' },
     },
     {
@@ -87,9 +87,9 @@ const solutionsListSchema = {
     {
       '@type': 'ListItem',
       position: 1,
-      name: 'CX Solutions — Survey Platform & Event Tracking',
+      name: 'CX Solutions — Survey Platform & Knowledge Base',
       url: 'https://www.nxtaut.com/solutions#cx-solutions',
-      description: 'Transform customer data into actionable intelligence with AI-powered survey and tracking tools.',
+      description: 'Transform customer data into actionable intelligence with AI-powered survey and knowledge base tools.',
     },
     {
       '@type': 'ListItem',

@@ -10,7 +10,7 @@ const capabilities = [
   'Document AI & OCR',
   'Survey Platform',
   'Predictive Analytics',
-  'Event Tracking',
+  'Knowledge Base',
   'Custom Integrations',
   '24/7 Optimization',
 ];

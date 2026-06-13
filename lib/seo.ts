@@ -58,7 +58,7 @@ export const serviceSchemas = [
       name: 'CX Modules',
       itemListElement: [
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Survey Platform' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Event Tracking System' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Knowledge Base' } },
       ],
     },
   },

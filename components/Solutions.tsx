@@ -7,7 +7,6 @@ import {
   Globe,
   Layers,
   BarChart3,
-  Activity,
   Target,
   Zap,
   TrendingUp,
@@ -57,11 +56,11 @@ const solutions: Solution[] = [
         ],
       },
       {
-        name: 'Event Tracking System',
+        name: 'Knowledge Base',
         features: [
-          { label: 'Real-Time Behavioral Capture', desc: 'Track operational data across all channels instantly.', icon: <Activity size={13} /> },
-          { label: 'Predictive Analytics', desc: "Identify revenue opportunities before they're missed.", icon: <TrendingUp size={13} /> },
-          { label: 'Omnichannel Intelligence', desc: 'Consolidate all data into one unified dashboard.', icon: <Database size={13} /> },
+          { label: 'AI-Powered Search', desc: 'Instantly surface answers across all your documentation.', icon: <FileSearch size={13} /> },
+          { label: 'Self-Service Hub', desc: 'Empower customers to resolve issues without an agent.', icon: <Bot size={13} /> },
+          { label: 'Centralized Content', desc: 'Consolidate articles, guides, and FAQs in one source of truth.', icon: <Database size={13} /> },
         ],
       },
     ],
