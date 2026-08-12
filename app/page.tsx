@@ -4,6 +4,7 @@ import { CapabilityMarquee } from '@/components/CapabilityMarquee';
 import { Solutions } from '@/components/Solutions';
 import { Methodology } from '@/components/Methodology';
 import { TheEdge } from '@/components/TheEdge';
+import { Partners } from '@/components/Partners';
 import { Technologies } from '@/components/Technologies';
 import { ContactForm } from '@/components/ContactForm';
 import { JsonLd } from '@/components/JsonLd';
@@ -181,6 +182,7 @@ export default function HomePage() {
       <Solutions />
       <Methodology />
       <TheEdge />
+      <Partners />
       <Technologies />
       <ContactForm />
     </>

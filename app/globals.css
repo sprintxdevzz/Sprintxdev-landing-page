@@ -199,6 +199,47 @@
   opacity: 0.5;
 }
 
+/* Animated multi-brand gradient text — pans slowly across the brand palette */
+.text-gradient-brand {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-brand-primary),
+    var(--color-brand-secondary),
+    var(--color-brand-orange),
+    var(--color-brand-primary)
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 7s ease-in-out infinite;
+}
+
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Slow, subtle drift for background color orbs */
+@keyframes orb-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) scale(1.08);
+  }
+}
+.animate-orb {
+  animation: orb-drift var(--orb-duration, 14s) ease-in-out infinite;
+  will-change: transform;
+}
+
 /* Infinite marquee — track holds two copies, slides exactly one copy width */
 @keyframes marquee {
   from {
