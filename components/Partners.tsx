@@ -17,10 +17,8 @@ const clients: Logo[] = [
   { name: 'Saudi Electricity Regulatory Authority', src: '/partners/saudi-electricity-regulatory-authority.jpg' },
   { name: 'Saudi National Bank', src: '/partners/saudi-national-bank.svg' },
   { name: 'Tawuniya', src: '/partners/tawuniya.png' },
-  { name: 'Al Faisaliah Group', src: '/partners/al-faisaliah-group.jpg' },
   { name: 'New Murabba', src: '/partners/new-murabba.jpg' },
   { name: 'Dr. Soliman Fakeeh Hospital', src: '/partners/dr-soliman-fakeeh-hospital.png' },
-  { name: 'HUMAIN', src: '/partners/humain.svg' },
 ];
 
 /** Technology & delivery partners — the platforms we build on. */
