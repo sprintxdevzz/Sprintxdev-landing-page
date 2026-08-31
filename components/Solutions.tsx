@@ -252,7 +252,7 @@ export const Solutions: React.FC = () => {
                 <div className="p-8 md:p-10">
                   <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
                     {sol.sections.map((sec, sIdx) => (
-                      <div key={sIdx}>
+                      <div key={sIdx} className="flex flex-col">
                         <p className="flex items-center gap-2 text-brand-primary font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-4">
                           <span className="h-1 w-1 rounded-full bg-brand-secondary" />
                           {sec.name}
@@ -274,12 +274,14 @@ export const Solutions: React.FC = () => {
                           ))}
                         </div>
                         {sec.outcome && (
-                          <div className="mt-3.5 flex gap-2.5 rounded-[var(--radius-sm)] bg-brand-primary/[0.04] border border-brand-primary/[0.07] px-3.5 py-2.5">
-                            <TrendingUp size={13} strokeWidth={2.25} className="mt-0.5 text-brand-secondary shrink-0" />
-                            <p className="text-[0.7rem] leading-relaxed text-ink-700">
-                              <span className="font-semibold text-ink">Outcome — </span>
-                              {sec.outcome}
-                            </p>
+                          <div className="mt-auto pt-3.5">
+                            <div className="flex gap-2.5 rounded-[var(--radius-sm)] bg-brand-primary/[0.04] border border-brand-primary/[0.07] px-3.5 py-2.5">
+                              <TrendingUp size={13} strokeWidth={2.25} className="mt-0.5 text-brand-secondary shrink-0" />
+                              <p className="text-[0.7rem] leading-relaxed text-ink-700">
+                                <span className="font-semibold text-ink">Outcome — </span>
+                                {sec.outcome}
+                              </p>
+                            </div>
                           </div>
                         )}
                       </div>
