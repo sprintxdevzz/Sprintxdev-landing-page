@@ -18,12 +18,21 @@ import {
   GitMerge,
   Bell,
   BarChart2,
-  CheckCircle2,
   Check,
+  Search,
+  RefreshCw,
+  Phone,
+  AudioLines,
+  BookOpen,
+  Gauge,
+  GitBranch,
+  ShieldCheck,
+  Boxes,
+  Workflow,
 } from 'lucide-react';
 
 type Feature = { label: string; desc: string; icon: React.ReactNode };
-type Section = { name: string; features: Feature[] };
+type Section = { name: string; features: Feature[]; outcome?: string };
 
 type Solution = {
   id: string;
@@ -49,25 +58,38 @@ const solutions: Solution[] = [
       {
         name: 'Survey Platform',
         features: [
-          { label: 'Conversational Data Entry', desc: 'Chat or voice-guided prompts for seamless survey creation.', icon: <MessageSquare size={13} /> },
-          { label: 'Fully Bilingual', desc: 'Native Arabic & English with integrated translation.', icon: <Globe size={13} /> },
-          { label: 'Adaptive Logic Paths', desc: 'Visual tree builder for complex conditional journeys.', icon: <Layers size={13} /> },
-          { label: 'Executive Dashboards', desc: 'Real-time BI reports for executive decision-making.', icon: <BarChart3 size={13} /> },
+          { label: 'Conversational Entry', desc: 'Chat or voice-guided survey creation.', icon: <MessageSquare size={13} /> },
+          { label: 'Adaptive Logic Paths', desc: 'Visual builder for complex journeys.', icon: <Layers size={13} /> },
+          { label: 'Fully Bilingual', desc: 'Native Arabic and English support.', icon: <Globe size={13} /> },
+          { label: 'Executive Dashboards', desc: 'Real-time BI for instant decisions.', icon: <BarChart3 size={13} /> },
         ],
+        outcome: 'Response rates up 35%, with feedback reaching decision-makers within 24 hours instead of weeks.',
       },
       {
-        name: 'Knowledge Base',
+        name: 'Knowledge Base System',
         features: [
-          { label: 'AI-Powered Search', desc: 'Instantly surface answers across all your documentation.', icon: <FileSearch size={13} /> },
-          { label: 'Self-Service Hub', desc: 'Empower customers to resolve issues without an agent.', icon: <Bot size={13} /> },
-          { label: 'Centralized Content', desc: 'Consolidate articles, guides, and FAQs in one source of truth.', icon: <Database size={13} /> },
+          { label: 'Centralized Content Hub', desc: 'Unify FAQs, policies, and product docs into one searchable source.', icon: <Database size={13} /> },
+          { label: 'AI-Powered Search', desc: 'Natural language search that understands intent, not just keywords.', icon: <Search size={13} /> },
+          { label: 'Auto-Sync Across Channels', desc: 'Update once, publish everywhere — website, app, agent tools.', icon: <RefreshCw size={13} /> },
+          { label: 'Fully Bilingual', desc: 'Native Arabic and English content management.', icon: <Globe size={13} /> },
         ],
+        outcome: 'First Contact Resolution (FCR) up to 85%, with Average Handle Time (AHT) reduced by 30%.',
+      },
+      {
+        name: 'AI Assistant',
+        features: [
+          { label: 'Voice AI Agent', desc: 'Handles calls end-to-end in natural, human-like conversation.', icon: <Phone size={13} /> },
+          { label: 'AI Chatbot', desc: 'Instant, accurate support across web, WhatsApp, and app.', icon: <Bot size={13} /> },
+          { label: 'Speech-to-Text Engine', desc: 'Real-time Arabic & English voice transcription.', icon: <AudioLines size={13} /> },
+          { label: 'Knowledge Base Grounded', desc: 'Answers pulled directly from your knowledge base for accuracy.', icon: <BookOpen size={13} /> },
+        ],
+        outcome: 'AHT reduced by 40%, CSAT up to 90%+, with 60% of interactions fully contained by AI — no human handoff needed.',
       },
     ],
     benefits: [
-      'True Omnichannel Mastery across every channel',
-      'Predictive action turning insights into revenue',
-      'Real-Time Velocity for rapid team accountability',
+      'True omnichannel mastery across every channel',
+      'Predictive action that turns insights into revenue',
+      'Real-time velocity for rapid team accountability',
     ],
   },
   {
@@ -80,20 +102,34 @@ const solutions: Solution[] = [
     icon: <Code2 />,
     sections: [
       {
-        name: 'CRM',
+        name: 'Performance & Strategy Management',
         features: [
-          { label: 'Microsoft CRM Customization', desc: 'Tailor-fit CRM workflows to your sales and service model.', icon: <Users size={13} /> },
-          { label: '360° Customer View', desc: 'Sales, marketing, and service automation in one platform.', icon: <Target size={13} /> },
-          { label: 'Revenue Forecasting', desc: 'Pipeline analytics with real-time performance dashboards.', icon: <TrendingUp size={13} /> },
+          { label: 'Automated KPI Frameworks', desc: 'Link individual output directly to strategy.', icon: <Gauge size={13} /> },
+          { label: 'Strategic Goal Cascading', desc: 'Cascade OKRs from company to individual.', icon: <GitBranch size={13} /> },
+          { label: 'Single Source of Truth', desc: 'Unify KPIs, initiatives, and executive reporting.', icon: <Database size={13} /> },
+          { label: 'Governance & Risk Oversight', desc: 'Align leadership with governance requirements.', icon: <ShieldCheck size={13} /> },
         ],
+        outcome: 'Strategic reporting cycle cut from 3 weeks to real-time — leadership tracks OKR attainment continuously instead of waiting until quarter-end.',
       },
       {
-        name: 'ERP & Performance KPI',
+        name: 'CRM Platform',
         features: [
-          { label: 'End-to-End Resource Planning', desc: 'Unify finance, supply chain, and operations in real time.', icon: <Layers size={13} /> },
-          { label: 'Power BI Integration', desc: 'Customizable modules with cross-department data flow.', icon: <BarChart3 size={13} /> },
-          { label: 'KPI Frameworks', desc: 'Link individual output to organizational objectives.', icon: <CheckCircle2 size={13} /> },
+          { label: 'Microsoft Dynamics 365', desc: 'Tailor-fit CRM workflow customization.', icon: <Users size={13} /> },
+          { label: '360° Customer View', desc: 'Sales, marketing & service in one.', icon: <Target size={13} /> },
+          { label: 'Revenue Forecasting', desc: 'Pipeline analytics with live dashboards.', icon: <TrendingUp size={13} /> },
+          { label: 'Bespoke CRM Build', desc: 'Custom development around your logic.', icon: <Code2 size={13} /> },
         ],
+        outcome: 'Sales cycle shortened by 25%, with forecast accuracy improved to 90%+.',
+      },
+      {
+        name: 'ERP Platform',
+        features: [
+          { label: 'Resource Planning', desc: 'Unify finance, supply chain & operations.', icon: <Layers size={13} /> },
+          { label: 'Power BI Integration', desc: 'Cross-department data flow.', icon: <BarChart3 size={13} /> },
+          { label: 'Module Flexibility', desc: 'Finance, HR, inventory, and procurement in one system.', icon: <Boxes size={13} /> },
+          { label: 'Custom Workflows', desc: 'Approval chains and processes built around how you work.', icon: <Workflow size={13} /> },
+        ],
+        outcome: 'Month-end close cut from 10 days to 3, with process accuracy up to 98%.',
       },
     ],
     benefits: [
@@ -212,16 +248,19 @@ export const Solutions: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Column 2: Features */}
+                {/* Column 2: Modules */}
                 <div className="p-8 md:p-10">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-7">
+                  <div className="space-y-6">
                     {sol.sections.map((sec, sIdx) => (
-                      <div key={sIdx}>
+                      <div
+                        key={sIdx}
+                        className={sIdx > 0 ? 'pt-6 border-t border-black/[0.06]' : ''}
+                      >
                         <p className="flex items-center gap-2 text-brand-primary font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-4">
                           <span className="h-1 w-1 rounded-full bg-brand-secondary" />
                           {sec.name}
                         </p>
-                        <div className="space-y-1">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
                           {sec.features.map((feat, fIdx) => (
                             <div
                               key={fIdx}
@@ -237,6 +276,15 @@ export const Solutions: React.FC = () => {
                             </div>
                           ))}
                         </div>
+                        {sec.outcome && (
+                          <div className="mt-3.5 flex gap-2.5 rounded-[var(--radius-sm)] bg-brand-primary/[0.04] border border-brand-primary/[0.07] px-3.5 py-2.5">
+                            <TrendingUp size={13} strokeWidth={2.25} className="mt-0.5 text-brand-secondary shrink-0" />
+                            <p className="text-[0.7rem] leading-relaxed text-ink-700">
+                              <span className="font-semibold text-ink">Outcome — </span>
+                              {sec.outcome}
+                            </p>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
