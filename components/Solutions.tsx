@@ -177,7 +177,7 @@ export const Solutions: React.FC = () => {
   return (
     <section id="solutions" className="py-20 md:py-32 bg-brand-light relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-grid mask-fade-b opacity-60" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16 md:mb-20 px-4">
           <motion.p
@@ -227,7 +227,7 @@ export const Solutions: React.FC = () => {
                 <div className="h-full w-full origin-left scale-x-0 bg-gradient-to-r from-brand-primary to-brand-secondary transition-transform duration-500 ease-out group-hover:scale-x-100" />
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] divide-y lg:divide-y-0 lg:divide-x divide-black/[0.06]">
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.2fr_1fr] divide-y lg:divide-y-0 lg:divide-x divide-black/[0.06]">
                 {/* Column 1: Identity */}
                 <div className="relative p-8 md:p-10 flex flex-col">
                   <span className="pointer-events-none absolute top-6 right-7 font-display font-black text-6xl text-brand-primary/[0.06] select-none leading-none transition-colors duration-500 group-hover:text-brand-primary/[0.1]">
@@ -250,17 +250,14 @@ export const Solutions: React.FC = () => {
 
                 {/* Column 2: Modules */}
                 <div className="p-8 md:p-10">
-                  <div className="space-y-6">
+                  <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
                     {sol.sections.map((sec, sIdx) => (
-                      <div
-                        key={sIdx}
-                        className={sIdx > 0 ? 'pt-6 border-t border-black/[0.06]' : ''}
-                      >
+                      <div key={sIdx}>
                         <p className="flex items-center gap-2 text-brand-primary font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-4">
                           <span className="h-1 w-1 rounded-full bg-brand-secondary" />
                           {sec.name}
                         </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+                        <div className="grid grid-cols-1 gap-y-1">
                           {sec.features.map((feat, fIdx) => (
                             <div
                               key={fIdx}
