@@ -29,6 +29,12 @@ import {
   ShieldCheck,
   Boxes,
   Workflow,
+  Repeat,
+  Clock,
+  ScrollText,
+  Route,
+  Cpu,
+  GraduationCap,
 } from 'lucide-react';
 
 type Feature = { label: string; desc: string; icon: React.ReactNode };
@@ -160,8 +166,22 @@ const solutions: Solution[] = [
       {
         name: 'Operations & RPA',
         features: [
-          { label: 'Process Monitoring & Alerting', desc: 'Real-time visibility and automatic escalation for critical flows.', icon: <Bell size={13} /> },
+          { label: 'Process Monitoring & Alerting', desc: 'Real-time visibility with automatic escalation on exceptions.', icon: <Bell size={13} /> },
+          { label: 'Zero-Fatigue Execution', desc: 'Bots that handle high-volume tasks with total accuracy, 24/7.', icon: <Repeat size={13} /> },
+          { label: 'Always-On Operations', desc: 'Around-the-clock processing that never sleeps or slows down.', icon: <Clock size={13} /> },
+          { label: 'Audit-Ready Logging', desc: 'Full traceability on every automated action, built for compliance.', icon: <ScrollText size={13} /> },
         ],
+        outcome: '24/7 SLA coverage with no added FTEs; reconciliation cycles cut from 5 days to under 1.',
+      },
+      {
+        name: 'Consulting',
+        features: [
+          { label: 'Process Audits & Bottleneck Mapping', desc: 'Map where time and money are actually being lost before recommending a fix.', icon: <Search size={13} /> },
+          { label: 'Automation Roadmap & Strategy', desc: 'A phased plan prioritized by impact and effort, not guesswork.', icon: <Route size={13} /> },
+          { label: 'Tech Stack Evaluation & Selection', desc: 'Assess what you have, recommend what you need — no duplicate tools, no mismatched platforms.', icon: <Cpu size={13} /> },
+          { label: 'Change Management & Team Training', desc: 'Hands-on training and rollout support so adoption actually sticks after launch.', icon: <GraduationCap size={13} /> },
+        ],
+        outcome: 'Roadmap delivered in under 4 weeks, with adoption rates significantly higher when rollout includes structured training vs. handoff alone.',
       },
     ],
     benefits: [
