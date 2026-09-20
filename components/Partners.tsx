@@ -14,10 +14,8 @@ type Logo = {
 const clients: Logo[] = [
   { name: 'Digital Government Authority', src: '/partners/digital-government-authority.svg' },
   { name: 'Insurance Authority', src: '/partners/insurance-authority.svg' },
-  { name: 'Saudi Electricity Regulatory Authority', src: '/partners/saudi-electricity-regulatory-authority.jpg' },
   { name: 'Saudi National Bank', src: '/partners/saudi-national-bank.svg' },
   { name: 'Tawuniya', src: '/partners/tawuniya.png' },
-  { name: 'New Murabba', src: '/partners/new-murabba.jpg' },
   { name: 'Dr. Soliman Fakeeh Hospital', src: '/partners/dr-soliman-fakeeh-hospital.png' },
 ];
 
@@ -28,7 +26,6 @@ const techPartners: Logo[] = [
   { name: 'Amazon Web Services', src: '/partners/amazon-web-services.svg' },
   { name: 'Google Cloud', src: '/partners/google-cloud.svg' },
   { name: 'Arabot', src: '/partners/arabot.svg' },
-  { name: 'Ejada', src: '/partners/ejada.png' },
 ];
 
 /** Rotating brand-accent palette — every card gets its own colour, so the wall reads
