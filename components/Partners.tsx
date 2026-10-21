@@ -26,6 +26,7 @@ const techPartners: Logo[] = [
   { name: 'Amazon Web Services', src: '/partners/amazon-web-services.svg' },
   { name: 'Google Cloud', src: '/partners/google-cloud.svg' },
   { name: 'Arabot', src: '/partners/arabot.svg' },
+  { name: 'Tamkeen Technologies', src: '/partners/tamkeen-technologies.svg' },
 ];
 
 /** Rotating brand-accent palette — every card gets its own colour, so the wall reads
