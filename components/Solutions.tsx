@@ -56,139 +56,139 @@ const solutions: Solution[] = [
     id: '1',
     anchor: 'cx-solutions',
     title: 'CX Solutions',
-    tagline: 'From Raw Data to Radical Growth',
+    tagline: 'Powered by Next CX',
     description:
-      'Your strategic command center engineered to transform every customer signal into a roadmap for success. A 360-degree lens across Customer Experience, Contact Centers, Employee pulse, and Digital Journey.',
+      'From the first WhatsApp message to the follow-up survey — every channel, agent and insight runs on Next CX, one AI-powered platform fluent in Arabic, English and every Saudi dialect.',
     icon: <BarChart2 />,
     sections: [
       {
-        name: 'Survey Platform',
+        name: 'Engage & Resolve',
         features: [
-          { label: 'Conversational Entry', desc: 'Chat or voice-guided survey creation.', icon: <MessageSquare size={13} /> },
-          { label: 'Adaptive Logic Paths', desc: 'Visual builder for complex journeys.', icon: <Layers size={13} /> },
-          { label: 'Fully Bilingual', desc: 'Native Arabic and English support.', icon: <Globe size={13} /> },
-          { label: 'Executive Dashboards', desc: 'Real-time BI for instant decisions.', icon: <BarChart3 size={13} /> },
+          { label: 'Omnichannel', desc: '12+ channels in one place — voice, chat, WhatsApp, email and more.', icon: <Globe size={13} /> },
+          { label: 'AI Voice Agent', desc: 'Every major language and every Saudi dialect, handling calls end-to-end.', icon: <Phone size={13} /> },
+          { label: 'AI Chat Agent', desc: 'Instant answers on web, WhatsApp, and app — around the clock.', icon: <Bot size={13} /> },
+          { label: 'Live Agent', desc: 'Full customer record in every chat, so agents never start from scratch.', icon: <Users size={13} /> },
         ],
-        outcome: 'Response rates up 35%, with feedback reaching decision-makers within 24 hours instead of weeks.',
+        outcome: 'AHT reduced by 40%, CSAT up to 90%+, with 60% of interactions fully handled by AI — no human handoff needed.',
       },
       {
-        name: 'Knowledge Base System',
+        name: 'Understand',
         features: [
-          { label: 'Centralized Content Hub', desc: 'Unify FAQs, policies, and product docs into one searchable source.', icon: <Database size={13} /> },
-          { label: 'AI-Powered Search', desc: 'Natural language search that understands intent, not just keywords.', icon: <Search size={13} /> },
-          { label: 'Auto-Sync Across Channels', desc: 'Update once, publish everywhere — website, app, agent tools.', icon: <RefreshCw size={13} /> },
-          { label: 'Fully Bilingual', desc: 'Native Arabic and English content management.', icon: <Globe size={13} /> },
+          { label: 'Unified Contacts', desc: 'One 360° profile per customer, built from every interaction across every channel.', icon: <Database size={13} /> },
+          { label: 'Journey Mapping', desc: 'Map and personalize every touchpoint from first contact to resolution.', icon: <Route size={13} /> },
+          { label: 'Survey Platform', desc: 'Voice and chat surveys in Arabic and English — response rates up 35%.', icon: <MessageSquare size={13} /> },
+          { label: 'CX Dashboard', desc: 'Live performance at a glance — CSAT, FCR, AHT in real time.', icon: <BarChart3 size={13} /> },
         ],
-        outcome: 'First Contact Resolution (FCR) up to 85%, with Average Handle Time (AHT) reduced by 30%.',
+        outcome: 'First Contact Resolution up to 85%, with feedback reaching decision-makers within 24 hours instead of weeks.',
       },
       {
-        name: 'AI Assistant',
+        name: 'Empower & Improve',
         features: [
-          { label: 'Voice AI Agent', desc: 'Handles calls end-to-end in natural, human-like conversation.', icon: <Phone size={13} /> },
-          { label: 'AI Chatbot', desc: 'Instant, accurate support across web, WhatsApp, and app.', icon: <Bot size={13} /> },
-          { label: 'Speech-to-Text Engine', desc: 'Real-time Arabic & English voice transcription.', icon: <AudioLines size={13} /> },
-          { label: 'Knowledge Base Grounded', desc: 'Answers pulled directly from your knowledge base for accuracy.', icon: <BookOpen size={13} /> },
+          { label: 'Knowledge Base', desc: 'One source of truth that AI agents answer from — updated once, applied everywhere.', icon: <BookOpen size={13} /> },
+          { label: 'Speech-to-Text', desc: 'Real-time Arabic and English transcription across every voice interaction.', icon: <AudioLines size={13} /> },
+          { label: 'QA & Agent Coaching', desc: 'Score every call and coach every agent with automated quality analysis.', icon: <Check size={13} /> },
+          { label: 'CX Automation', desc: '700+ integrations to automate workflows across your entire CX stack.', icon: <Zap size={13} /> },
         ],
-        outcome: 'AHT reduced by 40%, CSAT up to 90%+, with 60% of interactions fully contained by AI — no human handoff needed.',
       },
     ],
     benefits: [
-      'True omnichannel mastery across every channel',
-      'Predictive action that turns insights into revenue',
-      'Real-time velocity for rapid team accountability',
+      'One unified platform — 12+ channels, 700+ integrations',
+      'Native Arabic and every Saudi dialect',
+      'Hosted in Jeddah or fully on-premises',
+      'DGA-aligned accessibility for government',
     ],
   },
   {
     id: '2',
-    anchor: 'enterprise',
-    title: 'Enterprise Solutions',
-    tagline: 'The Infrastructure Backbone of Your Business',
-    description:
-      'Purpose-built ERP, CRM, and performance management platforms tailored to your industry and integrated seamlessly with your existing systems. Built for enterprises demanding reliability, scalability, and precision.',
-    icon: <Code2 />,
-    sections: [
-      {
-        name: 'Performance & Strategy Management',
-        features: [
-          { label: 'Automated KPI Frameworks', desc: 'Link individual output directly to strategy.', icon: <Gauge size={13} /> },
-          { label: 'Strategic Goal Cascading', desc: 'Cascade OKRs from company to individual.', icon: <GitBranch size={13} /> },
-          { label: 'Single Source of Truth', desc: 'Unify KPIs, initiatives, and executive reporting.', icon: <Database size={13} /> },
-          { label: 'Governance & Risk Oversight', desc: 'Align leadership with governance requirements.', icon: <ShieldCheck size={13} /> },
-        ],
-        outcome: 'Strategic reporting cycle cut from 3 weeks to real-time — leadership tracks OKR attainment continuously instead of waiting until quarter-end.',
-      },
-      {
-        name: 'CRM Platform',
-        features: [
-          { label: 'Microsoft Dynamics 365', desc: 'Tailor-fit CRM workflow customization.', icon: <Users size={13} /> },
-          { label: '360° Customer View', desc: 'Sales, marketing & service in one.', icon: <Target size={13} /> },
-          { label: 'Revenue Forecasting', desc: 'Pipeline analytics with live dashboards.', icon: <TrendingUp size={13} /> },
-          { label: 'Bespoke CRM Build', desc: 'Custom development around your logic.', icon: <Code2 size={13} /> },
-        ],
-        outcome: 'Sales cycle shortened by 25%, with forecast accuracy improved to 90%+.',
-      },
-      {
-        name: 'ERP Platform',
-        features: [
-          { label: 'Resource Planning', desc: 'Unify finance, supply chain & operations.', icon: <Layers size={13} /> },
-          { label: 'Power BI Integration', desc: 'Cross-department data flow.', icon: <BarChart3 size={13} /> },
-          { label: 'Module Flexibility', desc: 'Finance, HR, inventory, and procurement in one system.', icon: <Boxes size={13} /> },
-          { label: 'Custom Workflows', desc: 'Approval chains and processes built around how you work.', icon: <Workflow size={13} /> },
-        ],
-        outcome: 'Month-end close cut from 10 days to 3, with process accuracy up to 98%.',
-      },
-    ],
-    benefits: [
-      'Seamless connectivity with your existing stack',
-      'Workflow automation maximizing team productivity',
-      'Scalable architecture built for enterprise growth',
-      '24/7 dedicated maintenance & support',
-    ],
-  },
-  {
-    id: '3',
     anchor: 'automation',
     title: 'Automation',
-    tagline: 'Eliminate Friction. Maximize Throughput.',
+    tagline: 'Eliminate friction. Maximize throughput.',
     description:
-      'We identify every repetitive, manual process in your operations and engineer intelligent automation that runs around the clock—freeing your team to focus on what drives real business value.',
+      'We replace fragmented manual workflows with intelligent, autonomous systems engineered to scale. We don\'t replace people — we free them for the work that matters.',
     icon: <Bot />,
     sections: [
       {
-        name: 'Intelligent Automation',
+        name: 'Consulting · Plan',
         features: [
-          { label: 'Workflow Automation', desc: 'Streamline repetitive tasks across departments and systems.', icon: <Zap size={13} /> },
-          { label: 'AI-Powered Decision Routing', desc: 'Intelligent task assignment based on complexity and skill.', icon: <Bot size={13} /> },
-          { label: 'Document Processing & OCR', desc: 'Form reading and intelligent data capture at scale.', icon: <FileSearch size={13} /> },
-          { label: 'Custom Integrations', desc: 'Connect every tool in your stack into one ecosystem.', icon: <GitMerge size={13} /> },
+          { label: 'Process Audits', desc: 'Find where time and money are actually lost before recommending a fix.', icon: <Search size={13} /> },
+          { label: 'Automation Roadmap', desc: 'A phased plan prioritized by impact and effort, delivered in under 4 weeks.', icon: <Route size={13} /> },
+          { label: 'Tech Stack Evaluation', desc: 'Assess what you have and recommend what you need — no duplicate tools.', icon: <Cpu size={13} /> },
+          { label: 'Change Management & Training', desc: 'Hands-on rollout support so adoption actually sticks after launch.', icon: <GraduationCap size={13} /> },
         ],
+        outcome: 'Automation roadmap delivered in under 4 weeks, with a clear ROI case before a line of code is written.',
       },
       {
-        name: 'Operations & RPA',
+        name: 'Intelligent Automation · Build',
+        features: [
+          { label: 'Workflow Automation', desc: 'Multi-step tasks automated across departments and systems.', icon: <Workflow size={13} /> },
+          { label: 'AI Decision Routing', desc: 'Tasks assigned by complexity, urgency and skill — automatically.', icon: <Bot size={13} /> },
+          { label: 'Document Processing & OCR', desc: 'Structured data from forms in Arabic and English, at scale.', icon: <FileSearch size={13} /> },
+          { label: 'Custom Integrations', desc: 'Every tool in your stack connected into one ecosystem.', icon: <GitMerge size={13} /> },
+        ],
+        outcome: '~70% faster document turnaround with near-zero entry errors; invoice processing down from days to hours.',
+      },
+      {
+        name: 'Operations & RPA · Run',
         features: [
           { label: 'Process Monitoring & Alerting', desc: 'Real-time visibility with automatic escalation on exceptions.', icon: <Bell size={13} /> },
-          { label: 'Zero-Fatigue Execution', desc: 'Bots that handle high-volume tasks with total accuracy, 24/7.', icon: <Repeat size={13} /> },
-          { label: 'Always-On Operations', desc: 'Around-the-clock processing that never sleeps or slows down.', icon: <Clock size={13} /> },
+          { label: 'Zero-Fatigue Bots', desc: 'High-volume tasks handled with total accuracy, 24 hours a day.', icon: <Repeat size={13} /> },
+          { label: 'Always-On Operations', desc: 'Processing that never sleeps or slows down — cloud or on-premises.', icon: <Clock size={13} /> },
           { label: 'Audit-Ready Logging', desc: 'Full traceability on every automated action, built for compliance.', icon: <ScrollText size={13} /> },
         ],
         outcome: '24/7 SLA coverage with no added FTEs; reconciliation cycles cut from 5 days to under 1.',
       },
+    ],
+    benefits: [
+      'AR | EN document OCR — Arabic and English out of the box',
+      '24/7 operations with audit-ready logging',
+      'Hosted in Jeddah, KSA or fully on-premises',
+      'Integrates with your existing systems from day one',
+    ],
+  },
+  {
+    id: '3',
+    anchor: 'enterprise',
+    title: 'Enterprise Solutions',
+    tagline: 'Every layer, structured for scale.',
+    description:
+      'Whatever you run today, we customize it, implement proven platforms, or build exactly what you need — then connect it to your CX and automation.',
+    icon: <Layers />,
+    sections: [
       {
-        name: 'Consulting',
+        name: 'Strategy & Performance',
         features: [
-          { label: 'Process Audits & Bottleneck Mapping', desc: 'Map where time and money are actually being lost before recommending a fix.', icon: <Search size={13} /> },
-          { label: 'Automation Roadmap & Strategy', desc: 'A phased plan prioritized by impact and effort, not guesswork.', icon: <Route size={13} /> },
-          { label: 'Tech Stack Evaluation & Selection', desc: 'Assess what you have, recommend what you need — no duplicate tools, no mismatched platforms.', icon: <Cpu size={13} /> },
-          { label: 'Change Management & Team Training', desc: 'Hands-on training and rollout support so adoption actually sticks after launch.', icon: <GraduationCap size={13} /> },
+          { label: 'Automated KPI Frameworks', desc: 'Link individual output directly to strategy with real-time tracking.', icon: <Gauge size={13} /> },
+          { label: 'Goal Cascading', desc: 'OKRs from organization to individual — everyone aligned to the same north star.', icon: <GitBranch size={13} /> },
+          { label: 'Vision 2030 Alignment', desc: 'Map every KPI to national and entity strategy requirements.', icon: <Target size={13} /> },
+          { label: 'Executive Dashboards', desc: 'Live reporting in full Arabic and English — no more waiting for weekly reports.', icon: <BarChart3 size={13} /> },
         ],
-        outcome: 'Roadmap delivered in under 4 weeks, with adoption rates significantly higher when rollout includes structured training vs. handoff alone.',
+        outcome: 'Strategic reporting cycle cut from 3 weeks to real-time — leadership tracks OKR attainment continuously.',
+      },
+      {
+        name: 'Governance, Risk & Compliance',
+        features: [
+          { label: 'One GRC Platform', desc: 'Governance, risk and compliance managed in one place.', icon: <ShieldCheck size={13} /> },
+          { label: 'Saudi Frameworks', desc: 'NCA ECC · SAMA CSF · PDPL · ISO 27001 — certified compliance.', icon: <ScrollText size={13} /> },
+          { label: 'Enterprise Risk & Audit', desc: 'Identify, assess and track every risk across your organization.', icon: <Search size={13} /> },
+          { label: 'Audit-Ready Reporting', desc: 'Evidence and reports always up to date, ready when regulators ask.', icon: <Database size={13} /> },
+        ],
+      },
+      {
+        name: 'CRM, ERP & Workplace',
+        features: [
+          { label: 'CRM', desc: 'Dynamics 365 · Salesforce · Zoho · HubSpot — with custom logic and 360° view.', icon: <Users size={13} /> },
+          { label: 'ERP', desc: 'Finance, HR, inventory and procurement — fitted to how you work.', icon: <Boxes size={13} /> },
+          { label: 'Workplace', desc: 'Visitor management and attendance — connected to your broader systems.', icon: <Code2 size={13} /> },
+          { label: 'Built Your Way', desc: 'Customize what you have, implement proven platforms, or build something new.', icon: <GitMerge size={13} /> },
+        ],
+        outcome: '-25% shorter sales cycle, 90%+ forecast accuracy, and real-time strategic reporting down from 3 weeks.',
       },
     ],
     benefits: [
-      'Proven ROI with measurable time-to-value',
-      'Scalable automation architecture',
-      'Maximized team productivity',
-      'Dedicated support & continuous optimization',
+      'Vision 2030 aligned — NCA · SAMA · PDPL · ISO 27001',
+      'Microsoft certified team — Dynamics 365 & Power BI',
+      'Trusted by Saudi integrators: Ejada & BustanTech',
+      'Dedicated maintenance & support with agreed SLAs',
     ],
   },
 ];
@@ -226,7 +226,7 @@ export const Solutions: React.FC = () => {
             className="text-lg md:text-xl text-ink-500 max-w-2xl mx-auto text-pretty"
           >
             Three interconnected pillars designed to work as one unified system:
-            CX intelligence, enterprise infrastructure, and end-to-end automation.
+            CX intelligence, end-to-end automation, and strategic performance.
           </motion.p>
         </div>
 
