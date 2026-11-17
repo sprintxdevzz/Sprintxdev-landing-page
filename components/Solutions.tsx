@@ -262,17 +262,25 @@ export const Solutions: React.FC = () => {
                         <Link
                           key={pIdx}
                           href={product.href}
-                          className="group/prod flex flex-col rounded-xl border border-black/[0.07] bg-white/50 p-5 hover:border-brand-primary/20 hover:bg-brand-primary/[0.03] transition-all duration-200"
+                          className="group/prod relative flex flex-col rounded-xl border border-black/[0.08] bg-white p-5 hover:border-brand-primary/25 hover:shadow-[0_4px_24px_-6px_rgba(21,21,107,0.12)] transition-all duration-200"
                         >
-                          <div className="w-9 h-9 rounded-lg bg-brand-primary/[0.07] border border-brand-primary/10 flex items-center justify-center text-brand-primary mb-3 transition-all duration-200 group-hover/prod:bg-brand-primary group-hover/prod:text-white">
-                            {React.cloneElement(product.icon as React.ReactElement<{ size?: number }>, { size: 16 })}
+                          {/* Hover accent bar */}
+                          <div className="absolute inset-x-0 top-0 h-0.5 rounded-t-xl bg-gradient-to-r from-brand-primary/0 via-brand-primary/40 to-brand-primary/0 opacity-0 group-hover/prod:opacity-100 transition-opacity duration-300" />
+                          <div className="flex items-start gap-3 mb-3">
+                            <div className="w-10 h-10 rounded-[10px] bg-brand-primary/[0.07] border border-brand-primary/10 flex items-center justify-center text-brand-primary shrink-0 transition-all duration-200 group-hover/prod:bg-brand-primary group-hover/prod:text-white group-hover/prod:shadow-[0_4px_14px_-4px_rgba(21,21,107,0.35)]">
+                              {React.cloneElement(product.icon as React.ReactElement<{ size?: number }>, { size: 18 })}
+                            </div>
+                            <div className="min-w-0 pt-0.5">
+                              <p className="font-bold text-ink text-sm leading-snug">{product.name}</p>
+                              <p className="text-brand-primary text-[0.68rem] font-semibold leading-snug mt-0.5 truncate">{product.tagline}</p>
+                            </div>
                           </div>
-                          <p className="font-bold text-ink text-sm mb-0.5">{product.name}</p>
-                          <p className="text-brand-primary text-[0.7rem] font-semibold mb-2 leading-snug">{product.tagline}</p>
                           <p className="text-ink-400 text-xs leading-relaxed flex-1">{product.description}</p>
-                          <span className="mt-3 flex items-center gap-1 text-brand-primary text-xs font-semibold group-hover/prod:gap-2 transition-all">
-                            {s.learn_more} <ArrowRight size={12} />
-                          </span>
+                          <div className="mt-4 pt-3 border-t border-black/[0.05] flex items-center">
+                            <span className="flex items-center gap-1 text-brand-primary text-xs font-semibold group-hover/prod:gap-2 transition-all duration-200">
+                              {s.learn_more} <ArrowRight size={11} />
+                            </span>
+                          </div>
                         </Link>
                       ))}
                     </div>

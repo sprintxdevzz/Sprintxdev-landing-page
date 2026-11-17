@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import { PageHero } from '@/components/PageHero';
-import { KnowledgeBaseContent } from '@/components/products/KnowledgeBaseContent';
-import { CtaBlock } from '@/components/CtaBlock';
+import KnowledgeBaseClientPage from './ClientPage';
 
 export const metadata: Metadata = {
   title: 'Razqora — Knowledge Base System',
@@ -14,20 +12,5 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export default function KnowledgeBasePage() {
-  return (
-    <>
-      <PageHero
-        eyebrow="Knowledge Base · Razqora"
-        title={
-          <>
-            One trusted place for every{' '}
-            <span className="gradient-text">approved answer.</span>
-          </>
-        }
-        subtitle="A bilingual knowledge base where employees find correct, approved answers fast — in Arabic and English, with AI assistance, an approval workflow, and smart search."
-      />
-      <KnowledgeBaseContent />
-      <CtaBlock />
-    </>
-  );
+  return <KnowledgeBaseClientPage />;
 }
