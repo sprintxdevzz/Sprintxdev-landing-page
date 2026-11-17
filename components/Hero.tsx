@@ -15,7 +15,7 @@ import { useI18n } from '@/lib/i18n';
 
 function Word({ children, className = '' }: { children: string; className?: string }) {
   return (
-    <span className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-bottom mr-[0.26em] last:mr-0">
+    <span className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-bottom me-[0.26em] last:me-0">
       <motion.span variants={maskRise} className={`inline-block ${className}`}>
         {children}
       </motion.span>
