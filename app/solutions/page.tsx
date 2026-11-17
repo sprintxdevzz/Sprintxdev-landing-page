@@ -32,7 +32,7 @@ export default function SolutionsPage() {
             Built for modern <span className="gradient-text">enterprise complexity</span>
           </>
         }
-        subtitle="Three interconnected pillars: CX intelligence, enterprise infrastructure, and end-to-end automation."
+        subtitle="Two integrated solutions: AI-powered CX intelligence and strategic enterprise performance."
       />
       <Solutions />
       <CtaBlock />

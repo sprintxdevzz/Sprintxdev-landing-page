@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import {
-  MessageSquare,
   Globe,
   Layers,
   BarChart3,
@@ -14,31 +14,22 @@ import {
   Database,
   Code2,
   Bot,
-  FileSearch,
   GitMerge,
-  Bell,
   BarChart2,
   Check,
   Search,
-  RefreshCw,
-  Phone,
-  AudioLines,
   BookOpen,
   Gauge,
   GitBranch,
   ShieldCheck,
   Boxes,
-  Workflow,
-  Repeat,
-  Clock,
   ScrollText,
-  Route,
-  Cpu,
-  GraduationCap,
+  ArrowRight,
 } from 'lucide-react';
 
 type Feature = { label: string; desc: string; icon: React.ReactNode };
 type Section = { name: string; features: Feature[]; outcome?: string };
+type Product = { name: string; tagline: string; description: string; icon: React.ReactNode; href: string };
 
 type Solution = {
   id: string;
@@ -46,7 +37,8 @@ type Solution = {
   title: string;
   tagline: string;
   description: string;
-  sections: Section[];
+  sections?: Section[];
+  products?: Product[];
   benefits: string[];
   icon: React.ReactNode;
 };
@@ -60,93 +52,50 @@ const solutions: Solution[] = [
     description:
       'From the first WhatsApp message to the follow-up survey — every channel, agent and insight runs on Next CX, one AI-powered platform fluent in Arabic, English and every Saudi dialect.',
     icon: <BarChart2 />,
-    sections: [
+    products: [
       {
-        name: 'Engage & Resolve',
-        features: [
-          { label: 'Omnichannel', desc: '12+ channels in one place — voice, chat, WhatsApp, email and more.', icon: <Globe size={13} /> },
-          { label: 'AI Voice Agent', desc: 'Every major language and every Saudi dialect, handling calls end-to-end.', icon: <Phone size={13} /> },
-          { label: 'AI Chat Agent', desc: 'Instant answers on web, WhatsApp, and app — around the clock.', icon: <Bot size={13} /> },
-          { label: 'Live Agent', desc: 'Full customer record in every chat, so agents never start from scratch.', icon: <Users size={13} /> },
-        ],
-        outcome: 'AHT reduced by 40%, CSAT up to 90%+, with 60% of interactions fully handled by AI — no human handoff needed.',
+        name: 'Next CX',
+        tagline: 'Omnichannel CX Platform',
+        description:
+          'One inbox for every channel — WhatsApp, voice, web chat, email and more — with AI agents that answer from your approved knowledge base.',
+        icon: <Globe />,
+        href: '/products/next-cx',
       },
       {
-        name: 'Understand',
-        features: [
-          { label: 'Unified Contacts', desc: 'One 360° profile per customer, built from every interaction across every channel.', icon: <Database size={13} /> },
-          { label: 'Journey Mapping', desc: 'Map and personalize every touchpoint from first contact to resolution.', icon: <Route size={13} /> },
-          { label: 'Survey Platform', desc: 'Voice and chat surveys in Arabic and English — response rates up 35%.', icon: <MessageSquare size={13} /> },
-          { label: 'CX Dashboard', desc: 'Live performance at a glance — CSAT, FCR, AHT in real time.', icon: <BarChart3 size={13} /> },
-        ],
-        outcome: 'First Contact Resolution up to 85%, with feedback reaching decision-makers within 24 hours instead of weeks.',
+        name: 'Razqora',
+        tagline: 'Knowledge Base System',
+        description:
+          'A bilingual knowledge base where employees find correct, approved answers fast — with AI chat, approval workflows, and smart search.',
+        icon: <BookOpen />,
+        href: '/products/knowledge-base',
       },
       {
-        name: 'Empower & Improve',
-        features: [
-          { label: 'Knowledge Base', desc: 'One source of truth that AI agents answer from — updated once, applied everywhere.', icon: <BookOpen size={13} /> },
-          { label: 'Speech-to-Text', desc: 'Real-time Arabic and English transcription across every voice interaction.', icon: <AudioLines size={13} /> },
-          { label: 'QA & Agent Coaching', desc: 'Score every call and coach every agent with automated quality analysis.', icon: <Check size={13} /> },
-          { label: 'CX Automation', desc: '700+ integrations to automate workflows across your entire CX stack.', icon: <Zap size={13} /> },
-        ],
+        name: 'Qyas',
+        tagline: 'Survey Platform',
+        description:
+          'Create surveys with AI in minutes, distribute across every channel, and turn responses into decisions with built-in AI insights.',
+        icon: <Target />,
+        href: '/products/survey-platform',
+      },
+      {
+        name: 'Rafiq',
+        tagline: 'AI Assistant',
+        description:
+          'An embeddable AI chatbot that answers only from your approved content — bilingual, with one line of code and full control.',
+        icon: <Bot />,
+        href: '/products/ai-assistant',
       },
     ],
     benefits: [
-      'One unified platform — 12+ channels, 700+ integrations',
-      'Native Arabic and every Saudi dialect',
-      'Hosted in Jeddah or fully on-premises',
-      'DGA-aligned accessibility for government',
+      'One platform — one customer record across all channels',
+      'AI that answers only from your approved knowledge base',
+      'Arabic-first with every Saudi dialect supported',
+      'Hosted in Saudi Arabia — sovereign deployment option',
+      'PDPL-aligned consent ledger and data residency',
     ],
   },
   {
     id: '2',
-    anchor: 'automation',
-    title: 'Automation',
-    tagline: 'Eliminate friction. Maximize throughput.',
-    description:
-      'We replace fragmented manual workflows with intelligent, autonomous systems engineered to scale. We don\'t replace people — we free them for the work that matters.',
-    icon: <Bot />,
-    sections: [
-      {
-        name: 'Consulting · Plan',
-        features: [
-          { label: 'Process Audits', desc: 'Find where time and money are actually lost before recommending a fix.', icon: <Search size={13} /> },
-          { label: 'Automation Roadmap', desc: 'A phased plan prioritized by impact and effort, delivered in under 4 weeks.', icon: <Route size={13} /> },
-          { label: 'Tech Stack Evaluation', desc: 'Assess what you have and recommend what you need — no duplicate tools.', icon: <Cpu size={13} /> },
-          { label: 'Change Management & Training', desc: 'Hands-on rollout support so adoption actually sticks after launch.', icon: <GraduationCap size={13} /> },
-        ],
-        outcome: 'Automation roadmap delivered in under 4 weeks, with a clear ROI case before a line of code is written.',
-      },
-      {
-        name: 'Intelligent Automation · Build',
-        features: [
-          { label: 'Workflow Automation', desc: 'Multi-step tasks automated across departments and systems.', icon: <Workflow size={13} /> },
-          { label: 'AI Decision Routing', desc: 'Tasks assigned by complexity, urgency and skill — automatically.', icon: <Bot size={13} /> },
-          { label: 'Document Processing & OCR', desc: 'Structured data from forms in Arabic and English, at scale.', icon: <FileSearch size={13} /> },
-          { label: 'Custom Integrations', desc: 'Every tool in your stack connected into one ecosystem.', icon: <GitMerge size={13} /> },
-        ],
-        outcome: '~70% faster document turnaround with near-zero entry errors; invoice processing down from days to hours.',
-      },
-      {
-        name: 'Operations & RPA · Run',
-        features: [
-          { label: 'Process Monitoring & Alerting', desc: 'Real-time visibility with automatic escalation on exceptions.', icon: <Bell size={13} /> },
-          { label: 'Zero-Fatigue Bots', desc: 'High-volume tasks handled with total accuracy, 24 hours a day.', icon: <Repeat size={13} /> },
-          { label: 'Always-On Operations', desc: 'Processing that never sleeps or slows down — cloud or on-premises.', icon: <Clock size={13} /> },
-          { label: 'Audit-Ready Logging', desc: 'Full traceability on every automated action, built for compliance.', icon: <ScrollText size={13} /> },
-        ],
-        outcome: '24/7 SLA coverage with no added FTEs; reconciliation cycles cut from 5 days to under 1.',
-      },
-    ],
-    benefits: [
-      'AR | EN document OCR — Arabic and English out of the box',
-      '24/7 operations with audit-ready logging',
-      'Hosted in Jeddah, KSA or fully on-premises',
-      'Integrates with your existing systems from day one',
-    ],
-  },
-  {
-    id: '3',
     anchor: 'enterprise',
     title: 'Enterprise Solutions',
     tagline: 'Every layer, structured for scale.',
@@ -225,8 +174,8 @@ export const Solutions: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-lg md:text-xl text-ink-500 max-w-2xl mx-auto text-pretty"
           >
-            Three interconnected pillars designed to work as one unified system:
-            CX intelligence, end-to-end automation, and strategic performance.
+            Two integrated solutions designed to work together:
+            AI-powered CX intelligence and strategic enterprise performance.
           </motion.p>
         </div>
 
@@ -268,45 +217,67 @@ export const Solutions: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Column 2: Modules */}
+                {/* Column 2: Products or Modules */}
                 <div className="p-8 md:p-10">
-                  <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
-                    {sol.sections.map((sec, sIdx) => (
-                      <div key={sIdx} className="flex flex-col">
-                        <p className="flex items-center gap-2 text-brand-primary font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-4">
-                          <span className="h-1 w-1 rounded-full bg-brand-secondary" />
-                          {sec.name}
-                        </p>
-                        <div className="grid grid-cols-1 gap-y-1">
-                          {sec.features.map((feat, fIdx) => (
-                            <div
-                              key={fIdx}
-                              className="flex gap-2.5 rounded-lg -mx-2 px-2 py-1.5 transition-colors hover:bg-brand-primary/[0.04]"
-                            >
-                              <div className="mt-0.5 w-5 h-5 rounded-md bg-brand-primary/[0.08] flex items-center justify-center text-brand-primary shrink-0">
-                                {feat.icon}
-                              </div>
-                              <div>
-                                <h4 className="font-semibold text-ink text-xs mb-0.5">{feat.label}</h4>
-                                <p className="text-ink-400 text-xs leading-relaxed">{feat.desc}</p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                        {sec.outcome && (
-                          <div className="mt-auto pt-3.5">
-                            <div className="flex gap-2.5 rounded-[var(--radius-sm)] bg-brand-primary/[0.04] border border-brand-primary/[0.07] px-3.5 py-2.5">
-                              <TrendingUp size={13} strokeWidth={2.25} className="mt-0.5 text-brand-secondary shrink-0" />
-                              <p className="text-[0.7rem] leading-relaxed text-ink-700">
-                                <span className="font-semibold text-ink">Outcome — </span>
-                                {sec.outcome}
-                              </p>
-                            </div>
+                  {sol.products ? (
+                    <div className="grid grid-cols-2 gap-3 h-full content-start">
+                      {sol.products.map((product, pIdx) => (
+                        <Link
+                          key={pIdx}
+                          href={product.href}
+                          className="group/prod flex flex-col rounded-xl border border-black/[0.07] bg-white/50 p-5 hover:border-brand-primary/20 hover:bg-brand-primary/[0.03] transition-all duration-200"
+                        >
+                          <div className="w-9 h-9 rounded-lg bg-brand-primary/[0.07] border border-brand-primary/10 flex items-center justify-center text-brand-primary mb-3 transition-all duration-200 group-hover/prod:bg-brand-primary group-hover/prod:text-white">
+                            {React.cloneElement(product.icon as React.ReactElement<{ size?: number }>, { size: 16 })}
                           </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                          <p className="font-bold text-ink text-sm mb-0.5">{product.name}</p>
+                          <p className="text-brand-primary text-[0.7rem] font-semibold mb-2 leading-snug">{product.tagline}</p>
+                          <p className="text-ink-400 text-xs leading-relaxed flex-1">{product.description}</p>
+                          <span className="mt-3 flex items-center gap-1 text-brand-primary text-xs font-semibold group-hover/prod:gap-2 transition-all">
+                            Learn more <ArrowRight size={12} />
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
+                      {sol.sections?.map((sec, sIdx) => (
+                        <div key={sIdx} className="flex flex-col">
+                          <p className="flex items-center gap-2 text-brand-primary font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-4">
+                            <span className="h-1 w-1 rounded-full bg-brand-secondary" />
+                            {sec.name}
+                          </p>
+                          <div className="grid grid-cols-1 gap-y-1">
+                            {sec.features.map((feat, fIdx) => (
+                              <div
+                                key={fIdx}
+                                className="flex gap-2.5 rounded-lg -mx-2 px-2 py-1.5 transition-colors hover:bg-brand-primary/[0.04]"
+                              >
+                                <div className="mt-0.5 w-5 h-5 rounded-md bg-brand-primary/[0.08] flex items-center justify-center text-brand-primary shrink-0">
+                                  {feat.icon}
+                                </div>
+                                <div>
+                                  <h4 className="font-semibold text-ink text-xs mb-0.5">{feat.label}</h4>
+                                  <p className="text-ink-400 text-xs leading-relaxed">{feat.desc}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          {sec.outcome && (
+                            <div className="mt-auto pt-3.5">
+                              <div className="flex gap-2.5 rounded-[var(--radius-sm)] bg-brand-primary/[0.04] border border-brand-primary/[0.07] px-3.5 py-2.5">
+                                <TrendingUp size={13} strokeWidth={2.25} className="mt-0.5 text-brand-secondary shrink-0" />
+                                <p className="text-[0.7rem] leading-relaxed text-ink-700">
+                                  <span className="font-semibold text-ink">Outcome — </span>
+                                  {sec.outcome}
+                                </p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Column 3: Benefits */}

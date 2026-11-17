@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { BarChart2, Code2, Bot, ArrowRight } from 'lucide-react';
+import { BarChart2, Code2, ArrowRight } from 'lucide-react';
 
 const teasers = [
   {
@@ -22,14 +22,6 @@ const teasers = [
       'Purpose-built ERP, CRM, and performance management platforms tailored to your industry.',
     icon: <Code2 size={24} />,
   },
-  {
-    anchor: 'automation',
-    title: 'Automation',
-    tagline: 'Eliminate Friction. Maximize Throughput.',
-    description:
-      'Intelligent automation that runs around the clock—freeing your team to focus on real business value.',
-    icon: <Bot size={24} />,
-  },
 ];
 
 export const SolutionsTeaser: React.FC = () => {
@@ -40,11 +32,11 @@ export const SolutionsTeaser: React.FC = () => {
         <div className="text-center mb-14">
           <p className="eyebrow text-brand-primary justify-center mb-5">Our solutions</p>
           <h2 className="text-3xl md:text-5xl font-display font-bold text-ink text-balance">
-            Three pillars. One unified system.
+            Two pillars. One unified system.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {teasers.map((t, i) => (
             <motion.div
               key={t.anchor}
