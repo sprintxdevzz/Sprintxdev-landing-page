@@ -26,7 +26,8 @@ const techPartners: Logo[] = [
   { name: 'Microsoft Azure', src: '/partners/microsoft-azure.svg' },
   { name: 'Amazon Web Services', src: '/partners/amazon-web-services.svg' },
   { name: 'Google Cloud', src: '/partners/google-cloud.svg' },
-  { name: 'Tamkeen Technologies', src: '/partners/tamkeen-technologies.svg' },
+  { name: 'Ejada', src: '/partners/ejada.png' },
+  { name: 'BustanTech', src: '/partners/bustantech.png' },
 ];
 
 /** Rotating brand-accent palette — every card gets its own colour, so the wall reads
