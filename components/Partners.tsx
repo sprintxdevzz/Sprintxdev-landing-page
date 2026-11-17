@@ -23,9 +23,10 @@ const clients: Logo[] = [
 /** Technology & delivery partners — the platforms we build on. */
 const techPartners: Logo[] = [
   { name: 'Anthropic', src: '/partners/anthropic.svg' },
+  { name: 'Microsoft', src: '/partners/microsoft.svg' },
   { name: 'Microsoft Azure', src: '/partners/microsoft-azure.svg' },
-  { name: 'Amazon Web Services', src: '/partners/amazon-web-services.svg' },
   { name: 'Google Cloud', src: '/partners/google-cloud.svg' },
+  { name: 'Tamkeen Technologies', src: '/partners/tamkeen-technologies.svg' },
   { name: 'Ejada', src: '/partners/ejada.png' },
   { name: 'BustanTech', src: '/partners/bustantech.png' },
 ];
@@ -49,7 +50,7 @@ const LogoCard: React.FC<{ logo: Logo; index: number }> = ({ logo, index }) => {
       }}
       whileHover={{ y: -5, boxShadow: `0 22px 44px -18px ${accent}66` }}
       style={{ boxShadow: 'var(--shadow-card)' }}
-      className="group relative flex items-center justify-center w-[calc(50%-0.5rem)] sm:w-[160px] md:w-[176px] h-24 md:h-28 px-5
+      className="group relative flex items-center justify-center w-[calc(50%-0.5rem)] sm:w-[160px] md:w-[176px] xl:w-[158px] h-24 md:h-28 px-5
         rounded-[var(--radius-xl)] bg-white border border-black/[0.07] overflow-hidden
         transition-colors duration-300 hover:border-transparent"
     >
