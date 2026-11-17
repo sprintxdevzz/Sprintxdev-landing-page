@@ -9,7 +9,7 @@ export default function KnowledgeBaseClientPage() {
   const { t } = useI18n();
   const p = t.products_pages.knowledge_base;
   return (
-    <>
+    <div className="theme-razqora">
       <PageHero
         eyebrow={p.eyebrow}
         title={
@@ -21,6 +21,6 @@ export default function KnowledgeBaseClientPage() {
       />
       <KnowledgeBaseContent />
       <CtaBlock />
-    </>
+    </div>
   );
 }

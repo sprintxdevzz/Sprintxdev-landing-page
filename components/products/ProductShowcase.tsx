@@ -135,7 +135,7 @@ export function ProductShowcase({ basePath, eyebrow, h2_a, h2_b, note, url, item
                   onClick={() => goTo(i)}
                   className={`group relative shrink-0 snap-start overflow-hidden text-start rounded-xl border px-4 py-3 lg:px-5 lg:py-4 transition-all duration-300 ${
                     isActive
-                      ? 'bg-white border-brand-primary/20 shadow-[0_6px_24px_-10px_rgba(21,21,107,0.25)]'
+                      ? 'bg-white border-brand-primary/20 shadow-[0_6px_24px_-10px_color-mix(in_srgb,var(--color-brand-primary)_25%,transparent)]'
                       : 'bg-white/40 border-black/[0.06] hover:bg-white hover:border-black/[0.1]'
                   }`}
                 >

@@ -9,7 +9,7 @@ export default function SurveyPlatformClientPage() {
   const { t } = useI18n();
   const p = t.products_pages.survey_platform;
   return (
-    <>
+    <div className="theme-qyas">
       <PageHero
         eyebrow={p.eyebrow}
         title={
@@ -21,6 +21,6 @@ export default function SurveyPlatformClientPage() {
       />
       <SurveyPlatformContent />
       <CtaBlock />
-    </>
+    </div>
   );
 }

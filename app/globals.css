@@ -153,7 +153,9 @@
   @apply relative overflow-hidden inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
     bg-brand-primary text-white font-semibold text-[0.95rem] tracking-tight
     transition-all duration-200 active:scale-[0.98];
-  box-shadow: 0 1px 2px rgba(21, 21, 107, 0.2), 0 10px 24px -12px rgba(21, 21, 107, 0.5);
+  box-shadow:
+    0 1px 2px color-mix(in srgb, var(--color-brand-primary) 20%, transparent),
+    0 10px 24px -12px color-mix(in srgb, var(--color-brand-primary) 50%, transparent);
 }
 .btn-primary:hover {
   background: #1d1d82;
@@ -256,6 +258,33 @@
 .animate-marquee {
   animation: marquee var(--marquee-duration, 38s) linear infinite;
   will-change: transform;
+}
+
+/* Per-product page themes. Brand utilities read these variables, so scoping them on the
+ * page wrapper recolours the whole page; primary is a deeper shade so text stays >= 4.5:1. */
+.theme-razqora {
+  --color-brand-primary: #c24e12;
+  --color-brand-secondary: #ff6a1f;
+  --color-brand-accent: #ff6a1f;
+  --color-brand-light: #fbf6f1;
+  --color-brand-dark: #0f1d2e;
+  --shadow-card-hover: 0 1px 2px rgba(10, 15, 31, 0.05), 0 24px 48px -20px rgba(194, 78, 18, 0.25);
+}
+.theme-qyas {
+  --color-brand-primary: #0b7a70;
+  --color-brand-secondary: #2dd4bf;
+  --color-brand-accent: #2dd4bf;
+  --color-brand-light: #f1f8f7;
+  --color-brand-dark: #062421;
+  --shadow-card-hover: 0 1px 2px rgba(10, 15, 31, 0.05), 0 24px 48px -20px rgba(11, 122, 112, 0.25);
+}
+.theme-rafiq {
+  --color-brand-primary: #5a4fe6;
+  --color-brand-secondary: #5bc8e6;
+  --color-brand-accent: #5bc8e6;
+  --color-brand-light: #f5f4fe;
+  --color-brand-dark: #15132e;
+  --shadow-card-hover: 0 1px 2px rgba(10, 15, 31, 0.05), 0 24px 48px -20px rgba(90, 79, 230, 0.25);
 }
 
 /* Product tour: the active tab's progress bar doubles as the auto-advance timer */

@@ -9,7 +9,7 @@ export default function AIAssistantClientPage() {
   const { t } = useI18n();
   const p = t.products_pages.ai_assistant;
   return (
-    <>
+    <div className="theme-rafiq">
       <PageHero
         eyebrow={p.eyebrow}
         title={
@@ -21,6 +21,6 @@ export default function AIAssistantClientPage() {
       />
       <AIAssistantContent />
       <CtaBlock />
-    </>
+    </div>
   );
 }
