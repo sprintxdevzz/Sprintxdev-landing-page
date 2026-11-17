@@ -94,8 +94,8 @@ export const Navbar: React.FC = () => {
             <NavLink href="/#contact">{t.nav.contact}</NavLink>
 
             <div className="flex items-center gap-3 ml-4">
-              {/* Language toggle — sliding pill */}
-              <div className="relative inline-flex items-center rounded-full bg-black/[0.06] p-[3px]">
+              {/* Language toggle — sliding pill (always LTR internally) */}
+              <div dir="ltr" className="relative inline-flex items-center rounded-full bg-black/[0.06] p-[3px]">
                 <div
                   className="absolute top-[3px] bottom-[3px] rounded-full bg-brand-primary shadow-[0_1px_6px_-2px_rgba(21,21,107,0.4)] transition-transform duration-200 ease-in-out"
                   style={{ width: 'calc(50% - 1.5px)', transform: locale === 'en' ? 'translateX(0)' : 'translateX(calc(100% + 3px))' }}
@@ -133,8 +133,8 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile hamburger */}
           <div className="md:hidden flex items-center gap-2">
-            {/* Mobile language toggle — sliding pill */}
-            <div className="relative inline-flex items-center rounded-full bg-black/[0.06] p-[3px]">
+            {/* Mobile language toggle — sliding pill (always LTR internally) */}
+            <div dir="ltr" className="relative inline-flex items-center rounded-full bg-black/[0.06] p-[3px]">
               <div
                 className="absolute top-[3px] bottom-[3px] rounded-full bg-brand-primary shadow-[0_1px_6px_-2px_rgba(21,21,107,0.4)] transition-transform duration-200 ease-in-out"
                 style={{ width: 'calc(50% - 1.5px)', transform: locale === 'en' ? 'translateX(0)' : 'translateX(calc(100% + 3px))' }}
