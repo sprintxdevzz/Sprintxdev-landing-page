@@ -281,20 +281,18 @@
    Bilingual — Arabic / RTL support
 ---------------------------------------------------------------------------- */
 
-/* Switch to Tajawal when dir=rtl is active */
-[dir="rtl"] body,
-[dir="rtl"] input,
-[dir="rtl"] button,
-[dir="rtl"] textarea {
+/* Switch to Cairo when dir=rtl is active — apply to ALL elements */
+[dir="rtl"] * {
   font-family: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
   letter-spacing: 0;
 }
 
-/* Arabic headings need more line-height and no negative letter-spacing */
-[dir="rtl"] h1,
-[dir="rtl"] h2,
-[dir="rtl"] h3 {
-  font-family: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+/* Keep monospace for code and number displays */
+[dir="rtl"] code,
+[dir="rtl"] pre,
+[dir="rtl"] kbd,
+[dir="rtl"] .font-mono {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
   letter-spacing: 0;
 }
 
@@ -302,19 +300,11 @@
 [dir="rtl"] .hero-h1 {
   line-height: 1.3;
   font-size: clamp(2.4rem, 6.5vw, 5rem);
-  letter-spacing: 0;
 }
 
 /* Arabic page hero heading */
 [dir="rtl"] .page-hero-h1 {
   line-height: 1.35;
-  letter-spacing: 0;
-}
-
-/* Keep monospace numbers in Latin font */
-[dir="rtl"] .font-mono {
-  font-family: var(--font-jetbrains), ui-monospace, monospace;
-  letter-spacing: 0;
 }
 
 /* Respect reduced-motion globally */

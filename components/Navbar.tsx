@@ -18,7 +18,7 @@ const cxProductLinks = [
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
-  const { t, locale, setLocale, isRtl } = useI18n();
+  const { t, locale, setLocale } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -36,8 +36,8 @@ export const Navbar: React.FC = () => {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`relative overflow-visible w-full max-w-full sm:max-w-5xl transition-all duration-300 ease-out rounded-2xl md:rounded-full ${
           scrolled
-            ? 'bg-white/90 backdrop-blur-xl border border-black/[0.07] shadow-[0_8px_30px_-12px_rgba(10,15,31,0.18)] py-2.5 px-4 sm:px-6'
-            : 'bg-brand-dark/70 backdrop-blur-md border border-white/[0.1] shadow-[0_2px_12px_-6px_rgba(10,15,31,0.3)] py-3 px-4 sm:py-3.5 sm:px-8'
+            ? 'bg-white/92 backdrop-blur-xl border border-black/[0.08] shadow-[0_8px_30px_-12px_rgba(10,15,31,0.18)] py-2.5 px-4 sm:px-6'
+            : 'bg-white/60 backdrop-blur-xl border border-black/[0.07] shadow-[0_2px_16px_-6px_rgba(10,15,31,0.1)] py-3 px-4 sm:py-3.5 sm:px-8'
         }`}
       >
         <div className="relative z-10 flex justify-between items-center">
@@ -63,9 +63,7 @@ export const Navbar: React.FC = () => {
             <div className="relative group/sol">
               <Link
                 href="/solutions"
-                className={`text-[0.8rem] font-semibold transition-colors flex items-center gap-1 py-1 ${
-                  scrolled ? 'text-ink-500 hover:text-brand-primary' : 'text-white/70 hover:text-white'
-                }`}
+                className="text-[0.8rem] font-semibold text-ink-500 hover:text-brand-primary transition-colors flex items-center gap-1 py-1"
               >
                 {t.nav.solutions}
                 <ChevronDown
@@ -91,21 +89,19 @@ export const Navbar: React.FC = () => {
               </div>
             </div>
 
-            <NavLink href="/methodology" scrolled={scrolled}>{t.nav.process}</NavLink>
-            <NavLink href="/#technologies" scrolled={scrolled}>{t.nav.stack}</NavLink>
-            <NavLink href="/#contact" scrolled={scrolled}>{t.nav.contact}</NavLink>
+            <NavLink href="/methodology">{t.nav.process}</NavLink>
+            <NavLink href="/#technologies">{t.nav.stack}</NavLink>
+            <NavLink href="/#contact">{t.nav.contact}</NavLink>
 
             <div className="flex items-center gap-3 ml-4">
               {/* Language toggle */}
-              <div className={`flex items-center rounded-full border text-[0.72rem] font-bold overflow-hidden ${scrolled ? 'border-black/[0.1]' : 'border-white/[0.15]'}`}>
+              <div className="flex items-center rounded-full border border-black/[0.1] text-[0.72rem] font-bold overflow-hidden">
                 <button
                   onClick={() => setLocale('en')}
                   className={`px-3 py-1.5 transition-all duration-150 ${
                     locale === 'en'
                       ? 'bg-brand-secondary text-brand-dark'
-                      : scrolled
-                      ? 'text-ink-500 hover:text-brand-primary'
-                      : 'text-white/50 hover:text-white'
+                      : 'text-ink-500 hover:text-brand-primary'
                   }`}
                 >
                   EN
@@ -115,9 +111,7 @@ export const Navbar: React.FC = () => {
                   className={`px-3 py-1.5 transition-all duration-150 ${
                     locale === 'ar'
                       ? 'bg-brand-secondary text-brand-dark'
-                      : scrolled
-                      ? 'text-ink-500 hover:text-brand-primary'
-                      : 'text-white/50 hover:text-white'
+                      : 'text-ink-500 hover:text-brand-primary'
                   }`}
                   style={{ fontFamily: 'var(--font-arabic)' }}
                 >
@@ -144,16 +138,16 @@ export const Navbar: React.FC = () => {
           {/* Mobile hamburger */}
           <div className="md:hidden flex items-center gap-2">
             {/* Mobile language toggle */}
-            <div className={`flex items-center rounded-full border text-[0.7rem] font-bold overflow-hidden ${scrolled ? 'border-black/[0.1]' : 'border-white/[0.15]'}`}>
+            <div className="flex items-center rounded-full border border-black/[0.1] text-[0.7rem] font-bold overflow-hidden">
               <button
                 onClick={() => setLocale('en')}
-                className={`px-2.5 py-1 transition-all duration-150 ${locale === 'en' ? 'bg-brand-secondary text-brand-dark' : scrolled ? 'text-ink-500' : 'text-white/50'}`}
+                className={`px-2.5 py-1 transition-all duration-150 ${locale === 'en' ? 'bg-brand-secondary text-brand-dark' : 'text-ink-500'}`}
               >
                 EN
               </button>
               <button
                 onClick={() => setLocale('ar')}
-                className={`px-2.5 py-1 transition-all duration-150 ${locale === 'ar' ? 'bg-brand-secondary text-brand-dark' : scrolled ? 'text-ink-500' : 'text-white/50'}`}
+                className={`px-2.5 py-1 transition-all duration-150 ${locale === 'ar' ? 'bg-brand-secondary text-brand-dark' : 'text-ink-500'}`}
                 style={{ fontFamily: 'var(--font-arabic)' }}
               >
                 عر
@@ -161,7 +155,7 @@ export const Navbar: React.FC = () => {
             </div>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 ${scrolled ? 'text-brand-dark' : 'text-white'}`}
+              className="p-2 text-brand-dark"
             >
               {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -177,27 +171,27 @@ export const Navbar: React.FC = () => {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden overflow-hidden mt-4"
             >
-              <div className={`pt-4 pb-6 space-y-1 border-t ${scrolled ? 'border-black/5' : 'border-white/[0.1]'}`}>
-                <MobileNavLink href="/solutions" onClick={close} scrolled={scrolled}>
+              <div className="pt-4 pb-6 space-y-1 border-t border-black/5">
+                <MobileNavLink href="/solutions" onClick={close}>
                   {t.nav.solutions}
                 </MobileNavLink>
-                <div className={`pl-3 border-l ml-1 space-y-0.5 ${scrolled ? 'border-black/[0.06]' : 'border-white/[0.08]'}`}>
-                  <p className={`text-[0.6rem] font-bold uppercase tracking-[0.18em] py-1 ${scrolled ? 'text-ink-400' : 'text-white/40'}`}>
+                <div className="pl-3 border-l border-black/[0.06] ml-1 space-y-0.5">
+                  <p className="text-[0.6rem] font-bold uppercase tracking-[0.18em] py-1 text-ink-400">
                     {t.nav.cx_solutions}
                   </p>
                   {cxProductLinks.map((l) => (
-                    <MobileNavLink key={l.href} href={l.href} onClick={close} scrolled={scrolled}>
+                    <MobileNavLink key={l.href} href={l.href} onClick={close}>
                       {t.nav.products[l.key]}
                     </MobileNavLink>
                   ))}
-                  <div className={`my-1 h-px ${scrolled ? 'bg-black/[0.06]' : 'bg-white/[0.08]'}`} />
-                  <MobileNavLink href="/solutions#enterprise" onClick={close} scrolled={scrolled}>
+                  <div className="my-1 h-px bg-black/[0.06]" />
+                  <MobileNavLink href="/solutions#enterprise" onClick={close}>
                     {t.nav.enterprise}
                   </MobileNavLink>
                 </div>
-                <MobileNavLink href="/methodology" onClick={close} scrolled={scrolled}>{t.nav.process}</MobileNavLink>
-                <MobileNavLink href="/#technologies" onClick={close} scrolled={scrolled}>{t.nav.stack}</MobileNavLink>
-                <MobileNavLink href="/contact" onClick={close} scrolled={scrolled}>{t.nav.contact}</MobileNavLink>
+                <MobileNavLink href="/methodology" onClick={close}>{t.nav.process}</MobileNavLink>
+                <MobileNavLink href="/#technologies" onClick={close}>{t.nav.stack}</MobileNavLink>
+                <MobileNavLink href="/contact" onClick={close}>{t.nav.contact}</MobileNavLink>
                 <div className="pt-3">
                   <Link href="/contact" onClick={close}>
                     <NeonButton
@@ -222,17 +216,13 @@ export const Navbar: React.FC = () => {
 const NavLink = ({
   href,
   children,
-  scrolled,
 }: {
   href: string;
   children: React.ReactNode;
-  scrolled: boolean;
 }) => (
   <Link
     href={href}
-    className={`text-[0.8rem] font-semibold transition-colors relative group ${
-      scrolled ? 'text-ink-500 hover:text-brand-primary' : 'text-white/70 hover:text-white'
-    }`}
+    className="text-[0.8rem] font-semibold text-ink-500 hover:text-brand-primary transition-colors relative group"
   >
     {children}
     <span className="absolute -bottom-1.5 left-0 w-0 h-0.5 rounded-full bg-brand-secondary transition-all duration-300 group-hover:w-full" />
@@ -252,19 +242,15 @@ const MobileNavLink = ({
   href,
   children,
   onClick,
-  scrolled,
 }: {
   href: string;
   children: React.ReactNode;
   onClick: () => void;
-  scrolled: boolean;
 }) => (
   <Link
     href={href}
     onClick={onClick}
-    className={`w-full text-left block text-sm font-semibold py-2 transition-colors ${
-      scrolled ? 'text-ink-500 hover:text-brand-primary' : 'text-white/70 hover:text-white'
-    }`}
+    className="w-full text-left block text-sm font-semibold py-2 text-ink-500 hover:text-brand-primary transition-colors"
   >
     {children}
   </Link>

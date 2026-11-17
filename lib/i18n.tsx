@@ -187,6 +187,75 @@ const translations = {
       solutions_links: ['CX Solutions', 'Enterprise Solutions', 'Automation'],
       company_links: ['Methodology', 'FAQ', 'Contact'],
     },
+    solutions_cards: [
+      {
+        title: 'CX Solutions',
+        tagline: 'Powered by Next CX',
+        description:
+          'From the first WhatsApp message to the follow-up survey — every channel, agent and insight runs on Next CX, one AI-powered platform fluent in Arabic, English and every Saudi dialect.',
+        products: [
+          { name: 'Next CX', tagline: 'Omnichannel CX Platform', description: 'One inbox for every channel — WhatsApp, voice, web chat, email and more — with AI agents that answer from your approved knowledge base.' },
+          { name: 'Razqora', tagline: 'Knowledge Base System', description: 'A bilingual knowledge base where employees find correct, approved answers fast — with AI chat, approval workflows, and smart search.' },
+          { name: 'Qyas', tagline: 'Survey Platform', description: 'Create surveys with AI in minutes, distribute across every channel, and turn responses into decisions with built-in AI insights.' },
+          { name: 'Rafiq', tagline: 'AI Assistant', description: 'An embeddable AI chatbot that answers only from your approved content — bilingual, with one line of code and full control.' },
+        ],
+        sections: [],
+        benefits: [
+          'One platform — one customer record across all channels',
+          'AI that answers only from your approved knowledge base',
+          'Arabic-first with every Saudi dialect supported',
+          'Hosted in Saudi Arabia — sovereign deployment option',
+          'PDPL-aligned consent ledger and data residency',
+        ],
+        outcome_label: 'Outcome —',
+      },
+      {
+        title: 'Enterprise Solutions',
+        tagline: 'Every layer, structured for scale.',
+        description:
+          'Whatever you run today, we customize it, implement proven platforms, or build exactly what you need — then connect it to your CX and automation.',
+        products: [],
+        sections: [
+          {
+            name: 'Strategy & Performance',
+            features: [
+              { label: 'Automated KPI Frameworks', desc: 'Link individual output directly to strategy with real-time tracking.' },
+              { label: 'Goal Cascading', desc: 'OKRs from organization to individual — everyone aligned to the same north star.' },
+              { label: 'Vision 2030 Alignment', desc: 'Map every KPI to national and entity strategy requirements.' },
+              { label: 'Executive Dashboards', desc: 'Live reporting in full Arabic and English — no more waiting for weekly reports.' },
+            ],
+            outcome: 'Strategic reporting cycle cut from 3 weeks to real-time — leadership tracks OKR attainment continuously.',
+          },
+          {
+            name: 'Governance, Risk & Compliance',
+            features: [
+              { label: 'One GRC Platform', desc: 'Governance, risk and compliance managed in one place.' },
+              { label: 'Saudi Frameworks', desc: 'NCA ECC · SAMA CSF · PDPL · ISO 27001 — certified compliance.' },
+              { label: 'Enterprise Risk & Audit', desc: 'Identify, assess and track every risk across your organization.' },
+              { label: 'Audit-Ready Reporting', desc: 'Evidence and reports always up to date, ready when regulators ask.' },
+            ],
+            outcome: '',
+          },
+          {
+            name: 'CRM, ERP & Workplace',
+            features: [
+              { label: 'CRM', desc: 'Dynamics 365 · Salesforce · Zoho · HubSpot — with custom logic and 360° view.' },
+              { label: 'ERP', desc: 'Finance, HR, inventory and procurement — fitted to how you work.' },
+              { label: 'Workplace', desc: 'Visitor management and attendance — connected to your broader systems.' },
+              { label: 'Built Your Way', desc: 'Customize what you have, implement proven platforms, or build something new.' },
+            ],
+            outcome: '-25% shorter sales cycle, 90%+ forecast accuracy, and real-time strategic reporting down from 3 weeks.',
+          },
+        ],
+        benefits: [
+          'Vision 2030 aligned — NCA · SAMA · PDPL · ISO 27001',
+          'Microsoft certified team — Dynamics 365 & Power BI',
+          'Trusted by Saudi integrators: Ejada & BustanTech',
+          'Dedicated maintenance & support with agreed SLAs',
+        ],
+        outcome_label: 'Outcome —',
+      },
+    ],
   },
   ar: {
     nav: {
@@ -369,6 +438,75 @@ const translations = {
       solutions_links: ['حلول تجربة العملاء', 'حلول المؤسسات', 'الأتمتة'],
       company_links: ['المنهجية', 'الأسئلة الشائعة', 'تواصل'],
     },
+    solutions_cards: [
+      {
+        title: 'حلول تجربة العملاء',
+        tagline: 'مدعومة بـ Next CX',
+        description:
+          'من أول رسالة واتساب حتى استطلاع المتابعة — كل قناة وعميل وتحليل يعمل على Next CX، المنصة الذكية الواحدة الطليقة بالعربية والإنجليزية وكل لهجة سعودية.',
+        products: [
+          { name: 'نكست CX', tagline: 'منصة تجربة العملاء متعددة القنوات', description: 'صندوق وارد واحد لكل قناة — واتساب وصوت وويب وبريد وأكثر — مع وكلاء ذكاء اصطناعي يجيبون من قاعدة معرفتك المعتمدة.' },
+          { name: 'رزقورة', tagline: 'نظام قاعدة المعرفة', description: 'قاعدة معرفة ثنائية اللغة يجد فيها الموظفون الإجابات الصحيحة المعتمدة بسرعة — مع دردشة ذكاء اصطناعي وسير عمل موافقة وبحث ذكي.' },
+          { name: 'قياس', tagline: 'منصة الاستطلاع', description: 'أنشئ استطلاعات بالذكاء الاصطناعي في دقائق، وزّعها على كل قناة، وحوّل الردود إلى قرارات بتحليلات ذكاء اصطناعي مدمجة.' },
+          { name: 'رفيق', tagline: 'المساعد الذكي', description: 'روبوت محادثة ذكي قابل للتضمين يجيب فقط من محتواك المعتمد — ثنائي اللغة، بسطر كود واحد وتحكم كامل.' },
+        ],
+        sections: [],
+        benefits: [
+          'منصة واحدة — سجل عميل واحد عبر كل القنوات',
+          'ذكاء اصطناعي يجيب فقط من قاعدة معرفتك المعتمدة',
+          'عربية أولاً مع دعم كل اللهجات السعودية',
+          'مستضافة في المملكة العربية السعودية — خيار النشر السيادي',
+          'سجل موافقة PDPL ومقر البيانات',
+        ],
+        outcome_label: 'النتيجة —',
+      },
+      {
+        title: 'حلول المؤسسات',
+        tagline: 'كل طبقة، منظمة للتوسع.',
+        description:
+          'مهما كنت تشغّل اليوم، نخصصه لك، أو ننفّذ منصات مجربة، أو نبني ما تحتاجه تماماً — ثم نصله بـ CX وأنظمة الأتمتة.',
+        products: [],
+        sections: [
+          {
+            name: 'الاستراتيجية والأداء',
+            features: [
+              { label: 'أطر KPI آلية', desc: 'اربط المخرجات الفردية مباشرةً بالاستراتيجية مع تتبع في الوقت الفعلي.' },
+              { label: 'تتالي الأهداف', desc: 'OKRs من المنظمة إلى الفرد — الجميع متوافق مع النجم الشمالي ذاته.' },
+              { label: 'توافق رؤية 2030', desc: 'عيّن كل KPI على متطلبات استراتيجية الكيان الوطني.' },
+              { label: 'لوحات القيادة التنفيذية', desc: 'تقارير مباشرة بالعربية والإنجليزية الكاملة — لا انتظار للتقارير الأسبوعية.' },
+            ],
+            outcome: 'دورة التقارير الاستراتيجية انخفضت من 3 أسابيع إلى الوقت الفعلي — القيادة تتابع تحقيق OKR باستمرار.',
+          },
+          {
+            name: 'الحوكمة والمخاطر والامتثال',
+            features: [
+              { label: 'منصة GRC واحدة', desc: 'الحوكمة والمخاطر والامتثال في مكان واحد.' },
+              { label: 'الأطر السعودية', desc: 'NCA ECC · SAMA CSF · PDPL · ISO 27001 — امتثال معتمد.' },
+              { label: 'مخاطر المؤسسة والتدقيق', desc: 'تحديد وتقييم وتتبع كل مخاطر مؤسستك.' },
+              { label: 'تقارير جاهزة للتدقيق', desc: 'أدلة وتقارير محدّثة دائماً، جاهزة عند طلب الجهات الرقابية.' },
+            ],
+            outcome: '',
+          },
+          {
+            name: 'CRM وERP وبيئة العمل',
+            features: [
+              { label: 'CRM', desc: 'Dynamics 365 · Salesforce · Zoho · HubSpot — مع منطق مخصص وعرض 360°.' },
+              { label: 'ERP', desc: 'المالية والموارد البشرية والمخزون والمشتريات — مناسب لطريقة عملك.' },
+              { label: 'بيئة العمل', desc: 'إدارة الزوار والحضور — متصلة بأنظمتك الأشمل.' },
+              { label: 'مبني بأسلوبك', desc: 'خصّص ما لديك، أو نفّذ منصات مجربة، أو ابنِ شيئاً جديداً.' },
+            ],
+            outcome: 'دورة مبيعات أقصر بـ 25%، دقة توقع أكثر من 90%، وتقارير استراتيجية فورية بدلاً من 3 أسابيع.',
+          },
+        ],
+        benefits: [
+          'متوافق مع رؤية 2030 — NCA · SAMA · PDPL · ISO 27001',
+          'فريق معتمد من مايكروسوفت — Dynamics 365 وPower BI',
+          'موثوق من قِبل موردي السعودية: إيجادة وBustanTech',
+          'صيانة ودعم مخصصان باتفاقيات خدمة متفق عليها',
+        ],
+        outcome_label: 'النتيجة —',
+      },
+    ],
   },
 } as const;
 

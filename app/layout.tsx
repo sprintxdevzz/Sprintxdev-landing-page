@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Outfit, JetBrains_Mono, Tajawal } from 'next/font/google';
+import { Inter, Outfit, JetBrains_Mono, Cairo } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
@@ -31,9 +31,9 @@ const jetbrains = JetBrains_Mono({
   variable: '--font-jetbrains',
 });
 
-const tajawal = Tajawal({
+const cairo = Cairo({
   subsets: ['arabic'],
-  weight: ['300', '400', '500', '700'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
   display: 'swap',
   variable: '--font-arabic',
 });
@@ -108,7 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       dir="ltr"
-      className={`${inter.variable} ${outfit.variable} ${jetbrains.variable} ${tajawal.variable}`}
+      className={`${inter.variable} ${outfit.variable} ${jetbrains.variable} ${cairo.variable}`}
     >
       <body>
         <I18nProvider>

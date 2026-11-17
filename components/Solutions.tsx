@@ -143,9 +143,44 @@ const solutions: Solution[] = [
   },
 ];
 
+type CardText = {
+  title: string; tagline: string; description: string; benefits: readonly string[]; outcome_label: string;
+  products: readonly { name: string; tagline: string; description: string }[];
+  sections: readonly { name: string; features: readonly { label: string; desc: string }[]; outcome: string }[];
+};
+
 export const Solutions: React.FC = () => {
   const { t } = useI18n();
   const s = t.solutions_section;
+  const cards = t.solutions_cards as unknown as CardText[];
+
+  const localizedSolutions = solutions.map((sol, i) => {
+    const c = cards[i];
+    if (!c) return sol;
+    return {
+      ...sol,
+      title: c.title,
+      tagline: c.tagline,
+      description: c.description,
+      benefits: c.benefits as string[],
+      products: sol.products?.map((p, j) => ({
+        ...p,
+        name: c.products[j]?.name ?? p.name,
+        tagline: c.products[j]?.tagline ?? p.tagline,
+        description: c.products[j]?.description ?? p.description,
+      })),
+      sections: sol.sections?.map((sec, k) => ({
+        ...sec,
+        name: c.sections[k]?.name ?? sec.name,
+        outcome: c.sections[k]?.outcome ?? sec.outcome,
+        features: sec.features.map((feat, m) => ({
+          ...feat,
+          label: c.sections[k]?.features[m]?.label ?? feat.label,
+          desc: c.sections[k]?.features[m]?.desc ?? feat.desc,
+        })),
+      })),
+    };
+  });
   return (
     <section id="solutions" className="py-20 md:py-32 bg-brand-light relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-grid mask-fade-b opacity-60" />
@@ -183,7 +218,7 @@ export const Solutions: React.FC = () => {
 
         {/* Solution cards */}
         <div className="space-y-6">
-          {solutions.map((sol, index) => (
+          {localizedSolutions.map((sol, index) => (
             <motion.div
               key={sol.id}
               id={sol.anchor}
@@ -270,7 +305,7 @@ export const Solutions: React.FC = () => {
                               <div className="flex gap-2.5 rounded-[var(--radius-sm)] bg-brand-primary/[0.04] border border-brand-primary/[0.07] px-3.5 py-2.5">
                                 <TrendingUp size={13} strokeWidth={2.25} className="mt-0.5 text-brand-secondary shrink-0" />
                                 <p className="text-[0.7rem] leading-relaxed text-ink-700">
-                                  <span className="font-semibold text-ink">Outcome — </span>
+                                  <span className="font-semibold text-ink">{cards[index]?.outcome_label ?? 'Outcome —'} </span>
                                   {sec.outcome}
                                 </p>
                               </div>
