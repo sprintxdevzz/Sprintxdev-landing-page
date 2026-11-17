@@ -25,7 +25,6 @@ const techPartners: Logo[] = [
   { name: 'Microsoft Azure', src: '/partners/microsoft-azure.svg' },
   { name: 'Amazon Web Services', src: '/partners/amazon-web-services.svg' },
   { name: 'Google Cloud', src: '/partners/google-cloud.svg' },
-  { name: 'Arabot', src: '/partners/arabot.svg' },
   { name: 'Tamkeen Technologies', src: '/partners/tamkeen-technologies.svg' },
 ];
 
