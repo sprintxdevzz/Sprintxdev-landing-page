@@ -5,20 +5,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
-const solutionsLinks = [
-  { href: "/solutions#cx-solutions", label: "CX Solutions" },
-  { href: "/solutions#enterprise", label: "Enterprise Solutions" },
-  { href: "/solutions#automation", label: "Automation" },
+const solutionsHrefs = [
+  "/solutions#cx-solutions",
+  "/solutions#enterprise",
+  "/solutions#automation",
 ];
 
-const companyLinks = [
-  { href: "/methodology", label: "Methodology" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
+const companyHrefs = [
+  "/methodology",
+  "/faq",
+  "/contact",
 ];
 
 export const Footer: React.FC = () => {
+  const { t } = useI18n();
+  const f = t.footer;
+
   return (
     <footer className="relative bg-brand-dark overflow-hidden">
       {/* Gradient divider — strong separation from the section above */}
@@ -45,8 +49,7 @@ export const Footer: React.FC = () => {
               />
             </Link>
             <p className="text-white/55 max-w-xs mt-6 leading-relaxed text-sm">
-              Engineering high-velocity digital infrastructure — from AI-powered
-              platforms to enterprise ERP, CRM, and end-to-end automation.
+              {f.tagline}
             </p>
             <div className="mt-6 flex items-center gap-3">
               <motion.a
@@ -68,7 +71,7 @@ export const Footer: React.FC = () => {
 
           {/* Get in touch */}
           <div className="col-span-2 md:col-span-3">
-            <FooterHeading>Get in touch</FooterHeading>
+            <FooterHeading>{f.section_contact}</FooterHeading>
             <ul className="space-y-4">
               <li>
                 <a href="mailto:info@nxtaut.com" className="group flex items-center gap-3">
@@ -94,18 +97,18 @@ export const Footer: React.FC = () => {
                 <ContactIcon>
                   <MapPin size={15} strokeWidth={1.75} />
                 </ContactIcon>
-                <span className="text-sm text-white/55 font-medium">Saudi Arabia</span>
+                <span className="text-sm text-white/55 font-medium">{f.location}</span>
               </li>
             </ul>
           </div>
 
           {/* Solutions */}
           <div className="col-span-1 md:col-span-3">
-            <FooterHeading>Solutions</FooterHeading>
+            <FooterHeading>{f.section_solutions}</FooterHeading>
             <ul className="space-y-3.5">
-              {solutionsLinks.map((l) => (
-                <li key={l.href}>
-                  <FooterLink href={l.href}>{l.label}</FooterLink>
+              {solutionsHrefs.map((href, i) => (
+                <li key={href}>
+                  <FooterLink href={href}>{f.solutions_links[i]}</FooterLink>
                 </li>
               ))}
             </ul>
@@ -113,11 +116,11 @@ export const Footer: React.FC = () => {
 
           {/* Company */}
           <div className="col-span-1 md:col-span-2">
-            <FooterHeading>Company</FooterHeading>
+            <FooterHeading>{f.section_company}</FooterHeading>
             <ul className="space-y-3.5">
-              {companyLinks.map((l) => (
-                <li key={l.href}>
-                  <FooterLink href={l.href}>{l.label}</FooterLink>
+              {companyHrefs.map((href, i) => (
+                <li key={href}>
+                  <FooterLink href={href}>{f.company_links[i]}</FooterLink>
                 </li>
               ))}
             </ul>
@@ -126,14 +129,12 @@ export const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col-reverse md:flex-row justify-between items-center gap-4">
-          <p className="text-[0.8rem] text-white/40 font-medium">
-            © 2026 Next Automation. All rights reserved.
-          </p>
+          <p className="text-[0.8rem] text-white/40 font-medium">{f.copyright}</p>
           <Link
             href="/contact"
             className="group inline-flex items-center gap-1.5 text-[0.8rem] font-semibold text-white/70 hover:text-brand-secondary transition-colors"
           >
-            Start a project
+            {f.start_project}
             <ArrowUpRight
               size={15}
               className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

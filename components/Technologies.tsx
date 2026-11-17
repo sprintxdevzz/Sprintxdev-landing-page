@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { ShieldCheck } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 type Tech = {
   name: string;
@@ -106,6 +107,8 @@ const accentMap: Record<
 };
 
 export const Technologies: React.FC = () => {
+  const { t } = useI18n();
+  const tech = t.technologies;
   return (
     <section
       id="technologies"
@@ -145,7 +148,7 @@ export const Technologies: React.FC = () => {
               viewport={{ once: true }}
               className="eyebrow text-brand-secondary mb-4"
             >
-              Our technology stack
+              {tech.eyebrow}
             </motion.div>
             <motion.h2
               id="technologies-heading"
@@ -155,7 +158,7 @@ export const Technologies: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.05] text-balance"
             >
-              Built on <span className="text-brand-secondary">enterprise-grade</span> technology
+              {tech.h2_start} <span className="text-brand-secondary">{tech.h2_highlight}</span>{tech.h2_end ? ` ${tech.h2_end}` : ''}
             </motion.h2>
           </div>
 
@@ -167,13 +170,11 @@ export const Technologies: React.FC = () => {
             className="max-w-md lg:max-w-sm space-y-5"
           >
             <p className="text-white/65 text-base md:text-lg leading-relaxed">
-              We accelerate your success using the most modern tools —
-              engineered by expert teams to ensure best practices and
-              production-grade quality.
+              {tech.description}
             </p>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-[11px] font-semibold uppercase tracking-[0.16em]">
               <ShieldCheck size={13} className="text-brand-secondary" />
-              Expert engineering team
+              {tech.expert_badge}
             </div>
           </motion.div>
         </div>
@@ -229,13 +230,10 @@ export const Technologies: React.FC = () => {
           className="mt-14 md:mt-20 max-w-3xl mx-auto text-center"
         >
           <p className="text-white/75 text-base md:text-lg leading-relaxed text-pretty">
-            At Next Automation, we don&apos;t cut corners. We leverage
-            industry-leading technology — combined with expert engineering — to
-            design and build solutions that scale, perform, and last.
+            {tech.footer1}
           </p>
           <p className="mt-4 text-white/50 text-sm md:text-base leading-relaxed">
-            Every implementation is grounded in proven best practices, not
-            trends or shortcuts.
+            {tech.footer2}
           </p>
         </motion.div>
       </div>

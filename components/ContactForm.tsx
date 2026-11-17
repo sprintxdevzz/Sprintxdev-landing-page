@@ -15,6 +15,7 @@ import {
   Loader2,
 } from 'lucide-react';
 import { fadeUp, stagger, inView } from '@/lib/motion';
+import { useI18n } from '@/lib/i18n';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 type Values = { name: string; email: string; company: string; phone: string; message: string };
@@ -22,28 +23,26 @@ type Values = { name: string; email: string; company: string; phone: string; mes
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[+()\d][\d\s()+-]{5,}$/;
 
-const validators: Partial<Record<keyof Values, (v: string) => string>> = {
-  name: (v) => (v.trim().length >= 2 ? '' : 'Please enter your name.'),
-  email: (v) =>
-    !v.trim()
-      ? 'Please enter your email.'
-      : EMAIL_RE.test(v.trim())
-        ? ''
-        : 'Enter a valid email address.',
-  phone: (v) => (!v.trim() || PHONE_RE.test(v.trim()) ? '' : 'Enter a valid phone number.'),
-};
-
-const channels = [
-  { icon: Mail, label: 'Email us', value: 'info@nxtaut.com', href: 'mailto:info@nxtaut.com' },
-  { icon: Phone, label: 'Call us', value: '+966 50 059 8757', href: 'tel:+966500598757' },
-  { icon: Clock, label: 'Response time', value: 'Within 24 hours', href: undefined },
-];
-
 const emptyValues: Values = { name: '', email: '', company: '', phone: '', message: '' };
 
 export const ContactForm: React.FC = () => {
   const reduce = useReducedMotion();
   const formRef = useRef<HTMLFormElement>(null);
+  const { t } = useI18n();
+  const c = t.contact;
+
+  const validators: Partial<Record<keyof Values, (v: string) => string>> = {
+    name: (v) => (v.trim().length >= 2 ? '' : c.err_name),
+    email: (v) =>
+      !v.trim() ? c.err_email_required : EMAIL_RE.test(v.trim()) ? '' : c.err_email_invalid,
+    phone: (v) => (!v.trim() || PHONE_RE.test(v.trim()) ? '' : c.err_phone),
+  };
+
+  const channels = [
+    { icon: Mail, label: c.email_label, value: 'info@nxtaut.com', href: 'mailto:info@nxtaut.com' },
+    { icon: Phone, label: c.phone_label, value: '+966 50 059 8757', href: 'tel:+966500598757' },
+    { icon: Clock, label: c.response_label, value: c.response_value, href: undefined },
+  ];
 
   const [values, setValues] = useState<Values>(emptyValues);
   const [errors, setErrors] = useState<Partial<Record<keyof Values, string>>>({});
@@ -102,11 +101,11 @@ export const ContactForm: React.FC = () => {
         setErrors({});
       } else {
         setStatus('error');
-        setServerMsg(data.message || 'Something went wrong. Please try again.');
+        setServerMsg(data.message || c.err_server_default);
       }
     } catch {
       setStatus('error');
-      setServerMsg('Failed to connect. Check your connection and try again.');
+      setServerMsg(c.err_connection);
     }
   };
 
@@ -123,17 +122,16 @@ export const ContactForm: React.FC = () => {
             viewport={inView}
           >
             <motion.div variants={fadeUp} className="eyebrow text-brand-primary mb-5">
-              Get in touch
+              {c.eyebrow}
             </motion.div>
             <motion.h2
               variants={fadeUp}
               className="text-4xl md:text-6xl font-display font-bold text-ink mb-6 leading-[1.05] text-balance"
             >
-              Let&apos;s build your <span className="text-brand-primary">next big thing</span>
+              {c.h2_start} <span className="text-brand-primary">{c.h2_highlight}</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="text-ink-500 text-lg max-w-md mb-9 text-pretty">
-              Tell us about your project and our team will get back to you within one business day —
-              no obligations, no sales pressure.
+              {c.subtitle}
             </motion.p>
 
             <motion.div variants={fadeUp} className="space-y-3">
@@ -181,6 +179,9 @@ export const ContactForm: React.FC = () => {
                 <SuccessPanel
                   key="success"
                   reduce={!!reduce}
+                  title={c.success_title}
+                  desc={c.success_desc}
+                  resetLabel={c.success_reset}
                   onReset={() => {
                     setStatus('idle');
                     setServerMsg('');
@@ -214,11 +215,11 @@ export const ContactForm: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <Field
                         name="name"
-                        label="Name"
+                        label={c.field_name}
                         icon={User}
                         required
                         autoComplete="name"
-                        placeholder="Jane Doe"
+                        placeholder={c.placeholder_name}
                         value={values.name}
                         error={errors.name}
                         touched={touched.name}
@@ -227,13 +228,13 @@ export const ContactForm: React.FC = () => {
                       />
                       <Field
                         name="email"
-                        label="Email"
+                        label={c.field_email}
                         icon={Mail}
                         type="email"
                         inputMode="email"
                         required
                         autoComplete="email"
-                        placeholder="jane@company.com"
+                        placeholder={c.placeholder_email}
                         value={values.email}
                         error={errors.email}
                         touched={touched.email}
@@ -244,22 +245,22 @@ export const ContactForm: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <Field
                         name="company"
-                        label="Company"
+                        label={c.field_company}
                         icon={Building2}
                         autoComplete="organization"
-                        placeholder="Acme Inc."
+                        placeholder={c.placeholder_company}
                         value={values.company}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
                       <Field
                         name="phone"
-                        label="Phone"
+                        label={c.field_phone}
                         icon={Phone}
                         type="tel"
                         inputMode="tel"
                         autoComplete="tel"
-                        placeholder="+966 …"
+                        placeholder={c.placeholder_phone}
                         value={values.phone}
                         error={errors.phone}
                         touched={touched.phone}
@@ -269,10 +270,10 @@ export const ContactForm: React.FC = () => {
                     </div>
                     <Field
                       name="message"
-                      label="Message"
+                      label={c.field_message}
                       icon={MessageSquare}
                       as="textarea"
-                      placeholder="Tell us about your project…"
+                      placeholder={c.placeholder_message}
                       value={values.message}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -287,11 +288,11 @@ export const ContactForm: React.FC = () => {
                         {status === 'loading' ? (
                           <>
                             <Loader2 size={18} className="animate-spin" />
-                            Sending…
+                            {c.sending}
                           </>
                         ) : (
                           <>
-                            Send message
+                            {c.submit}
                             <Send
                               size={17}
                               className="transition-transform duration-200 group-hover:translate-x-0.5"
@@ -321,8 +322,7 @@ export const ContactForm: React.FC = () => {
                     </AnimatePresence>
 
                     <motion.p variants={fadeUp} className="text-center text-xs text-ink-400 pt-1">
-                      We&apos;ll never share your details. Required fields are marked
-                      <span className="text-brand-primary"> *</span>.
+                      {c.privacy}<span className="text-brand-primary"> *</span>.
                     </motion.p>
                   </motion.div>
                 </motion.form>
@@ -445,7 +445,7 @@ function Field({
   );
 }
 
-function SuccessPanel({ reduce, onReset }: { reduce: boolean; onReset: () => void }) {
+function SuccessPanel({ reduce, title, desc, resetLabel, onReset }: { reduce: boolean; title: string; desc: string; resetLabel: string; onReset: () => void }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -483,12 +483,10 @@ function SuccessPanel({ reduce, onReset }: { reduce: boolean; onReset: () => voi
           />
         </svg>
       </div>
-      <h3 className="text-2xl font-display font-bold text-ink mb-2">Message sent</h3>
-      <p className="text-ink-500 mb-7 max-w-xs mx-auto text-pretty">
-        Thanks for reaching out — our team will get back to you within 24 hours.
-      </p>
+      <h3 className="text-2xl font-display font-bold text-ink mb-2">{title}</h3>
+      <p className="text-ink-500 mb-7 max-w-xs mx-auto text-pretty">{desc}</p>
       <button onClick={onReset} className="btn-secondary mx-auto">
-        Send another message
+        {resetLabel}
       </button>
     </motion.div>
   );

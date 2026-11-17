@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useI18n } from '@/lib/i18n';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import {
@@ -143,6 +144,8 @@ const solutions: Solution[] = [
 ];
 
 export const Solutions: React.FC = () => {
+  const { t } = useI18n();
+  const s = t.solutions_section;
   return (
     <section id="solutions" className="py-20 md:py-32 bg-brand-light relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-grid mask-fade-b opacity-60" />
@@ -155,7 +158,7 @@ export const Solutions: React.FC = () => {
             viewport={{ once: true }}
             className="eyebrow text-brand-primary justify-center mb-5"
           >
-            Our solutions
+            {s.eyebrow}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -164,8 +167,8 @@ export const Solutions: React.FC = () => {
             transition={{ delay: 0.05 }}
             className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-ink mb-4 md:mb-6 text-balance"
           >
-            Built for modern{' '}
-            <span className="gradient-text">enterprise complexity</span>
+            {s.h2}{' '}
+            <span className="gradient-text">{s.h2_gradient}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -174,8 +177,7 @@ export const Solutions: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-lg md:text-xl text-ink-500 max-w-2xl mx-auto text-pretty"
           >
-            Two integrated solutions designed to work together:
-            AI-powered CX intelligence and strategic enterprise performance.
+            {s.subtitle}
           </motion.p>
         </div>
 
@@ -234,7 +236,7 @@ export const Solutions: React.FC = () => {
                           <p className="text-brand-primary text-[0.7rem] font-semibold mb-2 leading-snug">{product.tagline}</p>
                           <p className="text-ink-400 text-xs leading-relaxed flex-1">{product.description}</p>
                           <span className="mt-3 flex items-center gap-1 text-brand-primary text-xs font-semibold group-hover/prod:gap-2 transition-all">
-                            Learn more <ArrowRight size={12} />
+                            {s.learn_more} <ArrowRight size={12} />
                           </span>
                         </Link>
                       ))}
@@ -284,7 +286,7 @@ export const Solutions: React.FC = () => {
                 <div className="p-8 md:p-10 bg-brand-primary/[0.025] flex flex-col justify-center">
                   <p className="flex items-center gap-2 text-ink font-semibold text-[0.65rem] uppercase tracking-[0.18em] mb-5">
                     <Zap size={12} className="text-brand-secondary" strokeWidth={2.25} />
-                    Key benefits
+                    {s.key_benefits}
                   </p>
                   <ul className="space-y-3.5">
                     {sol.benefits.map((b, bIdx) => (

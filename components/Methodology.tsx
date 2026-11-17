@@ -3,34 +3,14 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Search, PenTool, Code2, LineChart } from 'lucide-react';
+import { useI18n } from '@/lib/i18n';
 
 export const Methodology: React.FC = () => {
-  const steps = [
-    {
-      number: '01',
-      title: 'Analysis',
-      desc: 'We identify your core challenges and map a clear path to resolution — understanding your business, data flows, and operational bottlenecks.',
-      icon: <Search />,
-    },
-    {
-      number: '02',
-      title: 'Design',
-      desc: 'Tailored blueprints that prioritize user experience and system speed, designed for your industry requirements and future growth.',
-      icon: <PenTool />,
-    },
-    {
-      number: '03',
-      title: 'Implementation',
-      desc: 'Clean execution with minimal impact on current operations — real-time progress tracking and transparent delivery milestones.',
-      icon: <Code2 />,
-    },
-    {
-      number: '04',
-      title: 'Optimization',
-      desc: 'Continuous monitoring and support via our responsive ticketing system, ensuring sustained performance and reliability.',
-      icon: <LineChart />,
-    },
-  ];
+  const { t } = useI18n();
+  const m = t.methodology;
+  const stepIcons = [<Search key="s" />, <PenTool key="p" />, <Code2 key="c" />, <LineChart key="l" />];
+  const stepNumbers = ['01', '02', '03', '04'];
+  const steps = m.steps.map((s, i) => ({ ...s, number: stepNumbers[i], icon: stepIcons[i] }));
 
   return (
     <section id="process" className="py-20 md:py-32 bg-brand-dark relative overflow-hidden">
@@ -44,7 +24,7 @@ export const Methodology: React.FC = () => {
               viewport={{ once: true }}
               className="eyebrow text-brand-secondary mb-4"
             >
-              The Next Automation methodology
+              {m.eyebrow}
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -53,7 +33,7 @@ export const Methodology: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight"
             >
-              A streamlined approach to engineering high-velocity digital systems
+              {m.h2}
             </motion.h2>
           </div>
           <motion.p
@@ -63,8 +43,7 @@ export const Methodology: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-white/55 text-base md:text-lg max-w-sm text-pretty"
           >
-            Building on the proven Sprint methodology, we deliver intelligent solutions through
-            discovery, design, implementation, and optimization.
+            {m.subtitle}
           </motion.p>
         </div>
 

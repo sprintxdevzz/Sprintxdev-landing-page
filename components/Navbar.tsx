@@ -8,9 +8,11 @@ import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { NeonButton } from './ui/neon-button';
 import { useI18n } from '@/lib/i18n';
 
-const solutionLinks = [
-  { href: '/solutions#cx-solutions', labelKey: 'cx_solutions' as const },
-  { href: '/solutions#enterprise', labelKey: 'enterprise' as const },
+const cxProductLinks = [
+  { href: '/products/next-cx', key: 'next_cx' as const },
+  { href: '/products/survey-platform', key: 'survey_platform' as const },
+  { href: '/products/knowledge-base', key: 'knowledge_base' as const },
+  { href: '/products/ai-assistant', key: 'ai_assistant' as const },
 ];
 
 export const Navbar: React.FC = () => {
@@ -72,12 +74,19 @@ export const Navbar: React.FC = () => {
                 />
               </Link>
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 pointer-events-none transition-all duration-200 group-hover/sol:opacity-100 group-hover/sol:pointer-events-auto group-focus-within/sol:opacity-100 group-focus-within/sol:pointer-events-auto">
-                <div className="bg-white border border-black/[0.07] rounded-2xl shadow-[var(--shadow-pop)] p-2 min-w-[210px]">
-                  {solutionLinks.map((l) => (
+                <div className="bg-white border border-black/[0.07] rounded-2xl shadow-[var(--shadow-pop)] p-2 min-w-[220px]">
+                  <p className="px-4 pt-1.5 pb-1 text-[0.6rem] font-bold uppercase tracking-[0.2em] text-ink-400">
+                    {t.nav.cx_solutions}
+                  </p>
+                  {cxProductLinks.map((l) => (
                     <DropdownItem key={l.href} href={l.href}>
-                      {t.nav[l.labelKey]}
+                      {t.nav.products[l.key]}
                     </DropdownItem>
                   ))}
+                  <div className="my-1.5 mx-3 h-px bg-black/[0.06]" />
+                  <DropdownItem href="/solutions#enterprise">
+                    {t.nav.enterprise}
+                  </DropdownItem>
                 </div>
               </div>
             </div>
@@ -172,12 +181,19 @@ export const Navbar: React.FC = () => {
                 <MobileNavLink href="/solutions" onClick={close} scrolled={scrolled}>
                   {t.nav.solutions}
                 </MobileNavLink>
-                <div className={`pl-3 border-l ml-1 space-y-1 ${scrolled ? 'border-black/[0.06]' : 'border-white/[0.08]'}`}>
-                  {solutionLinks.map((l) => (
+                <div className={`pl-3 border-l ml-1 space-y-0.5 ${scrolled ? 'border-black/[0.06]' : 'border-white/[0.08]'}`}>
+                  <p className={`text-[0.6rem] font-bold uppercase tracking-[0.18em] py-1 ${scrolled ? 'text-ink-400' : 'text-white/40'}`}>
+                    {t.nav.cx_solutions}
+                  </p>
+                  {cxProductLinks.map((l) => (
                     <MobileNavLink key={l.href} href={l.href} onClick={close} scrolled={scrolled}>
-                      {t.nav[l.labelKey]}
+                      {t.nav.products[l.key]}
                     </MobileNavLink>
                   ))}
+                  <div className={`my-1 h-px ${scrolled ? 'bg-black/[0.06]' : 'bg-white/[0.08]'}`} />
+                  <MobileNavLink href="/solutions#enterprise" onClick={close} scrolled={scrolled}>
+                    {t.nav.enterprise}
+                  </MobileNavLink>
                 </div>
                 <MobileNavLink href="/methodology" onClick={close} scrolled={scrolled}>{t.nav.process}</MobileNavLink>
                 <MobileNavLink href="/#technologies" onClick={close} scrolled={scrolled}>{t.nav.stack}</MobileNavLink>

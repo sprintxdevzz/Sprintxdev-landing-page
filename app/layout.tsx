@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Outfit, JetBrains_Mono, IBM_Plex_Sans_Arabic } from 'next/font/google';
+import { Inter, Outfit, JetBrains_Mono, Tajawal } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
@@ -31,9 +31,9 @@ const jetbrains = JetBrains_Mono({
   variable: '--font-jetbrains',
 });
 
-const ibmArabic = IBM_Plex_Sans_Arabic({
+const tajawal = Tajawal({
   subsets: ['arabic'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '700'],
   display: 'swap',
   variable: '--font-arabic',
 });
@@ -108,7 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       dir="ltr"
-      className={`${inter.variable} ${outfit.variable} ${jetbrains.variable} ${ibmArabic.variable}`}
+      className={`${inter.variable} ${outfit.variable} ${jetbrains.variable} ${tajawal.variable}`}
     >
       <body>
         <I18nProvider>

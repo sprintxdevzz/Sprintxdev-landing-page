@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'motion/react';
 import { ShieldCheck } from 'lucide-react';
+import { useI18n } from '@/lib/i18n';
 
 type Logo = {
   name: string;
@@ -117,6 +118,8 @@ const Orb: React.FC<{
 export const Partners: React.FC = () => {
   const reduceMotion = useReducedMotion();
   const animate = !reduceMotion;
+  const { t } = useI18n();
+  const p = t.partners;
 
   return (
     <section
@@ -143,7 +146,7 @@ export const Partners: React.FC = () => {
             viewport={{ once: true }}
             className="eyebrow text-brand-primary justify-center mb-4"
           >
-            Partners &amp; clients
+            {p.eyebrow}
           </motion.div>
           <motion.h2
             id="partners-heading"
@@ -153,8 +156,8 @@ export const Partners: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-display font-bold text-ink leading-[1.05] text-balance"
           >
-            Trusted by the organizations{' '}
-            <span className="text-gradient-brand">shaping what&apos;s next</span>
+            {p.h2}{' '}
+            <span className="text-gradient-brand">{p.h2_gradient}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -163,14 +166,13 @@ export const Partners: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="mt-5 text-ink-500 text-base md:text-lg leading-relaxed text-pretty"
           >
-            From government authorities and national enterprises to the world&apos;s leading
-            cloud and AI providers — we partner with organizations that set the standard.
+            {p.subtitle}
           </motion.p>
         </div>
 
         {/* Clients & organizations */}
         <div className="mb-16 md:mb-20">
-          <GroupLabel>Clients &amp; organizations</GroupLabel>
+          <GroupLabel>{p.clients_label}</GroupLabel>
           <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {clients.map((logo, i) => (
               <LogoCard key={logo.name} logo={logo} index={i} />
@@ -180,7 +182,7 @@ export const Partners: React.FC = () => {
 
         {/* Technology & delivery partners */}
         <div>
-          <GroupLabel>Technology &amp; delivery partners</GroupLabel>
+          <GroupLabel>{p.tech_label}</GroupLabel>
           <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {techPartners.map((logo, i) => (
               <LogoCard key={logo.name} logo={logo} index={i} />
@@ -198,7 +200,7 @@ export const Partners: React.FC = () => {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.07] text-ink-500 text-[11px] font-semibold uppercase tracking-[0.16em] shadow-[var(--shadow-card)]">
             <ShieldCheck size={13} className="text-brand-secondary" />
-            Enterprise-grade delivery, trusted at national scale
+            {p.trust_badge}
           </div>
         </motion.div>
       </div>

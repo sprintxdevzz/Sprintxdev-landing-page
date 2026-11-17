@@ -3,25 +3,13 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Users2, Zap, ShieldCheck } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 export const TheEdge: React.FC = () => {
-  const edges = [
-    {
-      title: "Real-time collaboration",
-      desc: "Review progress and approve deliverables through our integrated platform. Complete visibility at every stage of your project.",
-      icon: <Users2 />,
-    },
-    {
-      title: "Performance focus",
-      desc: "We optimize for speed, reducing staff training periods and increasing delivery velocity. Maximum ROI with minimum disruption.",
-      icon: <Zap />,
-    },
-    {
-      title: "Reliability & support",
-      desc: "Dedicated maintenance ensures your systems stay online, updated, and performing — 99.9% uptime with responsive support teams.",
-      icon: <ShieldCheck />,
-    },
-  ];
+  const { t } = useI18n();
+  const e = t.edge;
+  const edgeIcons = [<Users2 key="u" />, <Zap key="z" />, <ShieldCheck key="s" />];
+  const edges = e.items.map((item, i) => ({ ...item, icon: edgeIcons[i] }));
 
   return (
     <section
@@ -36,7 +24,7 @@ export const TheEdge: React.FC = () => {
             viewport={{ once: true }}
             className="eyebrow text-brand-primary justify-center mb-5"
           >
-            Why teams choose us
+            {e.eyebrow}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -45,7 +33,7 @@ export const TheEdge: React.FC = () => {
             transition={{ delay: 0.08 }}
             className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-ink leading-[1.05] text-balance"
           >
-            Built to ship, engineered to last
+            {e.h2}
           </motion.h2>
         </div>
 

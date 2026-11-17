@@ -281,7 +281,7 @@
    Bilingual — Arabic / RTL support
 ---------------------------------------------------------------------------- */
 
-/* Switch to IBM Plex Sans Arabic when dir=rtl is active */
+/* Switch to Tajawal when dir=rtl is active */
 [dir="rtl"] body,
 [dir="rtl"] input,
 [dir="rtl"] button,
