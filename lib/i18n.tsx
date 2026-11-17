@@ -16,12 +16,12 @@ const translations = {
       contact_cta: 'Contact Us',
     },
     hero: {
-      badge: 'AI-powered CX & Enterprise Platform',
-      h1_a: 'Intelligent CX.',
-      h1_b: 'Automated',
-      h1_c: 'Enterprise.',
+      badge: 'AI-powered automation, ERP & CX platforms',
+      h1_a: 'Automate. Optimize.',
+      h1_b: 'Accelerate growth.',
+      h1_c: '',
       subtitle:
-        'We engineer intelligent systems that turn operational data into competitive advantage — from AI-powered CX platforms to enterprise ERP, CRM, and end-to-end workflow automation.',
+        'We engineer intelligent systems that turn operational data into a competitive edge — from AI-powered CX platforms to enterprise ERP, CRM, and end-to-end workflow automation.',
       cta_primary: 'Book a demo',
       cta_secondary: 'Explore solutions',
       stat_1_val: '2–4 wks',
@@ -58,10 +58,10 @@ const translations = {
       contact_cta: 'تواصل معنا',
     },
     hero: {
-      badge: 'منصة CX والمؤسسات بالذكاء الاصطناعي',
-      h1_a: 'تجربة عملاء ذكية.',
-      h1_b: 'أتمتة ذكية',
-      h1_c: 'للمؤسسات.',
+      badge: 'أتمتة ذكية • ERP • منصات تجربة العملاء',
+      h1_a: 'أتمتة. تحسين.',
+      h1_b: 'تسريع النمو.',
+      h1_c: '',
       subtitle:
         'نهندس أنظمة ذكية تحوّل بياناتك التشغيلية إلى ميزة تنافسية — من منصات تجربة العملاء بالذكاء الاصطناعي إلى أنظمة ERP وCRM وأتمتة سير العمل الشاملة.',
       cta_primary: 'احجز عرضاً',
