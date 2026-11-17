@@ -117,7 +117,11 @@
 }
 
 .gradient-text {
-  color: var(--color-brand-primary);
+  background: linear-gradient(135deg, var(--color-brand-secondary) 0%, var(--color-brand-primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .glass-card {
@@ -271,6 +275,38 @@
   .text-pretty {
     text-wrap: pretty;
   }
+}
+
+/* ----------------------------------------------------------------------------
+   Bilingual — Arabic / RTL support
+---------------------------------------------------------------------------- */
+
+/* Switch to IBM Plex Sans Arabic when dir=rtl is active */
+[dir="rtl"] body,
+[dir="rtl"] input,
+[dir="rtl"] button,
+[dir="rtl"] textarea {
+  font-family: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3 {
+  font-family: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Keep the display/mono font for numbers and code in RTL mode */
+[dir="rtl"] .font-mono,
+[dir="rtl"] .font-display {
+  font-family: var(--font-arabic), var(--font-outfit), ui-sans-serif, sans-serif;
+}
+
+/* Flip decorative elements that assume LTR */
+[dir="rtl"] .eyebrow::before {
+  content: "";
+  order: 1;
 }
 
 /* Respect reduced-motion globally */

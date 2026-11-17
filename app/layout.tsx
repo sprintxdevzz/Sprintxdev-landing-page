@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Outfit, JetBrains_Mono } from 'next/font/google';
+import { Inter, Outfit, JetBrains_Mono, IBM_Plex_Sans_Arabic } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
@@ -8,6 +8,7 @@ import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { siteSchemas } from '@/lib/seo';
+import { I18nProvider } from '@/lib/i18n';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,6 +29,13 @@ const jetbrains = JetBrains_Mono({
   weight: ['400', '500'],
   display: 'swap',
   variable: '--font-jetbrains',
+});
+
+const ibmArabic = IBM_Plex_Sans_Arabic({
+  subsets: ['arabic'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-arabic',
 });
 
 export const metadata: Metadata = {
@@ -97,18 +105,24 @@ export const viewport: Viewport = { themeColor: '#15156B' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} ${jetbrains.variable}`}>
+    <html
+      lang="en"
+      dir="ltr"
+      className={`${inter.variable} ${outfit.variable} ${jetbrains.variable} ${ibmArabic.variable}`}
+    >
       <body>
-        <JsonLd data={siteSchemas.organization} />
-        <JsonLd data={siteSchemas.website} />
-        <ScrollProgress />
-        <div className="min-h-screen flex flex-col selection:bg-brand-primary/20">
-          <Navbar />
-          <main className="grow">{children}</main>
-          <Footer />
-        </div>
-        <Analytics />
-        <SpeedInsights />
+        <I18nProvider>
+          <JsonLd data={siteSchemas.organization} />
+          <JsonLd data={siteSchemas.website} />
+          <ScrollProgress />
+          <div className="min-h-screen flex flex-col selection:bg-brand-primary/20">
+            <Navbar />
+            <main className="grow">{children}</main>
+            <Footer />
+          </div>
+          <Analytics />
+          <SpeedInsights />
+        </I18nProvider>
       </body>
     </html>
   );
