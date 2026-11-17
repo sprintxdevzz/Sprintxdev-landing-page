@@ -24,7 +24,6 @@ const clients: Logo[] = [
 const techPartners: Logo[] = [
   { name: 'Anthropic', src: '/partners/anthropic.svg' },
   { name: 'Microsoft', src: '/partners/microsoft.svg' },
-  { name: 'Microsoft Azure', src: '/partners/microsoft-azure.svg' },
   { name: 'Google Cloud', src: '/partners/google-cloud.svg' },
   { name: 'Tamkeen Technologies', src: '/partners/tamkeen-technologies.svg' },
   { name: 'Ejada', src: '/partners/ejada.png' },
