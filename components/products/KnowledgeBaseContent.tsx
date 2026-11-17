@@ -15,6 +15,7 @@ import {
   Database,
 } from 'lucide-react';
 import { useI18n } from '@/lib/i18n';
+import { ProductShowcase } from './ProductShowcase';
 
 const FEATURE_ICONS = [
   <Search size={20} key="search" />,
@@ -65,6 +66,20 @@ const DATA = {
       { title: 'Internal Help Desks', desc: 'HR, IT and Operations teams managing internal policies, procedures and troubleshooting guides.' },
       { title: 'Regulated Teams', desc: 'Banks, government entities and healthcare organisations where answer accuracy and audit trails are non-negotiable.' },
     ],
+    tour: {
+      eyebrow: 'Product tour',
+      h2_a: 'Every answer,',
+      h2_b: 'one search away',
+      note: 'Real product screens · sample data',
+      items: [
+        { title: 'Find anything', desc: 'Press Ctrl K to search articles, guided troubleshooters and pages. Search understands meaning, typos and both languages.', image: '06-command-palette' },
+        { title: 'AI answers with sources', desc: 'Ask in plain language. The answer comes only from approved articles, with the source and related topics attached.', image: '31-ai-chat-answer-with-sources' },
+        { title: 'Guided decision trees', desc: 'Walk people through tricky cases one question at a time, with completion and helpfulness tracked for every tree.', image: '21-tree-runner-1-question' },
+        { title: 'Visual tree editor', desc: 'See the whole flow as a diagram and click any step to edit it, in English and Arabic side by side.', image: '25-tree-editor-visual-graph' },
+        { title: 'Insights and assessments', desc: 'Content growth, top categories and assessment results per topic, so you know what your team knows.', image: '60b-statistics-insights' },
+        { title: 'Live agent mode', desc: 'During a call, speech is transcribed live and matching procedures are suggested while the customer is still talking.', image: '75-live-agent-mode' },
+      ],
+    },
     back_link: 'Back to CX Solutions',
     related: [
       { label: 'Next CX', href: '/products/next-cx' },
@@ -105,6 +120,20 @@ const DATA = {
       { title: 'مكاتب المساعدة الداخلية', desc: 'فرق الموارد البشرية وتقنية المعلومات والعمليات التي تدير السياسات الداخلية والإجراءات وأدلة استكشاف الأخطاء.' },
       { title: 'الفرق المنظَّمة', desc: 'البنوك والجهات الحكومية ومنظمات الرعاية الصحية حيث دقة الإجابات ومسارات التدقيق غير قابلة للتفاوض.' },
     ],
+    tour: {
+      eyebrow: 'جولة في المنتج',
+      h2_a: 'كل إجابة،',
+      h2_b: 'على بُعد بحث واحد',
+      note: 'شاشات حقيقية من المنتج · بيانات تجريبية',
+      items: [
+        { title: 'اعثر على أي شيء', desc: 'اضغط Ctrl K للبحث في المقالات والمرشدات التفاعلية والصفحات. البحث يفهم المعنى والأخطاء الإملائية واللغتين.', image: '06-command-palette' },
+        { title: 'إجابات ذكية بمصادرها', desc: 'اسأل بلغة بسيطة. الإجابة تأتي فقط من المقالات المعتمدة، مع المصدر والمواضيع ذات الصلة.', image: '31-ai-chat-answer-with-sources' },
+        { title: 'أشجار قرار إرشادية', desc: 'وجّه الفريق في الحالات المعقدة سؤالاً بسؤال، مع تتبع نسبة الإكمال والفائدة لكل شجرة.', image: '21-tree-runner-1-question' },
+        { title: 'محرر أشجار مرئي', desc: 'شاهد المسار كاملاً كمخطط واضغط أي خطوة لتعديلها، بالعربية والإنجليزية جنباً إلى جنب.', image: '25-tree-editor-visual-graph' },
+        { title: 'رؤى واختبارات', desc: 'نمو المحتوى وأهم الفئات ونتائج الاختبارات لكل موضوع، لتعرف ما يعرفه فريقك.', image: '60b-statistics-insights' },
+        { title: 'وضع الوكيل المباشر', desc: 'أثناء المكالمة يُفرَّغ الكلام مباشرة وتُقترح الإجراءات المطابقة بينما العميل ما زال يتحدث.', image: '75-live-agent-mode' },
+      ],
+    },
     back_link: 'العودة إلى حلول تجربة العملاء',
     related: [
       { label: 'Next CX', href: '/products/next-cx' },
@@ -144,6 +173,13 @@ export const KnowledgeBaseContent: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <ProductShowcase
+        basePath="/products/razqora"
+        url="kbs.nxtaut.com"
+        className="bg-brand-light"
+        {...d.tour}
+      />
 
       {/* How it works */}
       <section className="py-20 md:py-28 relative overflow-hidden">

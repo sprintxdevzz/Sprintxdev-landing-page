@@ -16,6 +16,7 @@ import {
   ClipboardList,
 } from 'lucide-react';
 import { useI18n } from '@/lib/i18n';
+import { ProductShowcase } from './ProductShowcase';
 
 const PILLAR_ICONS = [
   <Bot size={28} key="bot" />,
@@ -98,6 +99,20 @@ const DATA = {
       { title: 'Enterprise Organizations', desc: 'Banks, telecoms and retail — continuous CSAT, NPS and CES measurement across every touchpoint.' },
       { title: 'Education & Healthcare', desc: 'Schools, universities and clinics running assessments, event feedback and patient-experience surveys.' },
     ],
+    tour: {
+      eyebrow: 'Product tour',
+      h2_a: 'See Qyas',
+      h2_b: 'in action',
+      note: 'Real product screens · sample data',
+      items: [
+        { title: 'Create with AI', desc: 'Describe the survey in one sentence, or upload a document, and AI drafts the whole thing in English or Arabic.', image: '01-create-ai-prompt' },
+        { title: '12 question types', desc: 'Rating, choice, ranking, grids, file upload and more, with a live preview as you build.', image: '21-question-types' },
+        { title: 'One survey, every channel', desc: 'Separate links for web, email, SMS, QR, social and live agent, each tracking its own responses.', image: '30-distributions' },
+        { title: 'Arabic and English', desc: 'Add a language and auto-translate the whole survey with AI in one click, then fine-tune any string.', image: '07-auto-translate' },
+        { title: 'Results by channel', desc: 'Responses, completion rate and average time at a glance, broken down by the channel they came from.', image: '40-results-overview' },
+        { title: 'Ask your results', desc: 'Ask the AI copilot a question about your data and get a grounded answer, with suggested follow-ups.', image: '04-copilot-answer' },
+      ],
+    },
     back_link: 'Back to CX Solutions',
     related: [
       { label: 'Next CX', href: '/products/next-cx' },
@@ -164,6 +179,20 @@ const DATA = {
       { title: 'المنظمات الكبرى', desc: 'البنوك والاتصالات والتجزئة — قياس مستمر للـ CSAT وNPS وCES عبر كل نقطة تواصل.' },
       { title: 'التعليم والرعاية الصحية', desc: 'المدارس والجامعات والعيادات التي تجري تقييمات واستطلاعات فعاليات وتجربة المريض.' },
     ],
+    tour: {
+      eyebrow: 'جولة في المنتج',
+      h2_a: 'شاهد قياس',
+      h2_b: 'أثناء العمل',
+      note: 'شاشات حقيقية من المنتج · بيانات تجريبية',
+      items: [
+        { title: 'أنشئ بالذكاء الاصطناعي', desc: 'صِف الاستطلاع بجملة واحدة أو ارفع مستنداً، ويصيغه الذكاء الاصطناعي كاملاً بالعربية أو الإنجليزية.', image: '01-create-ai-prompt' },
+        { title: '12 نوع سؤال', desc: 'تقييم واختيار وترتيب وجداول ورفع ملفات وأكثر، مع معاينة حيّة أثناء البناء.', image: '21-question-types' },
+        { title: 'استطلاع واحد، كل القنوات', desc: 'روابط مستقلة للويب والبريد والرسائل النصية ورمز QR والتواصل الاجتماعي والوكيل المباشر، لكل منها ردوده.', image: '30-distributions' },
+        { title: 'عربي وإنجليزي', desc: 'أضف لغة وترجم الاستطلاع كاملاً بالذكاء الاصطناعي بضغطة واحدة، ثم عدّل أي نص.', image: '07-auto-translate' },
+        { title: 'النتائج حسب القناة', desc: 'الردود ونسبة الإكمال ومتوسط الوقت في لمحة، موزعة حسب القناة التي جاءت منها.', image: '40-results-overview' },
+        { title: 'اسأل نتائجك', desc: 'اسأل المساعد الذكي عن بياناتك واحصل على إجابة مستندة إليها، مع أسئلة متابعة مقترحة.', image: '04-copilot-answer' },
+      ],
+    },
     back_link: 'العودة إلى حلول تجربة العملاء',
     related: [
       { label: 'Next CX', href: '/products/next-cx' },
@@ -204,6 +233,13 @@ export const SurveyPlatformContent: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <ProductShowcase
+        basePath="/products/qyas"
+        url="survey.nxtaut.com"
+        className="bg-brand-light"
+        {...d.tour}
+      />
 
       {/* Three pillars */}
       <section className="py-20 md:py-28 relative overflow-hidden">

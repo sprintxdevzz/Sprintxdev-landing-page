@@ -17,6 +17,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { useI18n } from '@/lib/i18n';
+import { ProductShowcase } from './ProductShowcase';
 
 const PILLAR_ICONS = [
   <Bot size={20} key="bot" />,
@@ -112,6 +113,20 @@ const DATA = {
         desc: 'Product and SaaS teams reducing support tickets by letting customers self-serve from approved docs.',
       },
     ],
+    tour: {
+      eyebrow: 'Product tour',
+      h2_a: 'It answers from your content',
+      h2_b: 'and shows the source',
+      note: 'Product preview · sample data',
+      items: [
+        { title: 'On your website', desc: 'Visitors ask in Arabic or English and get an answer in seconds, with source chips and related topics underneath.', image: 'c04-assistant-answer-sources' },
+        { title: 'Every assistant at a glance', desc: 'Conversations, helpful rate and unanswered questions for each assistant, with a 30-day activity chart.', image: 'a01-assistants-overview' },
+        { title: 'Missed information', desc: 'Every question it could not answer, with the reason, how often it was asked and which assistant missed it.', image: 'a03-missed-information' },
+        { title: 'Per-assistant analytics', desc: 'Track conversations, feedback and open content gaps for one assistant over time.', image: 'a07-assistant-analytics' },
+        { title: 'Full transcripts', desc: 'Open any conversation to read what people asked, how Rafiq answered and which sources it used.', image: 'a09-conversation-transcript' },
+        { title: 'AI-assisted editor', desc: 'Turn a gap into an article. Write in one language and AI drafts the other and suggests a category.', image: 'b04-bilingual-ai-translation' },
+      ],
+    },
     back_link: 'Back to CX Solutions',
     related: [
       { label: 'Next CX', href: '/products/next-cx' },
@@ -145,7 +160,7 @@ const DATA = {
       },
       {
         title: 'أنشئ',
-        desc: 'من قائمة فجوات المحتوى، يمكنك توليد مسودات مقالات للمراجعة في رزقورة. الأسئلة الفائتة تصبح معرفة جديدة — تلقائياً.',
+        desc: 'من قائمة فجوات المحتوى، يمكنك توليد مسودات مقالات للمراجعة في رازكورا. الأسئلة الفائتة تصبح معرفة جديدة — تلقائياً.',
       },
       {
         title: 'قِس',
@@ -190,6 +205,20 @@ const DATA = {
         desc: 'فرق المنتج والـ SaaS التي تقلل تذاكر الدعم بالسماح للعملاء بالخدمة الذاتية من الوثائق المعتمدة.',
       },
     ],
+    tour: {
+      eyebrow: 'جولة في المنتج',
+      h2_a: 'يجيب من محتواك',
+      h2_b: 'ويُظهر المصدر',
+      note: 'معاينة للمنتج · بيانات تجريبية',
+      items: [
+        { title: 'على موقعك', desc: 'يسأل الزوار بالعربية أو الإنجليزية ويحصلون على إجابة في ثوانٍ، مع المصادر والمواضيع ذات الصلة أسفلها.', image: 'c04-assistant-answer-sources' },
+        { title: 'كل المساعدين في لمحة', desc: 'المحادثات ونسبة الإفادة والأسئلة غير المجابة لكل مساعد، مع مخطط النشاط لآخر 30 يوماً.', image: 'a01-assistants-overview' },
+        { title: 'المعلومات الناقصة', desc: 'كل سؤال لم يستطع الإجابة عنه، مع السبب وعدد مرات طرحه والمساعد الذي فاته.', image: 'a03-missed-information' },
+        { title: 'تحليلات كل مساعد', desc: 'تابع المحادثات والتقييمات وفجوات المحتوى المفتوحة لمساعد واحد عبر الوقت.', image: 'a07-assistant-analytics' },
+        { title: 'سجل المحادثات كاملاً', desc: 'افتح أي محادثة لتقرأ ما سأله الناس وكيف أجاب رفيق والمصادر التي استخدمها.', image: 'a09-conversation-transcript' },
+        { title: 'محرر بمساعدة الذكاء الاصطناعي', desc: 'حوّل الفجوة إلى مقال. اكتب بلغة واحدة ويصيغ الذكاء الاصطناعي الأخرى ويقترح الفئة.', image: 'b04-bilingual-ai-translation' },
+      ],
+    },
     back_link: 'العودة إلى حلول تجربة العملاء',
     related: [
       { label: 'Next CX', href: '/products/next-cx' },
@@ -230,6 +259,13 @@ export const AIAssistantContent: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <ProductShowcase
+        basePath="/products/rafiq"
+        url="kbs.nxtaut.com/assistants"
+        className="bg-brand-light"
+        {...d.tour}
+      />
 
       {/* Six pillars */}
       <section className="py-20 md:py-28 relative overflow-hidden">
