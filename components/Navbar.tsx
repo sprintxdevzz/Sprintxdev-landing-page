@@ -94,28 +94,24 @@ export const Navbar: React.FC = () => {
             <NavLink href="/#contact">{t.nav.contact}</NavLink>
 
             <div className="flex items-center gap-3 ml-4">
-              {/* Language toggle */}
-              <div className="flex items-center rounded-full border border-black/[0.1] text-[0.72rem] font-bold overflow-hidden">
+              {/* Language toggle — sliding pill */}
+              <div className="relative inline-flex items-center rounded-full bg-black/[0.06] p-[3px]">
+                <div
+                  className="absolute top-[3px] bottom-[3px] rounded-full bg-brand-primary shadow-[0_1px_6px_-2px_rgba(21,21,107,0.4)] transition-transform duration-200 ease-in-out"
+                  style={{ width: 'calc(50% - 1.5px)', transform: locale === 'en' ? 'translateX(0)' : 'translateX(calc(100% + 3px))' }}
+                />
                 <button
                   onClick={() => setLocale('en')}
-                  className={`px-3 py-1.5 transition-all duration-150 ${
-                    locale === 'en'
-                      ? 'bg-brand-secondary text-brand-dark'
-                      : 'text-ink-500 hover:text-brand-primary'
-                  }`}
+                  className={`relative z-10 w-9 h-6 text-[0.68rem] font-bold rounded-full transition-colors duration-150 ${locale === 'en' ? 'text-white' : 'text-ink-500 hover:text-ink-700'}`}
                 >
                   EN
                 </button>
                 <button
                   onClick={() => setLocale('ar')}
-                  className={`px-3 py-1.5 transition-all duration-150 ${
-                    locale === 'ar'
-                      ? 'bg-brand-secondary text-brand-dark'
-                      : 'text-ink-500 hover:text-brand-primary'
-                  }`}
+                  className={`relative z-10 w-9 h-6 text-[0.72rem] font-bold rounded-full transition-colors duration-150 ${locale === 'ar' ? 'text-white' : 'text-ink-500 hover:text-ink-700'}`}
                   style={{ fontFamily: 'var(--font-arabic)' }}
                 >
-                  عر
+                  ع
                 </button>
               </div>
 
@@ -137,20 +133,24 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile hamburger */}
           <div className="md:hidden flex items-center gap-2">
-            {/* Mobile language toggle */}
-            <div className="flex items-center rounded-full border border-black/[0.1] text-[0.7rem] font-bold overflow-hidden">
+            {/* Mobile language toggle — sliding pill */}
+            <div className="relative inline-flex items-center rounded-full bg-black/[0.06] p-[3px]">
+              <div
+                className="absolute top-[3px] bottom-[3px] rounded-full bg-brand-primary shadow-[0_1px_6px_-2px_rgba(21,21,107,0.4)] transition-transform duration-200 ease-in-out"
+                style={{ width: 'calc(50% - 1.5px)', transform: locale === 'en' ? 'translateX(0)' : 'translateX(calc(100% + 3px))' }}
+              />
               <button
                 onClick={() => setLocale('en')}
-                className={`px-2.5 py-1 transition-all duration-150 ${locale === 'en' ? 'bg-brand-secondary text-brand-dark' : 'text-ink-500'}`}
+                className={`relative z-10 w-8 h-6 text-[0.65rem] font-bold rounded-full transition-colors duration-150 ${locale === 'en' ? 'text-white' : 'text-ink-500'}`}
               >
                 EN
               </button>
               <button
                 onClick={() => setLocale('ar')}
-                className={`px-2.5 py-1 transition-all duration-150 ${locale === 'ar' ? 'bg-brand-secondary text-brand-dark' : 'text-ink-500'}`}
+                className={`relative z-10 w-8 h-6 text-[0.68rem] font-bold rounded-full transition-colors duration-150 ${locale === 'ar' ? 'text-white' : 'text-ink-500'}`}
                 style={{ fontFamily: 'var(--font-arabic)' }}
               >
-                عر
+                ع
               </button>
             </div>
             <button

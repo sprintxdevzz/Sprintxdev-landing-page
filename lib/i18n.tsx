@@ -266,7 +266,7 @@ const translations = {
       back_to_cx: 'Back to CX Solutions',
       next_cx: {
         eyebrow: 'CX Platform',
-        h2_a: 'One platform. Every',
+        h2_a: 'Unified platform. Every',
         h2_gradient: 'conversation.',
         subtitle: 'Answer every customer on every channel — WhatsApp, voice, web chat, email and more — from one AI-powered platform built for Saudi Arabia.',
         how_it_works: 'How it works',
@@ -598,7 +598,7 @@ const translations = {
       back_to_cx: 'العودة إلى حلول تجربة العملاء',
       next_cx: {
         eyebrow: 'منصة تجربة العملاء',
-        h2_a: 'منصة واحدة. كل',
+        h2_a: 'المنصة الموحدة. كل',
         h2_gradient: 'محادثة.',
         subtitle: 'أجب على كل عميل في كل قناة — واتساب والصوت والويب والبريد الإلكتروني والتواصل الاجتماعي. وكلاء ذكاء اصطناعي يفهمون العربية والإنجليزية وكل لهجة سعودية.',
         how_it_works: 'كيف يعمل',
